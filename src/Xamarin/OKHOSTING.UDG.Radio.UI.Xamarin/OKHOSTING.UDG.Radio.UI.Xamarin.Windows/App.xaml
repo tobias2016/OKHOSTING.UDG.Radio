@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="OKHOSTING.UDG.Radio.UI.Xamarin.Windows.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OKHOSTING.UDG.Radio.UI.Xamarin.Windows">
+
+</Application>
