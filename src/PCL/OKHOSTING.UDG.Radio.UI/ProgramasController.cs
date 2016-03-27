@@ -20,7 +20,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
 			BackgroundImage = Platform.Current.Create<IImage>();
-			BackgroundImage.LoadFromUrl(new Uri("http://app-udg.okhosting.com/ICONOS-PROG/icon2--49.png"));
+			BackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--49.png"));
 			BackgroundImage.Width = Platform.Current.Page.Width;
 			BackgroundImage.Height = Platform.Current.Page.Height;
 			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);

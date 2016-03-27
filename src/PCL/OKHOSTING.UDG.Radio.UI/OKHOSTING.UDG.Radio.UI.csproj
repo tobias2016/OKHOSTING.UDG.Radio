@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcordeonController.cs" />
+    <Compile Include="HomeController.cs" />
     <Compile Include="IndexController.cs" />
     <Compile Include="ProgramasController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreenScontroller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -67,20 +69,29 @@
       <HintPath>..\..\packages\OKHOSTING.Sql.1.0.1\lib\OKHOSTING.Sql.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="OKHOSTING.Sql.MySql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.Sql.MySql.1.0.4\lib\OKHOSTING.Sql.MySql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OKHOSTING.Sql.Web.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.Sql.Web.Services.Client.1.0.0\lib\OKHOSTING.Sql.Web.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OKHOSTING.UI.1.0.6\lib\OKHOSTING.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCLCrypto.1.0.86\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLCrypto.2.0.144\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+    <Reference Include="Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
