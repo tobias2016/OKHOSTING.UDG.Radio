@@ -17,6 +17,11 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
             LoadApplication(new App());
         }
     }

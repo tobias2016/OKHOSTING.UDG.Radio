@@ -14,16 +14,19 @@ namespace OKHOSTING.UDG.Radio.UI
         {
             base.Start();
 
-            IImage logo = Platform.Current.Create<IImage>();
+            IImageButton logo = Platform.Current.Create<IImageButton>();
             logo.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--01.png"));
             logo.Width = Platform.Current.Page.Width;
             logo.Height = Platform.Current.Page.Height;
+            logo.Click += Logo_Click;
 
             Platform.Current.Page.Title = "Radio Universidad de Guaralajara";
             Platform.Current.Page.Content = logo;
+            //System.Threading.Tasks.Task.Delay(1000).Wait();
+        }
 
-            System.Threading.Tasks.Task.Delay(1000).Wait();
-
+        private void Logo_Click(object sender, EventArgs e)
+        {
             Finish();
             new HomeController().Start();
         }

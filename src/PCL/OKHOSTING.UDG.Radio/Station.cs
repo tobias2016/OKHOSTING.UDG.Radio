@@ -14,7 +14,7 @@ namespace OKHOSTING.UDG.Radio
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public string WebSiteUri { get; set; }
-		public string StramingUri { get; set; }
+		public Uri WebSiteUri { get; set; }
+		public Uri StramingUri { get; set; }
 	}
 }
