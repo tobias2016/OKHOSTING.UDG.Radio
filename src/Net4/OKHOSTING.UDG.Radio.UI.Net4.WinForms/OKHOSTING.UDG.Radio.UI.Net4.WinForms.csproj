@@ -107,9 +107,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\OKHOSTING.Streaming\src\PCL\OKHOSTING.Streaming\OKHOSTING.Streaming.csproj">
       <Project>{08813445-af0d-4dbc-9162-c222fb269352}</Project>
       <Name>OKHOSTING.Streaming</Name>
