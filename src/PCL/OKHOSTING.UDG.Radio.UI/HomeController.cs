@@ -23,40 +23,44 @@ namespace OKHOSTING.UDG.Radio.UI
 			BackgroundImage = Platform.Current.Create<IImage>();
 			BackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
 			BackgroundImage.Width = Platform.Current.Page.Width;
-			BackgroundImage.Height = Platform.Current.Page.Height;
+			BackgroundImage.Height = Platform.Current.Page.Height * 2;
 			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+
+            IGrid menu = Platform.Current.Create<IGrid>();
+            menu.RowCount = 1;
+            menu.ColumnCount = 3;
+            menu.Height = 50;
+            menu.Width = Platform.Current.Page.Width;
+            menu.BackgroundColor = new Color(255, 0, 0, 0);
+            panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IButton cmdProgramas = Platform.Current.Create<IButton>();
 			cmdProgramas.Text = "Programas";
 			cmdProgramas.Width = 80;
 			cmdProgramas.Height = 35;
 			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
-			panel.Add(cmdProgramas, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+            menu.SetContent(0, 0, cmdProgramas);
 
-			IImageButton Regionales = Platform.Current.Create<IImageButton>();
+            IImageButton Regionales = Platform.Current.Create<IImageButton>();
 			Regionales.LoadFromUrl (new Uri("http://app-udg.okhosting.com/iconos%20new/app-17.png"));
 			Regionales.Width = 80;
 			Regionales.Height = 35;
-			panel.Add(Regionales, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.TopWith);
+            menu.SetContent(0, 1, Regionales);
 
 			IImageButton Virtuales = Platform.Current.Create<IImageButton>();
 			Virtuales.LoadFromUrl (new Uri("http://app-udg.okhosting.com/iconos%20new/app-18.png"));
 			Virtuales.Width = 80;
 			Virtuales.Height = 35;
-			panel.Add(Virtuales, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith);
-
-			IGrid Titulo = Platform.Current.Create<IGrid> ();
-			Titulo.ColumnCount = 3;
-			Titulo.RowCount = 1;	
+            menu.SetContent(0, 2, Virtuales);
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Radio Universidad De Guadalajara";
 			lblLabel.Width = 150;
 			lblLabel.Height = 20;
-			lblLabel.FontColor = new Color(1, 0, 0, 255);
-			lblLabel.BackgroundColor = new Color(1, 255, 0, 255);
+			lblLabel.FontColor = new Color(255, 0, 0, 255);
+			lblLabel.BackgroundColor = new Color(255, 255, 0, 255);
             lblLabel.Margin = new Thickness(30);
-            panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, cmdProgramas);
+            panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
 			IImage imagen = Platform.Current.Create<IImage> ();
 			imagen.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--01.png"));
@@ -72,7 +76,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			ILabel lblLabel2 = Platform.Current.Create<ILabel>();
 			lblLabel2.Text = "AHORA AL AIRE";
-			lblLabel2.FontColor = new Color(1, 255, 0, 255);
+			lblLabel2.FontColor = new Color(255, 255, 0, 255);
 			panel.Add(lblLabel2, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.BelowOf, lblLabels);
 
 			IImage imagen2 = Platform.Current.Create<IImage> ();
@@ -91,7 +95,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			ILabel lblLabel3 = Platform.Current.Create<ILabel>();
 			lblLabel3.Text = "NOTAS DE EL ACORDEON";
-			lblLabel3.FontColor = new Color(1, 255, 0, 255);
+			lblLabel3.FontColor = new Color(255, 255, 0, 255);
 			panel.Add(lblLabel3, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, play);
 
 			IImage imagen3 = Platform.Current.Create<IImage> ();
@@ -102,7 +106,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			ILabel lblTexto = Platform.Current.Create<ILabel>();
 			lblTexto.Text = "Hoy estamos hablando de las palabras que usamos que provienen del Árabe. Llama a cabina y dinos cules conoces. Entras a la rifa de boletos de Radaid";
-			lblTexto.BorderColor = new Color(1, 255, 255, 255);
+			lblTexto.BorderColor = new Color(255, 255, 255, 255);
 			lblTexto.BorderWidth = new Thickness(9, 9, 9, 9);
 			panel.Add(lblTexto, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel3);
 
@@ -115,8 +119,8 @@ namespace OKHOSTING.UDG.Radio.UI
 			ITextArea txtAreaComentario = Platform.Current.Create<ITextArea>();
 			txtAreaComentario.Value = "";
 			txtAreaComentario.FontSize = 12;
-			txtAreaComentario.FontColor = new Color(1, 0, 0, 255);
-			txtAreaComentario.BackgroundColor = new Color(1, 255, 255, 255);
+			txtAreaComentario.FontColor = new Color(255, 0, 0, 255);
+			txtAreaComentario.BackgroundColor = new Color(255, 255, 255, 255);
 			txtAreaComentario.Width = 210;
 			txtAreaComentario.Height = 80;
 			panel.Add(txtAreaComentario, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel4);
