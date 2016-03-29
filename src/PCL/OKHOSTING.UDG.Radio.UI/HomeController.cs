@@ -61,7 +61,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTitulo.Width = Platform.Current.Page.Width;
 			lblTitulo.Height = 50;
 			lblTitulo.FontColor = new Color(255, 0, 0, 0);
-            lblTitulo.FontSize = 15;
+            lblTitulo.FontSize = 12;
             lblTitulo.Bold = true;
             lblTitulo.FontFamily = "Arial";
             lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -71,9 +71,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();
 			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images/app-07.png"));
-			imgLogo.Width = 100;
+			imgLogo.Width = 80;
 			imgLogo.Height = lblTitulo.Height;
-			panel.Add(imgLogo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, lblTitulo);
+			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, lblTitulo);
 
             imgBackgroundImage = Platform.Current.Create<IImage>();
             imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
@@ -85,11 +85,11 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgAntena.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-13.png"));
 			imgAntena.Width = 40;
 			imgAntena.Height = 15;
-			imgAntena.Margin = new Thickness(10, 25, 0, 10);
+			imgAntena.Margin = new Thickness(2, 25, 0, 10);
 			panel.Add(imgAntena, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
 			ILabel lblAlAire = Platform.Current.Create<ILabel>();
-			lblAlAire.Text = "Ahora al aire";
+			lblAlAire.Text = "AHORA AL AIRE";
             lblAlAire.FontSize = 14;
             lblAlAire.Bold = true;
             lblAlAire.FontFamily = "Arial";
@@ -123,7 +123,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
             ILabel lblPrograma2 = Platform.Current.Create<ILabel>();
             lblPrograma2.Text = "Con Manuel Falcón";
-            lblPrograma2.FontColor = new Color(255, 0, 0, 150);
+            lblPrograma2.FontColor = new Color(255, 192, 192, 192);
             lblPrograma2.FontFamily = "Arial";
             lblPrograma2.FontSize = 10;
 			lblPrograma2.Bold = true;
@@ -135,7 +135,7 @@ namespace OKHOSTING.UDG.Radio.UI
             cmdPlay.Click += Play_Click;
 			cmdPlay.Width = 80;
 			cmdPlay.Height = 35;
-			cmdPlay.Margin = new Thickness (20, 0, 0, 0);
+			cmdPlay.Margin = new Thickness (10, 0, 0, 0);
 			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblPrograma);
 
 			IImage imgNotas = Platform.Current.Create<IImage> ();
@@ -147,6 +147,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			ILabel lblNotas = Platform.Current.Create<ILabel>();
             lblNotas.Text = "NOTAS DE EL ACORDEON";
+			lblNotas.FontSize = 14;
+			lblNotas.Bold = true;
+			lblNotas.FontFamily = "Arial";
             lblNotas.FontColor = new Color(255, 255, 212, 79);
 			panel.Add(lblNotas, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, imgNotas);
 
@@ -154,6 +157,8 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTexto.Text = "Hoy estamos hablando de las palabras que usamos que provienen del Árabe. Llama a cabina y dinos cules conoces. Entras a la rifa de boletos de Radaid";
 			lblTexto.BorderColor = new Color(255, 255, 255, 255);
 			lblTexto.BorderWidth = new Thickness(9, 9, 9, 9);
+			lblTexto.FontSize = 10;
+			lblTexto.FontColor = new Color (255, 255, 255, 255);
 			lblTexto.Margin = new Thickness (2);
 			panel.Add(lblTexto, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgNotas);
 
