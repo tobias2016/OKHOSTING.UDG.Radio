@@ -158,7 +158,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			ILabel lblLabel4 = Platform.Current.Create<ILabel>();
 			lblLabel4.Text = "ENVIA UN MENSAJE A EL ACORDEON";
 			lblLabel4.FontSize = 11;
-			lblLabel4.FontColor = new Color(1, 255, 212, 79);
+			lblLabel4.FontColor = new Color(255, 255, 212, 79);
 			panel.Add(lblLabel4, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTexto);
 
 			ITextArea txtAreaComentario = Platform.Current.Create<ITextArea>();
