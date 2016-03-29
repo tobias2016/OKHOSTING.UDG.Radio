@@ -100,8 +100,8 @@ namespace OKHOSTING.UDG.Radio.UI
             grdReproductor.RowCount = 1;
             grdReproductor.ColumnCount = 4;
             grdReproductor.Height = 70;
-            grdReproductor.Width = Platform.Current.Page.Width - 20;
-            grdReproductor.BackgroundColor = new Color(255, 255, 255, 255);
+            grdReproductor.Width = Platform.Current.Page.Width - 40;
+            grdReproductor.BackgroundColor = new Color(130, 255, 255, 255);
             grdReproductor.Margin = new Thickness(10, 20, 20, 5);
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
@@ -110,7 +110,8 @@ namespace OKHOSTING.UDG.Radio.UI
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
             imgLogoPrograma.Margin = new Thickness(10, 10, 20, 5);
-            panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, grdReproductor);
+            //panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
+            panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
             ILabel lblPrograma = Platform.Current.Create<ILabel>();
             lblPrograma.Text = "El Acordeón";
