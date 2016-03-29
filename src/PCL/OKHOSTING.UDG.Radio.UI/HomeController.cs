@@ -101,7 +101,7 @@ namespace OKHOSTING.UDG.Radio.UI
             grdReproductor.ColumnCount = 4;
             grdReproductor.Height = 70;
             grdReproductor.Width = Platform.Current.Page.Width - 40;
-            grdReproductor.BackgroundColor = new Color(240, 255, 255, 255);
+            grdReproductor.BackgroundColor = new Color(200, 255, 255, 255);
             grdReproductor.Margin = new Thickness(10, 20, 20, 5);
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
@@ -207,15 +207,21 @@ namespace OKHOSTING.UDG.Radio.UI
             if (!IsPlaying)
             {
                 AudioPlayer.Play();
-                cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/image/app-53.png"));
+                cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-53.png"));
                 IsPlaying = true;
             }
             else
             {
                 AudioPlayer.Pause();
-                cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/image/app-54.png"));
+                cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-54.png"));
                 IsPlaying = false;
             }
+        }
+
+        public override void Finish()
+        {
+            AudioPlayer.Stop();
+            base.Finish();
         }
     }
 }
