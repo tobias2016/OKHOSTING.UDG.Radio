@@ -101,7 +101,7 @@ namespace OKHOSTING.UDG.Radio.UI
             grdReproductor.ColumnCount = 4;
             grdReproductor.Height = 70;
             grdReproductor.Width = Platform.Current.Page.Width - 40;
-            grdReproductor.BackgroundColor = new Color(130, 255, 255, 255);
+            grdReproductor.BackgroundColor = new Color(240, 255, 255, 255);
             grdReproductor.Margin = new Thickness(10, 20, 20, 5);
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
@@ -109,23 +109,25 @@ namespace OKHOSTING.UDG.Radio.UI
             imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
-            imgLogoPrograma.Margin = new Thickness(10, 10, 20, 5);
+            imgLogoPrograma.Margin = new Thickness(10, 10, 5, 5);
             //panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
             panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
             ILabel lblPrograma = Platform.Current.Create<ILabel>();
             lblPrograma.Text = "El Acordeón";
-            lblPrograma.FontColor = new Color(255, 80, 80, 80);
+            lblPrograma.FontColor = new Color(255, 0, 0, 10);
             lblPrograma.FontFamily = "Arial";
-            lblPrograma.FontSize = 16;
+            lblPrograma.FontSize = 13;
+			lblPrograma.Bold = true;
             panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
             ILabel lblPrograma2 = Platform.Current.Create<ILabel>();
             lblPrograma2.Text = "Con Manuel Falcón";
-            lblPrograma2.FontColor = new Color(255, 150, 150, 150);
+            lblPrograma2.FontColor = new Color(255, 0, 0, 150);
             lblPrograma2.FontFamily = "Arial";
-            lblPrograma2.FontSize = 12;
-            lblPrograma2.Margin = new Thickness(0, 5, 0, 0);
+            lblPrograma2.FontSize = 10;
+			lblPrograma2.Bold = true;
+            lblPrograma2.Margin = new Thickness(0, 2, 0, 0);
             panel.Add(lblPrograma2, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblPrograma);
 
             cmdPlay = Platform.Current.Create<IImageButton>();
