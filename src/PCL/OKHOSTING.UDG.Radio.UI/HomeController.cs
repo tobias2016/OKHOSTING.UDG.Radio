@@ -12,6 +12,9 @@ namespace OKHOSTING.UDG.Radio.UI
 		protected IImage imgBackgroundImage;
         protected IImageButton cmdPlay;
         IAudioPlayer AudioPlayer;
+		IImage imgLogoPrograma;
+		ILabel lblPrograma;
+		ILabel lblPrograma2;
 		public Station station 
 		{
 			get 
@@ -21,9 +24,10 @@ namespace OKHOSTING.UDG.Radio.UI
 			set 
 			{ 
 				_station = value;
-				AudioPlayer.Stop ();
-				cmdPlay.LoadFromUrl(_station.StramingUri);
-				IsPlaying = true;
+				AudioPlayer = _station.StramingUri;
+				imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
+				lblPrograma.Text = _station.Name;
+				lblPrograma2.Text = _station.Description;	
 			}
 		}
 
@@ -122,7 +126,7 @@ namespace OKHOSTING.UDG.Radio.UI
             grdReproductor.Margin = new Thickness(12, 10, 15, 20);
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
-            IImage imgLogoPrograma = Platform.Current.Create<IImage>();
+            imgLogoPrograma = Platform.Current.Create<IImage>();
 			imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
@@ -130,7 +134,7 @@ namespace OKHOSTING.UDG.Radio.UI
             //panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
             panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
-            ILabel lblPrograma = Platform.Current.Create<ILabel>();
+            lblPrograma = Platform.Current.Create<ILabel>();
 			lblPrograma.Text = "GUADALAJARA";
             lblPrograma.FontColor = new Color(255, 0, 0, 10);
             lblPrograma.FontFamily = "Arial";
@@ -138,7 +142,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblPrograma.Bold = true;
             panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
-            ILabel lblPrograma2 = Platform.Current.Create<ILabel>();
+            lblPrograma2 = Platform.Current.Create<ILabel>();
 			lblPrograma2.Text = "XHUDG 104.3 F.M.";
             lblPrograma2.FontColor = new Color(255, 128, 128, 128);
             lblPrograma2.FontFamily = "Arial";
@@ -211,8 +215,6 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdEnviar.BackgroundColor = new Color(255, 255, 212, 79);
 			cmdEnviar.Margin = new Thickness (0, 2, 15, 5);
 			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, grdReproductor);
-
-			Play_Click (null, null);
 
 			Platform.Current.Page.Title = "straming";
 			Platform.Current.Page.Content = panel;
