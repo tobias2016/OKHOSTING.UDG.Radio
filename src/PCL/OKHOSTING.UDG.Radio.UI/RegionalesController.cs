@@ -10,93 +10,93 @@ namespace OKHOSTING.UDG.Radio.UI
 	public class RegionalesController : OKHOSTING.UI.Controller
 	{
 		IAudioPlayer AudioPlayer;
-		protected IImage BackgroundImage;
+		protected IImage imgBackgroundImage;
 
 		public override void Start()
 		{
 			base.Start ();
 
-			IList<Station> Estaciones = new List<Station> ();
-			Station Estacion1 = new Station ();
-			Estacion1.Id = 1;
-			Estacion1.Name = "AMECA";
-			Estacion1.Description = "XHUDG 105.5 F.M.";
-			Estacion1.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--11.png");
-			Estacion1.StramingUri = new Uri ("http://148.202.87.222:8000/;stream/1");
+			IList<Station> estaciones = new List<Station> ();
+			Station estacion1 = new Station ();
+			estacion1.Id = 1;
+			estacion1.Name = "AMECA";
+			estacion1.Description = "XHUDG 105.5 F.M.";
+			estacion1.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--11.png");
+			estacion1.StramingUri = new Uri ("http://148.202.87.222:8000/;stream/1");
 
-			Estaciones.Add (Estacion1);
+			estaciones.Add (estacion1);
 
-			Station Estacion2 = new Station ();
-			Estacion2.Id = 2;
-			Estacion2.Name = "GUADALAJARA";
-			Estacion2.Description = "XHUDG 104.3 F.M.";
-			Estacion2.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--20.png");
-			Estacion2.StramingUri = new Uri ("http://148.202.165.2/videoPlayer/swfs/StrobeMediaPlayback.swf");
+			Station estacion2 = new Station ();
+			estacion2.Id = 2;
+			estacion2.Name = "GUADALAJARA";
+			estacion2.Description = "XHUDG 104.3 F.M.";
+			estacion2.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--20.png");
+			estacion2.StramingUri = new Uri ("http://148.202.165.2/videoPlayer/swfs/StrobeMediaPlayback.swf");
 
-			Estaciones.Add (Estacion2);
+			estaciones.Add (estacion2);
 
-			Station Estacion3 = new Station ();
-			Estacion3.Id = 1;
-			Estacion3.Name = "AUTLAN";
-			Estacion3.Description = "XHANU 102.3 F.M.";
-			Estacion3.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--40.png");
-			Estacion3.StramingUri = new Uri ("http://148.202.114.39:8000/;stream/1");
+			Station estacion3 = new Station ();
+			estacion3.Id = 1;
+			estacion3.Name = "AUTLAN";
+			estacion3.Description = "XHANU 102.3 F.M.";
+			estacion3.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--40.png");
+			estacion3.StramingUri = new Uri ("http://148.202.114.39:8000/;stream/1");
 
-			Estaciones.Add (Estacion3);
+			estaciones.Add (estacion3);
 
-			Station Estacion4 = new Station ();
-			Estacion4.Id = 1;
-			Estacion4.Name = "CD. GUZMÁN";
-			Estacion4.Description = "XHUGG 94.3 F.M.";
-			Estacion4.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--23.png");
-			Estacion4.StramingUri = new Uri ("http://148.202.119.233:8080/;stream/1");
+			Station estacion4 = new Station ();
+			estacion4.Id = 1;
+			estacion4.Name = "CD. GUZMÁN";
+			estacion4.Description = "XHUGG 94.3 F.M.";
+			estacion4.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--23.png");
+			estacion4.StramingUri = new Uri ("http://148.202.119.233:8080/;stream/1");
 
-			Estaciones.Add (Estacion4);
+			estaciones.Add (estacion4);
 
-			Station Estacion5 = new Station ();
-			Estacion5.Id = 1;
-			Estacion5.Name = "COLOTLÁN";
-			Estacion5.Description = "XHUGC 104.7 F.M.";
-			Estacion5.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--44.png");
-			Estacion5.StramingUri = new Uri ("http://148.202.79.112:8000/;stream/1");
+			Station estacion5 = new Station ();
+			estacion5.Id = 1;
+			estacion5.Name = "COLOTLÁN";
+			estacion5.Description = "XHUGC 104.7 F.M.";
+			estacion5.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--44.png");
+			estacion5.StramingUri = new Uri ("http://148.202.79.112:8000/;stream/1");
 
-			Estaciones.Add (Estacion5);
+			estaciones.Add (estacion5);
 
-			Station Estacion6 = new Station ();
-			Estacion6.Id = 1;
-			Estacion6.Name = "LAGOS DE MORENO";
-			Estacion6.Description = "XHUGL 104.7 F.M.";
-			Estacion6.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--43.png");
-			Estacion6.StramingUri = new Uri ("http://148.202.62.3:8000/;stream/1");
+			Station estacion6 = new Station ();
+			estacion6.Id = 1;
+			estacion6.Name = "LAGOS DE MORENO";
+			estacion6.Description = "XHUGL 104.7 F.M.";
+			estacion6.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--43.png");
+			estacion6.StramingUri = new Uri ("http://148.202.62.3:8000/;stream/1");
 
-			Estaciones.Add (Estacion6);
+			estaciones.Add (estacion6);
 
-			Station Estacion7 = new Station ();
-			Estacion7.Id = 1;
-			Estacion7.Name = "OCOTLÁN";
-			Estacion7.Description = "XHUGO 107.9 F.M.";
-			Estacion7.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--41.png");
-			Estacion7.StramingUri = new Uri ("http://148.202.148.5:4040/;stream/1");
+			Station estacion7 = new Station ();
+			estacion7.Id = 1;
+			estacion7.Name = "OCOTLÁN";
+			estacion7.Description = "XHUGO 107.9 F.M.";
+			estacion7.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--41.png");
+			estacion7.StramingUri = new Uri ("http://148.202.148.5:4040/;stream/1");
 
-			Estaciones.Add (Estacion7);
+			estaciones.Add (estacion7);
 
-			Station Estacion8 = new Station ();
-			Estacion8.Id = 1;
-			Estacion8.Name = "PUERTO VALLARTA";
-			Estacion8.Description = "XHUGP 104.3 F.M.";
-			Estacion8.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--42.png");
-			Estacion8.StramingUri = new Uri ("http://148.202.110.152:8000/;stream/1");
+			Station estacion8 = new Station ();
+			estacion8.Id = 1;
+			estacion8.Name = "PUERTO VALLARTA";
+			estacion8.Description = "XHUGP 104.3 F.M.";
+			estacion8.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--42.png");
+			estacion8.StramingUri = new Uri ("http://148.202.110.152:8000/;stream/1");
 
-			Estaciones.Add (Estacion8);
+			estaciones.Add (estacion8);
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
-			BackgroundImage = Platform.Current.Create<IImage>();
-			BackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--49.png"));
-			BackgroundImage.Width = Platform.Current.Page.Width;
-			BackgroundImage.Height = Platform.Current.Page.Height;
-			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+			imgBackgroundImage = Platform.Current.Create<IImage>();
+			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--50.png"));
+			imgBackgroundImage.Width = Platform.Current.Page.Width * 1.1;
+			imgBackgroundImage.Height = Platform.Current.Page.Height * 2.3;
+			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IGrid menu = Platform.Current.Create<IGrid>();
 			menu.RowCount = 1;
@@ -138,69 +138,73 @@ namespace OKHOSTING.UDG.Radio.UI
 			bgdTitulo.ColumnCount = 4;
 			bgdTitulo.Height = 40;
 			bgdTitulo.Width = Platform.Current.Page.Width;
-			bgdTitulo.BackgroundColor = new Color(230, 255, 143, 0);
+			bgdTitulo.BackgroundColor = new Color(250, 79, 195, 247);
+			bgdTitulo.Margin = new Thickness (0, 0, 20, 0);
 			panel.Add(bgdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
-
-			IImage imgArchivos = Platform.Current.Create<IImage>();
-			imgArchivos.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--31.png"));
-			imgArchivos.Width = 25;
-			imgArchivos.Height = 25;
-			imgArchivos.Margin = new Thickness(5, 10, 10, 5);
-			imgArchivos.Margin = new Thickness (5, 0, 10, 0);
-			panel.Add(imgArchivos, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
-
+			
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Estaciones Regionales";
-			lblLabel.Width = 140;
+			lblLabel.Width = 150;
 			lblLabel.Height = 20;
-			lblLabel.FontSize = 12;
+			lblLabel.FontSize = 11;
 			lblLabel.Bold = true;
-			lblLabel.FontColor = new Color(255, 255, 255, 255);
-			lblLabel.Margin = new Thickness (0, 0, 10, 0);
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, imgArchivos);
+			//lblLabel.BackgroundColor = new Color (255, 79, 195, 247);
+			lblLabel.FontColor = new Color(255, 0, 0, 0);
+			lblLabel.Margin = new Thickness (25, 0, 0, 0);
+			//lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
+			//lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();
 			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-			imgLogo.Width = 50;
-			imgLogo.Height = 50;
-			imgLogo.Margin = new Thickness (0, -13, 0, 0);
+			imgLogo.Width = 55;
+			imgLogo.Height = 55;
+			imgLogo.Margin = new Thickness (5, -17, 0, 0);
 			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
 
-            IControl referencia = bgdTitulo;
+			IControl referencia = lblLabel;
 
-            foreach (Station staciones in Estaciones) 
+			foreach (Station staciones in estaciones) 
 			{
-				IGrid pgrAcordeon = Platform.Current.Create<IGrid>();
-				pgrAcordeon.RowCount = 1;
-				pgrAcordeon.ColumnCount = 4;
-				pgrAcordeon.Height = 50;
-				pgrAcordeon.Width = Platform.Current.Page.Width -30;
-				pgrAcordeon.BackgroundColor = new Color(10, 128, 128, 128);
-				pgrAcordeon.Margin = new Thickness (0, 10, 0, 0);
-				panel.Add(pgrAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+				IGrid grdEstacion = Platform.Current.Create<IGrid>();
+				grdEstacion.RowCount = 1;
+				grdEstacion.ColumnCount = 4;
+				grdEstacion.Height = 50;
+				grdEstacion.Width = Platform.Current.Page.Width -20;
+				grdEstacion.BackgroundColor = new Color(40, 120, 120, 120);
+				grdEstacion.Margin = new Thickness (0, 20, 0, 0);
+				panel.Add(grdEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-                referencia = pgrAcordeon;
+				referencia = grdEstacion;
 
-                IImageButton imgAcordeon = Platform.Current.Create<IImageButton>();
-				imgAcordeon.LoadFromUrl(staciones.WebSiteUri);
-				imgAcordeon.Width = 35;
-				imgAcordeon.Height = 35;
-				imgAcordeon.Margin = new Thickness(10, 10, 10, 5);
-				panel.Add(imgAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, pgrAcordeon);
+                IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
+				imgEstacion.LoadFromUrl(staciones.WebSiteUri);
+				imgEstacion.Width = 35;
+				imgEstacion.Height = 35;
+				imgEstacion.Margin = new Thickness(10, 10, 10, 5);
+				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
 
-				ILabelButton Programa1 = Platform.Current.Create<ILabelButton>();
-				Programa1.Click += (object sender, EventArgs e) => new AcordeonController().Start();
-				Programa1.Text = staciones.Name;
-				Programa1.FontSize = 11;
-				Programa1.FontColor = new Color(255, 255, 255, 255);
-				panel.Add(Programa1, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgAcordeon);
+				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
+				lblNombreEstacion.Click += (object sender, EventArgs e) => new AcordeonController().Start();
+				lblNombreEstacion.Text = staciones.Name;
+				lblNombreEstacion.FontSize = 11;
+				lblNombreEstacion.Bold = true;
+				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
+				panel.Add(lblNombreEstacion, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgEstacion);
 
-				ILabelButton Descripcion = Platform.Current.Create<ILabelButton>();
-				Descripcion.Click += (object sender, EventArgs e) => new AcordeonController().Start();
-				Descripcion.Text = staciones.Description;
-				Descripcion.FontSize = 9;
-				Descripcion.FontColor = new Color (255, 128, 128, 128);
-				panel.Add(Descripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programa1);
+				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
+				lblDescripcionEstacion.Click += (object sender, EventArgs e) => new AcordeonController().Start();
+				lblDescripcionEstacion.Text = staciones.Description;
+				lblDescripcionEstacion.FontSize = 10;
+				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
+				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
+
+				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
+				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
+				imgPlay.Width = 20;
+				imgPlay.Height = 20;
+				imgPlay.Margin = new Thickness (-60, 0, 0, 0);
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, grdEstacion);
 			}
 
 			/*
@@ -260,12 +264,21 @@ namespace OKHOSTING.UDG.Radio.UI
 			IButton cmdClose = Platform.Current.Create<IButton>();
 			cmdClose.Text = "Cerrar";
 			cmdClose.Height = 40;
-			cmdClose.BackgroundColor = new Color(255, 255, 0, 255);
+			cmdClose.BackgroundColor = new Color(255, 255, 212, 79);
 			cmdClose.Click += CmdClose_Click;
-			panel.Add(cmdClose, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.BottomWith);
+			cmdClose.Margin = new Thickness (0, 15, 15, 0);
+			panel.Add(cmdClose, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
 			Platform.Current.Page.Title = "Choose one control to test";
 			Platform.Current.Page.Content = panel;
+		}
+
+		public override void Resize()
+		{
+			base.Resize();
+
+			imgBackgroundImage.Width = Platform.Current.Page.Width;
+			imgBackgroundImage.Height = Platform.Current.Page.Height;
 		}
 
 		private void CmdClose_Click(object sender, EventArgs e)
