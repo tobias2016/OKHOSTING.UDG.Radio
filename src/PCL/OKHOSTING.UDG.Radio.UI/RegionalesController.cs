@@ -296,8 +296,8 @@ namespace OKHOSTING.UDG.Radio.UI
 		public void Estacion_Click(object sender, EventArgs e)
 		{
 			IControl control = (IControl)sender;
-			Station station = (Station)control.Tag;
-			homecontroler.station = station;
+			Station estacion = (Station)control.Tag;
+			homecontroler.station = estacion;
 			this.Finish ();
 		}
 	}
