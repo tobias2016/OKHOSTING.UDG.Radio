@@ -24,7 +24,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			set 
 			{ 
 				_station = value;
-				AudioPlayer = _station.StramingUri;
+				AudioPlayer.Source = _station.StramingUri;
 				imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
 				lblPrograma.Text = _station.Name;
 				lblPrograma2.Text = _station.Description;	
