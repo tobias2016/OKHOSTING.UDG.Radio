@@ -25,21 +25,39 @@ namespace OKHOSTING.UDG.Radio.UI
 			BackgroundImage.Height = Platform.Current.Page.Height;
 			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			ILabelButton Programas = Platform.Current.Create<ILabelButton>();
-			Programas.Text = "Programas";
-			Programas.Width = 80;
-			Programas.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programas, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+			IGrid menu = Platform.Current.Create<IGrid>();
+			menu.RowCount = 1;
+			menu.ColumnCount = 4;
+			menu.Height = 50;
+			menu.Width = Platform.Current.Page.Width;
+			menu.BackgroundColor = new Color(255, 0, 0, 0);
+			panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			ILabelButton Regionales = Platform.Current.Create<ILabelButton>();
-			Regionales.Text = "Regionales";
-			Regionales.Width = 80;
-			panel.Add(Regionales, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.TopWith);
+			IImageButton Home = Platform.Current.Create<IImageButton>();
+			Home.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
+			Home.Width = 50;
+			Home.Height = 35;
+			Home.Click += (object sender, EventArgs e) => new HomeController().Start();
+			menu.SetContent (0, 0, Home);
 
-			ILabelButton Virtuales = Platform.Current.Create<ILabelButton>();
-			Virtuales.Text = "Virtuales";
-			Virtuales.Width = 80;
-			panel.Add(Virtuales, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith);
+			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
+			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-09.png"));
+			cmdProgramas.Width = 50;
+			cmdProgramas.Height = 35;
+			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			menu.SetContent (0, 1, cmdProgramas);
+
+			IImageButton Regionales = Platform.Current.Create<IImageButton>();
+			Regionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-17.png"));
+			Regionales.Width = 50;
+			Regionales.Height = 35;
+			menu.SetContent (0, 2, Regionales);
+
+			IImageButton Virtuales = Platform.Current.Create<IImageButton>();
+			Virtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-18.png"));
+			Virtuales.Width = 50;
+			Virtuales.Height = 35;
+			menu.SetContent (0, 3, Virtuales);
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Archivo de programas";
@@ -47,7 +65,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblLabel.Height = 20;
 			lblLabel.FontColor = new Color(255, 0, 0, 0);
 			lblLabel.BackgroundColor = new Color(255, 255, 212, 79);
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programas);
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
 			ILabelButton Programa1 = Platform.Current.Create<ILabelButton>();
 			Programa1.Click += Programa1_Click;

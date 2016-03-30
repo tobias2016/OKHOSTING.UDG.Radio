@@ -70,10 +70,10 @@ namespace OKHOSTING.UDG.Radio.UI
             panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();
-			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images/app-07.png"));
+			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
 			imgLogo.Width = 80;
-			imgLogo.Height = lblTitulo.Height;
-			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, lblTitulo);
+			imgLogo.Height = 50;
+			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 
             imgBackgroundImage = Platform.Current.Create<IImage>();
             imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
@@ -85,12 +85,12 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgAntena.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-13.png"));
 			imgAntena.Width = 40;
 			imgAntena.Height = 15;
-			imgAntena.Margin = new Thickness(2, 25, 0, 10);
+			imgAntena.Margin = new Thickness(0, 25, 0, 5);
 			panel.Add(imgAntena, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
 			ILabel lblAlAire = Platform.Current.Create<ILabel>();
 			lblAlAire.Text = "AHORA AL AIRE";
-            lblAlAire.FontSize = 14;
+            lblAlAire.FontSize = 12;
             lblAlAire.Bold = true;
             lblAlAire.FontFamily = "Arial";
             lblAlAire.FontColor = new Color(255, 255, 212, 79);
@@ -100,16 +100,16 @@ namespace OKHOSTING.UDG.Radio.UI
             grdReproductor.RowCount = 1;
             grdReproductor.ColumnCount = 4;
             grdReproductor.Height = 70;
-            grdReproductor.Width = Platform.Current.Page.Width - 40;
-            grdReproductor.BackgroundColor = new Color(200, 255, 255, 255);
-            grdReproductor.Margin = new Thickness(10, 20, 20, 5);
+            grdReproductor.Width = Platform.Current.Page.Width - 30;
+            grdReproductor.BackgroundColor = new Color(230, 255, 255, 255);
+            grdReproductor.Margin = new Thickness(12, 10, 15, 20);
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
             IImage imgLogoPrograma = Platform.Current.Create<IImage>();
             imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
-            imgLogoPrograma.Margin = new Thickness(10, 10, 5, 5);
+            imgLogoPrograma.Margin = new Thickness(10, 10, 10, 5);
             //panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
             panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
@@ -123,7 +123,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
             ILabel lblPrograma2 = Platform.Current.Create<ILabel>();
             lblPrograma2.Text = "Con Manuel Falcón";
-            lblPrograma2.FontColor = new Color(255, 192, 192, 192);
+            lblPrograma2.FontColor = new Color(255, 128, 128, 128);
             lblPrograma2.FontFamily = "Arial";
             lblPrograma2.FontSize = 10;
 			lblPrograma2.Bold = true;
@@ -142,12 +142,12 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgNotas.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-14.png"));
 			imgNotas.Width = 40;
 			imgNotas.Height = 15;
-			imgNotas.Margin = new Thickness (0, 15, 0, 5);
+			imgNotas.Margin = new Thickness (-11, 0, 0, 0);
 			panel.Add(imgNotas, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdReproductor);
 
 			ILabel lblNotas = Platform.Current.Create<ILabel>();
             lblNotas.Text = "NOTAS DE EL ACORDEON";
-			lblNotas.FontSize = 14;
+			lblNotas.FontSize = 12;
 			lblNotas.Bold = true;
 			lblNotas.FontFamily = "Arial";
             lblNotas.FontColor = new Color(255, 255, 212, 79);
@@ -158,14 +158,18 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTexto.BorderColor = new Color(255, 255, 255, 255);
 			lblTexto.BorderWidth = new Thickness(9, 9, 9, 9);
 			lblTexto.FontSize = 10;
+			lblTexto.Width = Platform.Current.Page.Width - 40;
 			lblTexto.FontColor = new Color (255, 255, 255, 255);
-			lblTexto.Margin = new Thickness (2);
+			lblTexto.Margin = new Thickness (25, 5, 0, 15);
 			panel.Add(lblTexto, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgNotas);
 
 			ILabel lblLabel4 = Platform.Current.Create<ILabel>();
 			lblLabel4.Text = "ENVIA UN MENSAJE A EL ACORDEON";
-			lblLabel4.FontSize = 11;
+			lblLabel4.FontSize = 12;
+			lblLabel4.FontFamily = "Arial";
+			lblLabel4.Bold = true;
 			lblLabel4.FontColor = new Color(255, 255, 212, 79);
+			lblLabel4.Margin = new Thickness (-12, 0, 0, 0);
 			panel.Add(lblLabel4, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTexto);
 
 			ITextArea txtAreaComentario = Platform.Current.Create<ITextArea>();
@@ -173,19 +177,20 @@ namespace OKHOSTING.UDG.Radio.UI
 			txtAreaComentario.FontSize = 12;
 			txtAreaComentario.FontColor = new Color(255, 0, 0, 0);
 			txtAreaComentario.BackgroundColor = new Color(255, 255, 255, 255);
-			txtAreaComentario.Width = 210;
+			txtAreaComentario.Width = Platform.Current.Page.Width - 45;
 			txtAreaComentario.Height = 80;
-			txtAreaComentario.Margin = new Thickness (2);
+			txtAreaComentario.Margin = new Thickness (15, 5, 0, 10);
 			panel.Add(txtAreaComentario, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel4);
 
 			IButton cmdEnviar = Platform.Current.Create<IButton>();
 			cmdEnviar.Text = "Enviar";
-			cmdEnviar.Width = 80;
-			cmdEnviar.Height = 30;
-			cmdEnviar.FontSize = 12;
+			cmdEnviar.Width = 60;
+			cmdEnviar.Height = 28;
+			cmdEnviar.FontSize = 9;
+			cmdEnviar.Bold = true;
 			cmdEnviar.FontColor = new Color (255, 0, 0, 0);
 			cmdEnviar.BackgroundColor = new Color(255, 255, 212, 79);
-			cmdEnviar.Margin = new Thickness (0, 2, 2, 5);
+			cmdEnviar.Margin = new Thickness (0, 2, 15, 5);
 			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, txtAreaComentario);
 
 			Platform.Current.Page.Title = "straming";

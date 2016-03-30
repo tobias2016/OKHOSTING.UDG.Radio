@@ -48,30 +48,78 @@ namespace OKHOSTING.UDG.Radio.UI
 			menu.SetContent (0, 1, cmdProgramas);
 
 			IImageButton Regionales = Platform.Current.Create<IImageButton>();
-			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-17.png"));
+			Regionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-17.png"));
 			Regionales.Width = 50;
 			Regionales.Height = 35;
 			menu.SetContent (0, 2, Regionales);
 
 			IImageButton Virtuales = Platform.Current.Create<IImageButton>();
-			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-18.png"));
+			Virtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-18.png"));
 			Virtuales.Width = 50;
 			Virtuales.Height = 35;
 			menu.SetContent (0, 3, Virtuales);
 
+			IGrid bgdTitulo = Platform.Current.Create<IGrid>();
+			bgdTitulo.RowCount = 1;
+			bgdTitulo.ColumnCount = 4;
+			bgdTitulo.Height = 40;
+			bgdTitulo.Width = Platform.Current.Page.Width;
+			bgdTitulo.BackgroundColor = new Color(230, 255, 143, 0);
+			panel.Add(bgdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
+
+			IImage imgArchivos = Platform.Current.Create<IImage>();
+			imgArchivos.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--31.png"));
+			imgArchivos.Width = 25;
+			imgArchivos.Height = 25;
+			imgArchivos.Margin = new Thickness(5, 10, 10, 5);
+			imgArchivos.Margin = new Thickness (5, 0, 10, 0);
+			panel.Add(imgArchivos, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
+
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Archivo de programas";
-			lblLabel.Width = 240;
+			lblLabel.Width = 140;
 			lblLabel.Height = 20;
-			lblLabel.FontColor = new Color(255, 0, 0, 0);
-			lblLabel.BackgroundColor = new Color(255, 255, 212, 79);
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
+			lblLabel.FontSize = 12;
+			lblLabel.Bold = true;
+			lblLabel.FontColor = new Color(255, 255, 255, 255);
+			lblLabel.Margin = new Thickness (0, 0, 10, 0);
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, imgArchivos);
+
+			IImage imgLogo = Platform.Current.Create<IImage> ();
+			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
+			imgLogo.Width = 50;
+			imgLogo.Height = 50;
+			imgLogo.Margin = new Thickness (0, -13, 0, 0);
+			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
+
+			IGrid pgrAcordeon = Platform.Current.Create<IGrid>();
+			pgrAcordeon.RowCount = 1;
+			pgrAcordeon.ColumnCount = 4;
+			pgrAcordeon.Height = 50;
+			pgrAcordeon.Width = Platform.Current.Page.Width;
+			pgrAcordeon.BackgroundColor = new Color(1, 255, 143, 0);
+			pgrAcordeon.Margin = new Thickness (0, 15, 0, 15);
+			panel.Add(pgrAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, bgdTitulo);
+
+			IImage imgAcordeon = Platform.Current.Create<IImage>();
+			imgAcordeon.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
+			imgAcordeon.Width = 41;
+			imgAcordeon.Height = 41;
+			imgAcordeon.Margin = new Thickness(10, 10, 10, 5);
+			panel.Add(imgAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, pgrAcordeon);
 
 			ILabelButton Programa1 = Platform.Current.Create<ILabelButton>();
 			Programa1.Click += (object sender, EventArgs e) => new AcordeonController().Start();
 			Programa1.Text = "El acordeon";
 			Programa1.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa1, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
+			panel.Add(Programa1, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgAcordeon);
+
+			IImage arvAcordeon = Platform.Current.Create<IImage>();
+			arvAcordeon.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--28.png"));
+			arvAcordeon.Width = 41;
+			arvAcordeon.Height = 41;
+			arvAcordeon.Margin = new Thickness(20, 0, 0, 0);
+			panel.Add(arvAcordeon, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, Programa1);
 
 			ILabelButton Programa2 = Platform.Current.Create<ILabelButton>();
 			//Programa2.Click += Programa2_Click;
