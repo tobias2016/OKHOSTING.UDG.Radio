@@ -166,7 +166,9 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgLogo.Margin = new Thickness (0, -13, 0, 0);
 			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
 
-			foreach (Station staciones in Estaciones) 
+            IControl referencia = bgdTitulo;
+
+            foreach (Station staciones in Estaciones) 
 			{
 				IGrid pgrAcordeon = Platform.Current.Create<IGrid>();
 				pgrAcordeon.RowCount = 1;
@@ -175,9 +177,11 @@ namespace OKHOSTING.UDG.Radio.UI
 				pgrAcordeon.Width = Platform.Current.Page.Width -30;
 				pgrAcordeon.BackgroundColor = new Color(10, 128, 128, 128);
 				pgrAcordeon.Margin = new Thickness (0, 10, 0, 0);
-				panel.Add(pgrAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, bgdTitulo);
+				panel.Add(pgrAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-				IImageButton imgAcordeon = Platform.Current.Create<IImageButton>();
+                referencia = pgrAcordeon;
+
+                IImageButton imgAcordeon = Platform.Current.Create<IImageButton>();
 				imgAcordeon.LoadFromUrl(staciones.WebSiteUri);
 				imgAcordeon.Width = 35;
 				imgAcordeon.Height = 35;
