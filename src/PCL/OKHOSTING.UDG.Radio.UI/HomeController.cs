@@ -38,22 +38,23 @@ namespace OKHOSTING.UDG.Radio.UI
 			menu.SetContent(0, 0, imgHome);
 
 			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
-			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-16.png"));
-			imgProgramas.Width = 35;
-			imgProgramas.Height = 35;
+			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			imgProgramas.Width = 30;
+			imgProgramas.Height = 30;
 			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
             menu.SetContent(0, 1, imgProgramas);
 
             IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
-			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-17.png"));
-			imgRegionales.Width = 35;
-			imgRegionales.Height = 35;
+			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
+			imgRegionales.Width = 30;
+			imgRegionales.Height = 30;
+			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController().Start();
             menu.SetContent(0, 2, imgRegionales);
             
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
-			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-18.png"));
-			imgVirtuales.Width = 35;
-			imgVirtuales.Height = 35;
+			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
+			imgVirtuales.Width = 30;
+			imgVirtuales.Height = 30;
             menu.SetContent(0, 3, imgVirtuales);
 
 			ILabel lblTitulo = Platform.Current.Create<ILabel>();
@@ -61,7 +62,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTitulo.Width = Platform.Current.Page.Width;
 			lblTitulo.Height = 50;
 			lblTitulo.FontColor = new Color(255, 0, 0, 0);
-            lblTitulo.FontSize = 12;
+            lblTitulo.FontSize = 10;
             lblTitulo.Bold = true;
             lblTitulo.FontFamily = "Arial";
             lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -138,6 +139,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdPlay.Margin = new Thickness (10, 0, 0, 0);
 			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblPrograma);
 
+			/*
 			IImage imgNotas = Platform.Current.Create<IImage> ();
 			imgNotas.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-14.png"));
 			imgNotas.Width = 40;
@@ -181,9 +183,10 @@ namespace OKHOSTING.UDG.Radio.UI
 			txtAreaComentario.Height = 80;
 			txtAreaComentario.Margin = new Thickness (15, 5, 0, 10);
 			panel.Add(txtAreaComentario, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel4);
+			*/
 
 			IButton cmdEnviar = Platform.Current.Create<IButton>();
-			cmdEnviar.Text = "Enviar";
+			cmdEnviar.Text = "Cerrar";
 			cmdEnviar.Width = 60;
 			cmdEnviar.Height = 28;
 			cmdEnviar.FontSize = 9;
@@ -191,7 +194,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdEnviar.FontColor = new Color (255, 0, 0, 0);
 			cmdEnviar.BackgroundColor = new Color(255, 255, 212, 79);
 			cmdEnviar.Margin = new Thickness (0, 2, 15, 5);
-			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, txtAreaComentario);
+			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, grdReproductor);
 
 			Platform.Current.Page.Title = "straming";
 			Platform.Current.Page.Content = panel;

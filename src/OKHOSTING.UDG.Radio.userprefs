@@ -1,12 +1,30 @@
 ﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_19" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs">
     <Files>
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="51" Column="79" />
-      <File FileName="../../OKHOSTING.UI/src/Xamarin/OKHOSTING.UI.Xamarin.Forms/Page.cs" Line="24" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="74" Column="66" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/AcordeonController.cs" Line="57" Column="66" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="114" Column="139" />
+      <File FileName="../../OKHOSTING.UI/src/Xamarin/OKHOSTING.UI.Xamarin.Forms/Page.cs" Line="1" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="115" Column="105" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/AcordeonController.cs" Line="58" Column="25" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OKHOSTING.UDG.Radio" expanded="True">
+            <Node name="OKHOSTING.UDG.Radio.UI" expanded="True">
+              <Node name="ProgramasController.cs" selected="True" />
+            </Node>
+            <Node name="OKHOSTING.UDG.Radio.UI.Net4.WebServices" expanded="True" />
+            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin" expanded="True" />
+            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin.Droid" expanded="True" />
+            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
