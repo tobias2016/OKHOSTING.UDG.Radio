@@ -11,6 +11,7 @@ namespace OKHOSTING.UDG.Radio.UI
 	{
 		IAudioPlayer AudioPlayer;
 		protected IImage imgBackgroundImage;
+		protected HomeController homecontroler;
 
 		public override void Start()
 		{
@@ -179,28 +180,34 @@ namespace OKHOSTING.UDG.Radio.UI
 
                 IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
 				imgEstacion.LoadFromUrl(staciones.WebSiteUri);
+				imgEstacion.Click += Estacion_Click;
+				imgEstacion.Tag = staciones.StramingUri;
 				imgEstacion.Width = 35;
 				imgEstacion.Height = 35;
 				imgEstacion.Margin = new Thickness(30, 10, 10, 5);
 				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
 
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
-				lblNombreEstacion.Click += (object sender, EventArgs e) => new AcordeonController().Start();
+				lblNombreEstacion.Click += Estacion_Click;
 				lblNombreEstacion.Text = staciones.Name;
+				lblNombreEstacion.Tag = staciones.StramingUri;
 				lblNombreEstacion.FontSize = 11;
 				lblNombreEstacion.Bold = true;
 				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
 				panel.Add(lblNombreEstacion, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgEstacion);
 
 				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
-				lblDescripcionEstacion.Click += (object sender, EventArgs e) => new AcordeonController().Start();
+				lblDescripcionEstacion.Click += Estacion_Click;
 				lblDescripcionEstacion.Text = staciones.Description;
+				lblDescripcionEstacion.Tag = staciones.StramingUri;
 				lblDescripcionEstacion.FontSize = 10;
 				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
 				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
+				imgPlay.Click += Estacion_Click;
+				imgPlay.Tag = staciones.StramingUri;
 				imgPlay.Width = 20;
 				imgPlay.Height = 20;
 				imgPlay.Margin = new Thickness (-40, 0, 0, 0);
@@ -284,6 +291,14 @@ namespace OKHOSTING.UDG.Radio.UI
 		private void CmdClose_Click(object sender, EventArgs e)
 		{
 			this.Finish();
+		}
+
+		public void Estacion_Click(object sender, EventArgs e)
+		{
+			IControl control = (IControl)sender;
+			Station station = (Station)control.Tag;
+			homecontroler.station = station;
+			this.Finish ();
 		}
 	}
 }

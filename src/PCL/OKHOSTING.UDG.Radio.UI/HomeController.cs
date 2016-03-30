@@ -11,7 +11,23 @@ namespace OKHOSTING.UDG.Radio.UI
     {
 		protected IImage imgBackgroundImage;
         protected IImageButton cmdPlay;
-        public static IAudioPlayer AudioPlayer;
+        IAudioPlayer AudioPlayer;
+		public Station station 
+		{
+			get 
+			{
+				return _station;
+			}
+			set 
+			{ 
+				_station = value;
+				AudioPlayer.Stop ();
+				cmdPlay.LoadFromUrl(_station.StramingUri);
+				IsPlaying = true;
+			}
+		}
+
+		private Station _station;
 
         public override void Start()
         {
@@ -107,7 +123,7 @@ namespace OKHOSTING.UDG.Radio.UI
             panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
             IImage imgLogoPrograma = Platform.Current.Create<IImage>();
-            imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
+			imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
             imgLogoPrograma.Margin = new Thickness(10, 10, 10, 5);
@@ -115,7 +131,7 @@ namespace OKHOSTING.UDG.Radio.UI
             panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
             ILabel lblPrograma = Platform.Current.Create<ILabel>();
-            lblPrograma.Text = "El Acordeón";
+			lblPrograma.Text = _station.Name;
             lblPrograma.FontColor = new Color(255, 0, 0, 10);
             lblPrograma.FontFamily = "Arial";
             lblPrograma.FontSize = 13;
@@ -123,7 +139,7 @@ namespace OKHOSTING.UDG.Radio.UI
             panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
             ILabel lblPrograma2 = Platform.Current.Create<ILabel>();
-            lblPrograma2.Text = "Con Manuel Falcón";
+			lblPrograma2.Text = _station.Description;
             lblPrograma2.FontColor = new Color(255, 128, 128, 128);
             lblPrograma2.FontFamily = "Arial";
             lblPrograma2.FontSize = 10;
