@@ -94,8 +94,8 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			imgBackgroundImage = Platform.Current.Create<IImage>();
 			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--50.png"));
-			imgBackgroundImage.Width = Platform.Current.Page.Width * 1.1;
-			imgBackgroundImage.Height = Platform.Current.Page.Height * 2.3;
+			imgBackgroundImage.Width = Platform.Current.Page.Width;
+			imgBackgroundImage.Height = Platform.Current.Page.Height * 2.9;
 			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IGrid menu = Platform.Current.Create<IGrid>();
@@ -133,14 +133,14 @@ namespace OKHOSTING.UDG.Radio.UI
 			Virtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
 			menu.SetContent (0, 3, Virtuales);
 
-			IGrid bgdTitulo = Platform.Current.Create<IGrid>();
-			bgdTitulo.RowCount = 1;
-			bgdTitulo.ColumnCount = 4;
-			bgdTitulo.Height = 40;
-			bgdTitulo.Width = Platform.Current.Page.Width;
-			bgdTitulo.BackgroundColor = new Color(250, 79, 195, 247);
-			bgdTitulo.Margin = new Thickness (0, 0, 20, 0);
-			panel.Add(bgdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
+			IGrid grdTitulo = Platform.Current.Create<IGrid>();
+			grdTitulo.RowCount = 1;
+			grdTitulo.ColumnCount = 4;
+			grdTitulo.Height = 40;
+			grdTitulo.Width = Platform.Current.Page.Width;
+			grdTitulo.BackgroundColor = new Color(250, 79, 195, 247);
+			grdTitulo.Margin = new Thickness (0, 0, 20, 0);
+			panel.Add(grdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 			
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Estaciones Regionales";
@@ -153,7 +153,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblLabel.Margin = new Thickness (25, 0, 0, 0);
 			//lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
 			//lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, grdTitulo);
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();
 			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
@@ -162,7 +162,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgLogo.Margin = new Thickness (5, -17, 0, 0);
 			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
 
-			IControl referencia = lblLabel;
+			IControl referencia = grdTitulo;
 
 			foreach (Station staciones in estaciones) 
 			{
@@ -170,7 +170,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				grdEstacion.RowCount = 1;
 				grdEstacion.ColumnCount = 4;
 				grdEstacion.Height = 50;
-				grdEstacion.Width = Platform.Current.Page.Width -20;
+				grdEstacion.Width = Platform.Current.Page.Width;
 				grdEstacion.BackgroundColor = new Color(40, 120, 120, 120);
 				grdEstacion.Margin = new Thickness (0, 20, 0, 0);
 				panel.Add(grdEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
@@ -181,7 +181,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgEstacion.LoadFromUrl(staciones.WebSiteUri);
 				imgEstacion.Width = 35;
 				imgEstacion.Height = 35;
-				imgEstacion.Margin = new Thickness(10, 10, 10, 5);
+				imgEstacion.Margin = new Thickness(30, 10, 10, 5);
 				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
 
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
@@ -203,7 +203,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Width = 20;
 				imgPlay.Height = 20;
-				imgPlay.Margin = new Thickness (-60, 0, 0, 0);
+				imgPlay.Margin = new Thickness (-40, 0, 0, 0);
 				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, grdEstacion);
 			}
 
