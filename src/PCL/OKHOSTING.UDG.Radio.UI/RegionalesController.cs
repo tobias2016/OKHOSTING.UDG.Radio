@@ -181,7 +181,7 @@ namespace OKHOSTING.UDG.Radio.UI
                 IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
 				imgEstacion.LoadFromUrl(staciones.WebSiteUri);
 				imgEstacion.Click += Estacion_Click;
-				imgEstacion.Tag = estaciones;
+				imgEstacion.Tag = staciones;
 				imgEstacion.Width = 35;
 				imgEstacion.Height = 35;
 				imgEstacion.Margin = new Thickness(30, 10, 10, 5);
@@ -190,7 +190,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
 				lblNombreEstacion.Click += Estacion_Click;
 				lblNombreEstacion.Text = staciones.Name;
-				lblNombreEstacion.Tag = estaciones;
+				lblNombreEstacion.Tag = staciones;
 				lblNombreEstacion.FontSize = 11;
 				lblNombreEstacion.Bold = true;
 				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
@@ -199,7 +199,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
 				lblDescripcionEstacion.Click += Estacion_Click;
 				lblDescripcionEstacion.Text = staciones.Description;
-				lblDescripcionEstacion.Tag = estaciones;
+				lblDescripcionEstacion.Tag = staciones;
 				lblDescripcionEstacion.FontSize = 10;
 				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
 				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
@@ -207,7 +207,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Click += Estacion_Click;
-				imgPlay.Tag = estaciones;
+				imgPlay.Tag = staciones;
 				imgPlay.Width = 20;
 				imgPlay.Height = 20;
 				imgPlay.Margin = new Thickness (-40, 0, 0, 0);
