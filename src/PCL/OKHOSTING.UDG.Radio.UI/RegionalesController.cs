@@ -302,7 +302,7 @@ namespace OKHOSTING.UDG.Radio.UI
 		{
 			IControl control = (IControl)sender;
 			Station estacion = (Station)control.Tag;
-			homecontroler.station = estacion;
+			homecontroler.Station = estacion;
 			this.Finish ();
 		}
 	}
