@@ -280,6 +280,11 @@ namespace OKHOSTING.UDG.Radio.UI
 			Platform.Current.Page.Content = panel;
 		}
 
+		public RegionalesController(HomeController h)
+		{
+			h = homecontroler;
+		}
+
 		public override void Resize()
 		{
 			base.Resize();
