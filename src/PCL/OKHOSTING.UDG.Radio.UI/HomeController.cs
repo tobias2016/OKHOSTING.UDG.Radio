@@ -68,7 +68,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
 			imgRegionales.Width = 30;
 			imgRegionales.Height = 30;
-			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController().Start();
+			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(this).Start();
             menu.SetContent(0, 2, imgRegionales);
             
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();

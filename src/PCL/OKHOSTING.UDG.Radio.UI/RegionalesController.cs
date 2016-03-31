@@ -282,7 +282,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 		public RegionalesController(HomeController h)
 		{
-			h = homecontroler;
+			homecontroler = h;
 		}
 
 		public override void Resize()
