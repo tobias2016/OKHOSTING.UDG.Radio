@@ -24,7 +24,9 @@ namespace OKHOSTING.UDG.Radio.UI
 			set 
 			{ 
 				_station = value;
+				AudioPlayer.Stop ();
 				AudioPlayer.Source = _station.StramingUri;
+				AudioPlayer.Play ();
 				imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
 				lblPrograma.Text = _station.Name;
 				lblPrograma2.Text = _station.Description;	
@@ -139,6 +141,7 @@ namespace OKHOSTING.UDG.Radio.UI
             lblPrograma.FontColor = new Color(255, 0, 0, 10);
             lblPrograma.FontFamily = "Arial";
             lblPrograma.FontSize = 13;
+			lblPrograma.Width = 100;
 			lblPrograma.Bold = true;
             panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
@@ -156,7 +159,7 @@ namespace OKHOSTING.UDG.Radio.UI
             cmdPlay.Click += Play_Click;
 			cmdPlay.Width = 80;
 			cmdPlay.Height = 35;
-			cmdPlay.Margin = new Thickness (10, 0, 0, 0);
+			cmdPlay.Margin = new Thickness (5, 0, 0, 0);
 			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblPrograma);
 
 			/*
@@ -215,6 +218,8 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdEnviar.BackgroundColor = new Color(255, 255, 212, 79);
 			cmdEnviar.Margin = new Thickness (0, 2, 15, 5);
 			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, grdReproductor);
+
+			Play_Click (null, null);
 
 			Platform.Current.Page.Title = "straming";
 			Platform.Current.Page.Content = panel;

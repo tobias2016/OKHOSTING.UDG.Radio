@@ -1,18 +1,22 @@
 ﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_19" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/RegionalesController.cs">
     <Files>
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="114" Column="139" />
-      <File FileName="../../OKHOSTING.UI/src/Xamarin/OKHOSTING.UI.Xamarin.Forms/Page.cs" Line="1" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="115" Column="105" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/AcordeonController.cs" Line="58" Column="25" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="28" Column="54" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="50" Column="70" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/RegionalesController.cs" Line="311" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/VirtualesController.cs" Line="54" Column="6" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio/Station.cs" Line="1" Column="1" />
+      <File FileName="../../KalTire.Admin/KalTire.Tienda.Web/ProductosAjax.ashx.cs" Line="1" Column="1" />
+      <File FileName="../../KalTire.Admin/KalTire.Admin.Module/Cotizacion.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OKHOSTING.UDG.Radio" expanded="True">
+            <Node name="OKHOSTING.UDG.Radio" expanded="True" />
             <Node name="OKHOSTING.UDG.Radio.UI" expanded="True">
-              <Node name="ProgramasController.cs" selected="True" />
+              <Node name="RegionalesController.cs" selected="True" />
             </Node>
             <Node name="OKHOSTING.UDG.Radio.UI.Net4.WebServices" expanded="True" />
             <Node name="OKHOSTING.UDG.Radio.UI.Xamarin" expanded="True" />
