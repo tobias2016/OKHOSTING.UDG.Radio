@@ -54,37 +54,37 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-08.png"));
-			imgHome.Width = 35;
-			imgHome.Height = 35;
+			imgHome.Width = 20;
+			imgHome.Height = 20;
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
 			menu.SetContent(0, 0, imgHome);
 
-			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
-			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
-			imgProgramas.Width = 30;
-			imgProgramas.Height = 30;
-			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
-            menu.SetContent(0, 1, imgProgramas);
-
             IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			imgRegionales.Width = 30;
-			imgRegionales.Height = 30;
+			imgRegionales.Width = 20;
+			imgRegionales.Height = 20;
 			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(this).Start();
-            menu.SetContent(0, 2, imgRegionales);
+            menu.SetContent(0, 1, imgRegionales);
+
+			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
+			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			imgProgramas.Width = 20;
+			imgProgramas.Height = 20;
+			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			menu.SetContent(0, 2, imgProgramas);
             
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 30;
-			imgVirtuales.Height = 30;
+			imgVirtuales.Width = 20;
+			imgVirtuales.Height = 20;
             menu.SetContent(0, 3, imgVirtuales);
 
 			ILabel lblTitulo = Platform.Current.Create<ILabel>();
 			lblTitulo.Text = "Radio Universidad De Guadalajara";
 			lblTitulo.Width = Platform.Current.Page.Width;
-			lblTitulo.Height = 50;
+			lblTitulo.Height = 40;
 			lblTitulo.FontColor = new Color(255, 0, 0, 0);
-            lblTitulo.FontSize = 10;
+            lblTitulo.FontSize = 11;
             lblTitulo.Bold = true;
             lblTitulo.FontFamily = "Arial";
             lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -92,16 +92,19 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTitulo.BackgroundColor = new Color(255, 255, 212, 79);
             panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
-			IImage imgLogo = Platform.Current.Create<IImage> ();
-			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-			imgLogo.Width = 80;
-			imgLogo.Height = 50;
-			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
+			if (Platform.Current.Page.Width > 250)
+			{
+				IImage imgLogo = Platform.Current.Create<IImage> ();
+				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
+				imgLogo.Width = 60;
+				imgLogo.Height = 40;
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
+			}
 
             imgBackgroundImage = Platform.Current.Create<IImage>();
             imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
-            imgBackgroundImage.Width = Platform.Current.Page.Width * 1.3;
-            imgBackgroundImage.Height = Platform.Current.Page.Height * 2;
+            imgBackgroundImage.Width = Platform.Current.Page.Width * 1.2;
+            imgBackgroundImage.Height = Platform.Current.Page.Height * 1.3;
             panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
             IImage imgAntena = Platform.Current.Create<IImage> ();
@@ -132,7 +135,19 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
             imgLogoPrograma.Width = 41;
             imgLogoPrograma.Height = 41;
-            imgLogoPrograma.Margin = new Thickness(10, 10, 10, 5);
+			if (Platform.Current.Page.Width > 390)
+			{
+				imgLogoPrograma.Margin = new Thickness(20, 10, 35, 5);
+			}
+			else if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 350)
+			{
+				imgLogoPrograma.Margin = new Thickness(15, 10, 25, 5);
+			} 
+			else if (Platform.Current.Page.Width < 250)
+			{
+				imgLogoPrograma.Margin = new Thickness(10, 10, 15, 5);
+			}
+            
             //panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
             panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
@@ -140,17 +155,43 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblPrograma.Text = "GUADALAJARA";
             lblPrograma.FontColor = new Color(255, 0, 0, 10);
             lblPrograma.FontFamily = "Arial";
-            lblPrograma.FontSize = 13;
-			lblPrograma.Width = 100;
+
+			if (Platform.Current.Page.Width > 390)
+			{
+				lblPrograma.FontSize = 12;
+				lblPrograma.Width = 200;
+			}
+			else if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 350)
+			{
+				lblPrograma.FontSize = 11;
+				lblPrograma.Width = 140;
+			} 
+			else if (Platform.Current.Page.Width < 250)
+			{
+				lblPrograma.FontSize = 10;
+				lblPrograma.Width = 100;
+			}
+
 			lblPrograma.Bold = true;
-            panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
+			panel.Add(lblPrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
             lblPrograma2 = Platform.Current.Create<ILabel>();
 			lblPrograma2.Text = "XHUDG 104.3 F.M.";
             lblPrograma2.FontColor = new Color(255, 128, 128, 128);
             lblPrograma2.FontFamily = "Arial";
-            lblPrograma2.FontSize = 10;
-			lblPrograma2.Bold = true;
+			if (Platform.Current.Page.Width > 390)
+			{
+				lblPrograma2.FontSize = 11;
+			}
+			else if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 350)
+			{
+				lblPrograma2.FontSize = 10;
+			} 
+			else if (Platform.Current.Page.Width < 250)
+			{
+				lblPrograma2.FontSize = 9;
+			}
+            
             lblPrograma2.Margin = new Thickness(0, 2, 0, 0);
             panel.Add(lblPrograma2, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblPrograma);
 
@@ -160,7 +201,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdPlay.Width = 80;
 			cmdPlay.Height = 35;
 			cmdPlay.Margin = new Thickness (5, 0, 0, 0);
-			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblPrograma);
+			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdReproductor);
 
 			/*
 			IImage imgNotas = Platform.Current.Create<IImage> ();
@@ -211,7 +252,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IButton cmdEnviar = Platform.Current.Create<IButton>();
 			cmdEnviar.Text = "Cerrar";
 			cmdEnviar.Width = 60;
-			cmdEnviar.Height = 28;
+			cmdEnviar.Height = 30;
 			cmdEnviar.FontSize = 9;
 			cmdEnviar.Bold = true;
 			cmdEnviar.FontColor = new Color (255, 0, 0, 0);

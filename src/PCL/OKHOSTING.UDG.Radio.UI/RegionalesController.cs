@@ -96,44 +96,45 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgBackgroundImage = Platform.Current.Create<IImage>();
 			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--50.png"));
 			imgBackgroundImage.Width = Platform.Current.Page.Width;
-			imgBackgroundImage.Height = Platform.Current.Page.Height * 2.9;
+			imgBackgroundImage.Height = Platform.Current.Page.Height * 2;
 			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			IGrid menu = Platform.Current.Create<IGrid>();
-			menu.RowCount = 1;
-			menu.ColumnCount = 4;
-			menu.Height = 50;
-			menu.Width = Platform.Current.Page.Width;
-			menu.BackgroundColor = new Color(255, 0, 0, 0);
-			panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+			IGrid grdMenu = Platform.Current.Create<IGrid>();
+			grdMenu.RowCount = 1;
+			grdMenu.ColumnCount = 4;
+			grdMenu.Height = 30;
+			grdMenu.Width = Platform.Current.Page.Width;
+			grdMenu.BackgroundColor = new Color(255, 0, 0, 0);
+			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			IImageButton Home = Platform.Current.Create<IImageButton>();
-			Home.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			Home.Width = 30;
-			Home.Height = 30;
-			Home.Click += (object sender, EventArgs e) => new HomeController().Start();
-			menu.SetContent (0, 0, Home);
-
-			IImageButton imngProgramas = Platform.Current.Create<IImageButton>();
-			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
-			imngProgramas.Width = 30;
-			imngProgramas.Height = 30;
-			imngProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
-			menu.SetContent (0, 1, imngProgramas);
+			IImageButton imgHome = Platform.Current.Create<IImageButton>();
+			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-05.png"));
+			imgHome.Width = 20;
+			imgHome.Height = 20;
+			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
+			grdMenu.SetContent (0, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-12.png"));
-			imgRegionales.Width = 30;
-			imgRegionales.Height = 30;
-			menu.SetContent (0, 2, imgRegionales);
+			imgRegionales.Width = 20;
+			imgRegionales.Height = 20;
+			grdMenu.SetContent (0, 1, imgRegionales);
+
+			IImageButton imngProgramas = Platform.Current.Create<IImageButton>();
+			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			imngProgramas.Width = 20;
+			imngProgramas.Height = 20;
+			imngProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			grdMenu.SetContent (0, 2, imngProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 30;
-			imgVirtuales.Height = 30;
+			imgVirtuales.Width = 20;
+			imgVirtuales.Height = 20;
 			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
-			menu.SetContent (0, 3, imgVirtuales);
+			grdMenu.SetContent (0, 3, imgVirtuales);
 
+			/*
 			IGrid grdTitulo = Platform.Current.Create<IGrid>();
 			grdTitulo.RowCount = 1;
 			grdTitulo.ColumnCount = 4;
@@ -142,28 +143,28 @@ namespace OKHOSTING.UDG.Radio.UI
 			grdTitulo.BackgroundColor = new Color(250, 79, 195, 247);
 			grdTitulo.Margin = new Thickness (0, 0, 20, 0);
 			panel.Add(grdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
-			
+			*/
+
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Estaciones Regionales";
-			lblLabel.Width = 150;
-			lblLabel.Height = 20;
+			lblLabel.Width = Platform.Current.Page.Width;
+			lblLabel.Height = 40;
 			lblLabel.FontSize = 11;
 			lblLabel.Bold = true;
-			//lblLabel.BackgroundColor = new Color (255, 79, 195, 247);
+			lblLabel.BackgroundColor = new Color (255, 79, 195, 247);
 			lblLabel.FontColor = new Color(255, 0, 0, 0);
-			lblLabel.Margin = new Thickness (25, 0, 0, 0);
-			//lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
-			//lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, grdTitulo);
+			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
+			lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();
 			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-			imgLogo.Width = 55;
-			imgLogo.Height = 55;
-			imgLogo.Margin = new Thickness (5, -17, 0, 0);
-			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
+			imgLogo.Width = 60;
+			imgLogo.Height = 40;
+			//imgLogo.Margin = new Thickness (5, -17, 0, 0);
+			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
 
-			IControl referencia = grdTitulo;
+			IControl referencia = lblLabel;
 
 			foreach (Station etacion in estaciones) 
 			{
@@ -184,7 +185,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgEstacion.Tag = etacion;
 				imgEstacion.Width = 35;
 				imgEstacion.Height = 35;
-				imgEstacion.Margin = new Thickness(30, 10, 10, 5);
+				imgEstacion.Margin = new Thickness(30, 10, 20, 5);
 				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
 
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
@@ -210,8 +211,8 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.Tag = etacion;
 				imgPlay.Width = 20;
 				imgPlay.Height = 20;
-				imgPlay.Margin = new Thickness (-40, 0, 0, 0);
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, grdEstacion);
+				imgPlay.Margin = new Thickness (0, 0, 20, 0);
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdEstacion);
 			}
 
 			/*

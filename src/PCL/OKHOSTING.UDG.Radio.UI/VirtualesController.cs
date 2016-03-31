@@ -25,40 +25,40 @@ namespace OKHOSTING.UDG.Radio.UI
 			BackgroundImage.Height = Platform.Current.Page.Height;
 			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			IGrid menu = Platform.Current.Create<IGrid>();
-			menu.RowCount = 1;
-			menu.ColumnCount = 4;
-			menu.Height = 50;
-			menu.Width = Platform.Current.Page.Width;
-			menu.BackgroundColor = new Color(255, 0, 0, 0);
-			panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+			IGrid grdmenu = Platform.Current.Create<IGrid>();
+			grdmenu.RowCount = 1;
+			grdmenu.ColumnCount = 4;
+			grdmenu.Height = 50;
+			grdmenu.Width = Platform.Current.Page.Width;
+			grdmenu.BackgroundColor = new Color(255, 0, 0, 0);
+			panel.Add(grdmenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
-			IImageButton Home = Platform.Current.Create<IImageButton>();
-			Home.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			Home.Width = 50;
-			Home.Height = 35;
-			Home.Click += (object sender, EventArgs e) => new HomeController().Start();
-			menu.SetContent (0, 0, Home);
-
-			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
-			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
-			cmdProgramas.Width = 50;
-			cmdProgramas.Height = 35;
-			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
-			menu.SetContent (0, 1, cmdProgramas);
+			IImageButton imgHome = Platform.Current.Create<IImageButton>();
+			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
+			imgHome.Width = 20;
+			imgHome.Height = 20;
+			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
+			grdmenu.SetContent (0, 0, imgHome);
 
 			IImageButton Regionales = Platform.Current.Create<IImageButton>();
 			Regionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			Regionales.Width = 50;
-			Regionales.Height = 35;
+			Regionales.Width = 20;
+			Regionales.Height = 20;
 			//Regionales.Click += (object sender, EventArgs e) => new RegionalesController().Start();
-			menu.SetContent (0, 2, Regionales);
+			grdmenu.SetContent (0, 1, Regionales);
+
+			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
+			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			cmdProgramas.Width = 20;
+			cmdProgramas.Height = 20;
+			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			grdmenu.SetContent (0, 2, cmdProgramas);
 
 			IImageButton Virtuales = Platform.Current.Create<IImageButton>();
 			Virtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-10.png"));
-			Virtuales.Width = 50;
-			Virtuales.Height = 35;
-			menu.SetContent (0, 3, Virtuales);
+			Virtuales.Width = 20;
+			Virtuales.Height = 20;
+			grdmenu.SetContent (0, 3, Virtuales);
 
 			IGrid bgdTitulo = Platform.Current.Create<IGrid>();
 			bgdTitulo.RowCount = 1;
