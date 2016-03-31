@@ -114,25 +114,25 @@ namespace OKHOSTING.UDG.Radio.UI
 			Home.Click += (object sender, EventArgs e) => new HomeController().Start();
 			menu.SetContent (0, 0, Home);
 
-			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
-			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
-			cmdProgramas.Width = 30;
-			cmdProgramas.Height = 30;
-			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
-			menu.SetContent (0, 1, cmdProgramas);
+			IImageButton imngProgramas = Platform.Current.Create<IImageButton>();
+			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			imngProgramas.Width = 30;
+			imngProgramas.Height = 30;
+			imngProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			menu.SetContent (0, 1, imngProgramas);
 
-			IImageButton Regionales = Platform.Current.Create<IImageButton>();
-			Regionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-12.png"));
-			Regionales.Width = 30;
-			Regionales.Height = 30;
-			menu.SetContent (0, 2, Regionales);
+			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
+			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-12.png"));
+			imgRegionales.Width = 30;
+			imgRegionales.Height = 30;
+			menu.SetContent (0, 2, imgRegionales);
 
-			IImageButton Virtuales = Platform.Current.Create<IImageButton>();
-			Virtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			Virtuales.Width = 30;
-			Virtuales.Height = 30;
-			Virtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
-			menu.SetContent (0, 3, Virtuales);
+			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
+			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
+			imgVirtuales.Width = 30;
+			imgVirtuales.Height = 30;
+			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
+			menu.SetContent (0, 3, imgVirtuales);
 
 			IGrid grdTitulo = Platform.Current.Create<IGrid>();
 			grdTitulo.RowCount = 1;
@@ -165,7 +165,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IControl referencia = grdTitulo;
 
-			foreach (Station staciones in estaciones) 
+			foreach (Station etacion in estaciones) 
 			{
 				IGrid grdEstacion = Platform.Current.Create<IGrid>();
 				grdEstacion.RowCount = 1;
@@ -179,9 +179,9 @@ namespace OKHOSTING.UDG.Radio.UI
 				referencia = grdEstacion;
 
                 IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
-				imgEstacion.LoadFromUrl(staciones.WebSiteUri);
+				imgEstacion.LoadFromUrl(etacion.WebSiteUri);
 				imgEstacion.Click += Estacion_Click;
-				imgEstacion.Tag = staciones;
+				imgEstacion.Tag = etacion;
 				imgEstacion.Width = 35;
 				imgEstacion.Height = 35;
 				imgEstacion.Margin = new Thickness(30, 10, 10, 5);
@@ -189,8 +189,8 @@ namespace OKHOSTING.UDG.Radio.UI
 
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
 				lblNombreEstacion.Click += Estacion_Click;
-				lblNombreEstacion.Text = staciones.Name;
-				lblNombreEstacion.Tag = staciones;
+				lblNombreEstacion.Text = etacion.Name;
+				lblNombreEstacion.Tag = etacion;
 				lblNombreEstacion.FontSize = 11;
 				lblNombreEstacion.Bold = true;
 				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
@@ -198,8 +198,8 @@ namespace OKHOSTING.UDG.Radio.UI
 
 				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
 				lblDescripcionEstacion.Click += Estacion_Click;
-				lblDescripcionEstacion.Text = staciones.Description;
-				lblDescripcionEstacion.Tag = staciones;
+				lblDescripcionEstacion.Text = etacion.Description;
+				lblDescripcionEstacion.Tag = etacion;
 				lblDescripcionEstacion.FontSize = 10;
 				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
 				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
@@ -207,7 +207,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Click += Estacion_Click;
-				imgPlay.Tag = staciones;
+				imgPlay.Tag = etacion;
 				imgPlay.Width = 20;
 				imgPlay.Height = 20;
 				imgPlay.Margin = new Thickness (-40, 0, 0, 0);

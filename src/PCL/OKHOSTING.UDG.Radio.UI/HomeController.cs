@@ -15,7 +15,7 @@ namespace OKHOSTING.UDG.Radio.UI
 		IImage imgLogoPrograma;
 		ILabel lblPrograma;
 		ILabel lblPrograma2;
-		public Station station 
+		public Station Station 
 		{
 			get 
 			{
