@@ -44,16 +44,22 @@ namespace OKHOSTING.UDG.Radio.UI
 
             AudioPlayer.Source = new Uri("http://148.202.114.39:8000/;stream/1");
 
+			imgBackgroundImage = Platform.Current.Create<IImage>();
+			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
+			imgBackgroundImage.Width = Platform.Current.Page.Width * 1.5;
+			imgBackgroundImage.Height = Platform.Current.Page.Height * 1.2;
+			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
+
             IGrid menu = Platform.Current.Create<IGrid>();
             menu.RowCount = 1;
             menu.ColumnCount = 4;
-            menu.Height = 50;
+            menu.Height = 25;
             menu.Width = Platform.Current.Page.Width;
             menu.BackgroundColor = new Color(255, 0, 0, 0);
             panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
-			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-08.png"));
+			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon2--15.png"));
 			imgHome.Width = 20;
 			imgHome.Height = 20;
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
@@ -90,6 +96,7 @@ namespace OKHOSTING.UDG.Radio.UI
             lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
             lblTitulo.TextVerticalAlignment = VerticalAlignment.Center;
 			lblTitulo.BackgroundColor = new Color(255, 255, 212, 79);
+			lblTitulo.Margin = new Thickness (0, 10, 0, 0);
             panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
 			if (Platform.Current.Page.Width > 250)
@@ -100,12 +107,6 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgLogo.Height = 40;
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 			}
-
-            imgBackgroundImage = Platform.Current.Create<IImage>();
-            imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
-            imgBackgroundImage.Width = Platform.Current.Page.Width * 1.2;
-            imgBackgroundImage.Height = Platform.Current.Page.Height * 1.3;
-            panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
             IImage imgAntena = Platform.Current.Create<IImage> ();
 			imgAntena.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-13.png"));

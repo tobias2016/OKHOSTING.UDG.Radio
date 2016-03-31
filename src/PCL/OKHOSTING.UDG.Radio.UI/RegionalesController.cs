@@ -102,7 +102,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 1;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 30;
+			grdMenu.Height = 25;
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 0, 0, 0);
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -155,6 +155,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblLabel.FontColor = new Color(255, 0, 0, 0);
 			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
 			lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
+			lblLabel.Margin = new Thickness (0, 10, 0, 0);
 			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
 
 			IImage imgLogo = Platform.Current.Create<IImage> ();

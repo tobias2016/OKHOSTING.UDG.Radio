@@ -28,7 +28,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdmenu = Platform.Current.Create<IGrid>();
 			grdmenu.RowCount = 1;
 			grdmenu.ColumnCount = 4;
-			grdmenu.Height = 50;
+			grdmenu.Height = 25;
 			grdmenu.Width = Platform.Current.Page.Width;
 			grdmenu.BackgroundColor = new Color(255, 0, 0, 0);
 			panel.Add(grdmenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -77,7 +77,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			panel.Add(imgArchivos, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
-			lblLabel.Text = "¡PROXIMAMENTE!";
+			lblLabel.Text = "¡PROXIMAMENTE VIRTUALES!";
 			lblLabel.Width = 140;
 			lblLabel.Height = 20;
 			lblLabel.FontSize = 12;
