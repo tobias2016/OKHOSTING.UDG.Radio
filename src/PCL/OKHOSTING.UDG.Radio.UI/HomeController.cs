@@ -46,7 +46,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			imgBackgroundImage = Platform.Current.Create<IImage>();
 			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
-			imgBackgroundImage.Width = Platform.Current.Page.Width * 1.5;
+			imgBackgroundImage.Width = Platform.Current.Page.Width;
 			imgBackgroundImage.Height = Platform.Current.Page.Height * 1.2;
 			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
