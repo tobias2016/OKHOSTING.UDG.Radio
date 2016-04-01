@@ -40,20 +40,15 @@ namespace OKHOSTING.UDG.Radio.UI
 			base.Start();
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
+			panel.BackgroundColor = new Color (255, 0, 0, 0);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
             AudioPlayer.Source = new Uri("http://148.202.114.39:8000/;stream/1");
 
-			imgBackgroundImage = Platform.Current.Create<IImage>();
-			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
-			imgBackgroundImage.Width = Platform.Current.Page.Width;
-			imgBackgroundImage.Height = Platform.Current.Page.Height * 1.2;
-			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
-
             IGrid menu = Platform.Current.Create<IGrid>();
             menu.RowCount = 1;
             menu.ColumnCount = 4;
-            menu.Height = 25;
+            menu.Height = 15;
             menu.Width = Platform.Current.Page.Width;
             menu.BackgroundColor = new Color(255, 0, 0, 0);
             panel.Add(menu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -96,7 +91,7 @@ namespace OKHOSTING.UDG.Radio.UI
             lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
             lblTitulo.TextVerticalAlignment = VerticalAlignment.Center;
 			lblTitulo.BackgroundColor = new Color(255, 255, 212, 79);
-			lblTitulo.Margin = new Thickness (0, 10, 0, 0);
+			lblTitulo.Margin = new Thickness (0, 15, 0, 0);
             panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
 
 			if (Platform.Current.Page.Width > 250)
@@ -107,6 +102,20 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgLogo.Height = 40;
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 			}
+
+			imgBackgroundImage = Platform.Current.Create<IImage>();
+			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--47.png"));
+			imgBackgroundImage.Width = Platform.Current.Page.Width;
+			if (Platform.Current.Page.Width > 500)
+			{
+				imgBackgroundImage.Height = Platform.Current.Page.Height * 2.7;
+			} 
+			else if (Platform.Current.Page.Width < 500)
+			{
+				imgBackgroundImage.Height = Platform.Current.Page.Height * 1.3;
+			}
+
+			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
             IImage imgAntena = Platform.Current.Create<IImage> ();
 			imgAntena.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon-13.png"));
@@ -249,17 +258,6 @@ namespace OKHOSTING.UDG.Radio.UI
 			txtAreaComentario.Margin = new Thickness (15, 5, 0, 10);
 			panel.Add(txtAreaComentario, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel4);
 			*/
-
-			IButton cmdEnviar = Platform.Current.Create<IButton>();
-			cmdEnviar.Text = "Cerrar";
-			cmdEnviar.Width = 60;
-			cmdEnviar.Height = 30;
-			cmdEnviar.FontSize = 9;
-			cmdEnviar.Bold = true;
-			cmdEnviar.FontColor = new Color (255, 0, 0, 0);
-			cmdEnviar.BackgroundColor = new Color(255, 255, 212, 79);
-			cmdEnviar.Margin = new Thickness (0, 2, 15, 5);
-			panel.Add(cmdEnviar, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.BelowOf, grdReproductor);
 
 			Play_Click (null, null);
 

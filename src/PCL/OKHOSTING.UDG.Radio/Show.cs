@@ -15,7 +15,7 @@ namespace OKHOSTING.UDG.Radio
 		public Station Station { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public Uri WebSiteUri { get; set; }
-		public Uri StramingUri { get; set; }
+		public Uri LogoUri { get; set; }
+		public Uri PodcastUri { get; set; }
 	}
 }
