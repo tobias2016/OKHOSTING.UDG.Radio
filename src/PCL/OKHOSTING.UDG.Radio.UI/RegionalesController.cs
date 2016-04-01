@@ -166,11 +166,11 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 500)
 			{
-				imgBackgroundImage.Height = Platform.Current.Page.Height * 1.3;
+				imgBackgroundImage.Height = Platform.Current.Page.Height * 1.2;
 			} 
 			else if (Platform.Current.Page.Width < 250)
 			{
-				imgBackgroundImage.Height = Platform.Current.Page.Height * 1.6;
+				imgBackgroundImage.Height = Platform.Current.Page.Height * 2;
 			} 
 			else if (Platform.Current.Page.Width > 500)
 			{

@@ -97,7 +97,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			} 
 			else if (Platform.Current.Page.Width < 500)
 			{
-				BackgroundImage.Height = Platform.Current.Page.Height * 1.3;
+				BackgroundImage.Height = Platform.Current.Page.Height * 1.2;
 			}
 			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
 
