@@ -30,6 +30,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
 				lblPrograma.Text = _station.Name;
 				lblPrograma2.Text = _station.Description;	
+				cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-53.png"));
 			}
 		}
 
