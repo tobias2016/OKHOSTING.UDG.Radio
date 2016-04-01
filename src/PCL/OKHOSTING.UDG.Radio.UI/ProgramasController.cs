@@ -61,6 +61,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			Virtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
 			grdMenu.SetContent (0, 3, Virtuales);
 
+			/*
 			IGrid bgdTitulo = Platform.Current.Create<IGrid>();
 			bgdTitulo.RowCount = 1;
 			bgdTitulo.ColumnCount = 4;
@@ -68,31 +69,37 @@ namespace OKHOSTING.UDG.Radio.UI
 			bgdTitulo.Width = Platform.Current.Page.Width;
 			bgdTitulo.BackgroundColor = new Color(230, 255, 143, 0);
 			panel.Add(bgdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith);
-
-			IImage imgArchivos = Platform.Current.Create<IImage>();
-			imgArchivos.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--31.png"));
-			imgArchivos.Width = 25;
-			imgArchivos.Height = 25;
-			imgArchivos.Margin = new Thickness(5, 10, 10, 5);
-			imgArchivos.Margin = new Thickness (5, 0, 10, 0);
-			panel.Add(imgArchivos, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, bgdTitulo);
+			*/
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "¡PROXIMAMENTE PROGRAMAS!";
-			lblLabel.Width = 140;
-			lblLabel.Height = 20;
+			lblLabel.Width = Platform.Current.Page.Width;
+			lblLabel.Height = 40;
 			lblLabel.FontSize = 12;
 			lblLabel.Bold = true;
 			lblLabel.FontColor = new Color(255, 255, 255, 255);
-			lblLabel.Margin = new Thickness (0, 0, 10, 0);
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, imgArchivos);
+			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
+			lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
+			lblLabel.BackgroundColor = new Color (230, 255, 143, 0);
+			//lblLabel.Margin = new Thickness (0, 0, 10, 0);
+			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith);
 
-			IImage imgLogo = Platform.Current.Create<IImage> ();
-			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-			imgLogo.Width = 50;
-			imgLogo.Height = 50;
-			imgLogo.Margin = new Thickness (0, -13, 0, 0);
-			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblLabel);
+			if (Platform.Current.Page.Width > 250)
+			{
+				IImage imgArchivos = Platform.Current.Create<IImage>();
+				imgArchivos.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--31.png"));
+				imgArchivos.Width = 25;
+				imgArchivos.Height = 25;
+				imgArchivos.Margin = new Thickness(15, 0, 0, 0);
+				panel.Add(imgArchivos, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.CenterWith, lblLabel);
+
+				IImage imgLogo = Platform.Current.Create<IImage> ();
+				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
+				imgLogo.Width = 60;
+				imgLogo.Height = 60;
+				imgLogo.Margin = new Thickness (0, -10, 0, 0);
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
+			}
 
 			/*
 			IGrid pgrAcordeon = Platform.Current.Create<IGrid>();
@@ -151,7 +158,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IButton cmdClose = Platform.Current.Create<IButton>();
 			cmdClose.Text = "Cerrar";
 			cmdClose.Height = 40;
-			cmdClose.BackgroundColor = new Color(255, 255, 0, 255);
+			cmdClose.BackgroundColor = new Color(230, 255, 143, 0);
 			cmdClose.Click += CmdClose_Click;
 			panel.Add(cmdClose, RelativePanelHorizontalContraint.CenterWith, RelativePanelVerticalContraint.BottomWith);
 
