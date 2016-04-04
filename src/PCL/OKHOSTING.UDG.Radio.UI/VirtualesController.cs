@@ -46,7 +46,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			cmdProgramas.Width = 20;
 			cmdProgramas.Height = 20;
-			cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			//cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
 			grdmenu.SetContent (0, 2, cmdProgramas);
 
 			IImageButton Virtuales = Platform.Current.Create<IImageButton>();

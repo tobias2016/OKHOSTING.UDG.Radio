@@ -9,9 +9,11 @@ namespace OKHOSTING.UDG.Radio
 	/// <summary>
 	/// An episode in a show
 	/// </summary>
-	class Episode
+	public class Episode
 	{
 		public Show Show { get; set; }
 		public DateTime PublishedOn { get; set; }
+		public string Name { get; set; }
+		public Uri EpisodeUri { get; set; }
 	}
 }

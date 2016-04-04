@@ -119,7 +119,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			imngProgramas.Width = 20;
 			imngProgramas.Height = 20;
-			imngProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			//imngProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
 			grdMenu.SetContent (0, 2, imngProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
@@ -128,17 +128,6 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgVirtuales.Height = 20;
 			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
 			grdMenu.SetContent (0, 3, imgVirtuales);
-
-			/*
-			IGrid grdTitulo = Platform.Current.Create<IGrid>();
-			grdTitulo.RowCount = 1;
-			grdTitulo.ColumnCount = 4;
-			grdTitulo.Height = 40;
-			grdTitulo.Width = Platform.Current.Page.Width;
-			grdTitulo.BackgroundColor = new Color(250, 79, 195, 247);
-			grdTitulo.Margin = new Thickness (0, 0, 20, 0);
-			panel.Add(grdTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, menu);
-			*/
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Estaciones Regionales";
@@ -157,7 +146,6 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
 			imgLogo.Width = 60;
 			imgLogo.Height = 40;
-			//imgLogo.Margin = new Thickness (5, -17, 0, 0);
 			panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
 
 			imgBackgroundImage = Platform.Current.Create<IImage>();
@@ -228,60 +216,6 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.Margin = new Thickness (0, 0, 20, 0);
 				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdEstacion);
 			}
-
-			/*
-			IGrid pgrAcordeon = Platform.Current.Create<IGrid>();
-			pgrAcordeon.RowCount = 1;
-			pgrAcordeon.ColumnCount = 4;
-			pgrAcordeon.Height = 50;
-			pgrAcordeon.Width = Platform.Current.Page.Width;
-			pgrAcordeon.BackgroundColor = new Color(1, 255, 143, 0);
-			pgrAcordeon.Margin = new Thickness (0, 15, 0, 15);
-			panel.Add(pgrAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, bgdTitulo);
-
-			IImage imgAcordeon = Platform.Current.Create<IImage>();
-			imgAcordeon.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--19.png"));
-			imgAcordeon.Width = 41;
-			imgAcordeon.Height = 41;
-			imgAcordeon.Margin = new Thickness(10, 10, 10, 5);
-			panel.Add(imgAcordeon, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, pgrAcordeon);
-
-			ILabelButton Programa1 = Platform.Current.Create<ILabelButton>();
-			Programa1.Click += (object sender, EventArgs e) => new AcordeonController().Start();
-			Programa1.Text = "El acordeon";
-			Programa1.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa1, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgAcordeon);
-
-			IImage arvAcordeon = Platform.Current.Create<IImage>();
-			arvAcordeon.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--28.png"));
-			arvAcordeon.Width = 41;
-			arvAcordeon.Height = 41;
-			arvAcordeon.Margin = new Thickness(20, 0, 0, 0);
-			panel.Add(arvAcordeon, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.CenterWith, Programa1);
-
-			ILabelButton Programa2 = Platform.Current.Create<ILabelButton>();
-			//Programa2.Click += Programa2_Click;
-			Programa2.Text = "Teleferico";
-			Programa2.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa2, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programa1);
-
-			ILabelButton Programa3 = Platform.Current.Create<ILabelButton>();
-			//Programa3.Click += Programa3_Click;
-			Programa3.Text = "El despeñadero";
-			Programa3.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa3, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programa2);
-
-			ILabelButton Programa4 = Platform.Current.Create<ILabelButton>();
-			//Programa4.Click += Programa4_Click;
-			Programa4.Text = "El ritual de lo habitual";
-			Programa4.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa4, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programa3);
-
-			ILabelButton Programa5 = Platform.Current.Create<ILabelButton>();
-			Programa5.Text = "El expreso de las 10";
-			Programa5.FontColor = new Color(255, 255, 255, 255);
-			panel.Add(Programa5, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, Programa4);
-			*/
 
 			Platform.Current.Page.Title = "Choose one control to test";
 			Platform.Current.Page.Content = panel;

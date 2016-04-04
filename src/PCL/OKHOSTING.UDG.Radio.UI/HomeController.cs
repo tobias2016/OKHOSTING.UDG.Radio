@@ -15,6 +15,7 @@ namespace OKHOSTING.UDG.Radio.UI
 		IImage imgLogoPrograma;
 		ILabel lblPrograma;
 		ILabel lblPrograma2;
+
 		public Station Station 
 		{
 			get 
@@ -31,10 +32,30 @@ namespace OKHOSTING.UDG.Radio.UI
 				lblPrograma.Text = _station.Name;
 				lblPrograma2.Text = _station.Description;	
 				cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-53.png"));
+				IsPlaying = true;
 			}
 		}
 
 		private Station _station;
+
+		public Episode Episode
+		{
+			get 
+			{
+				return _episode;
+			}
+			set 
+			{
+				_episode = value;
+				AudioPlayer.Stop ();
+				AudioPlayer.Source = _episode.EpisodeUri;
+				lblPrograma.Text = _episode.Name;
+				cmdPlay.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images/app-53.png"));
+				IsPlaying = true;
+			}
+		}
+
+		private Episode _episode;
 
         public override void Start()
         {
@@ -72,7 +93,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			imgProgramas.Width = 20;
 			imgProgramas.Height = 20;
-			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
+			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController(this).Start();
 			menu.SetContent(0, 2, imgProgramas);
             
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
