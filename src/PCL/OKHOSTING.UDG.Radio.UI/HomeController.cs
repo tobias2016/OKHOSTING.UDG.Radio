@@ -49,6 +49,8 @@ namespace OKHOSTING.UDG.Radio.UI
 				_episode = value;
 				AudioPlayer.Stop ();
 				AudioPlayer.Source = _episode.EpisodeUri;
+				AudioPlayer.Play ();
+				imgLogoPrograma.LoadFromUrl (_episode.ImagenUri);
 				lblPrograma.Text = _episode.Name;
 				cmdPlay.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images/app-53.png"));
 				IsPlaying = true;

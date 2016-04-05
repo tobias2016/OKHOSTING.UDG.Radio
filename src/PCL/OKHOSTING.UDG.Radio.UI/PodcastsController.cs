@@ -87,7 +87,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblLabel.FontFamily = "Arial";
 			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
 			lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
-			lblLabel.FontColor = new Color(255, 0, 0, 0);
+			lblLabel.FontColor = new Color(255, 255, 255, 255);
 			lblLabel.BackgroundColor = new Color(255, 255, 143, 0);
 			lblLabel.Margin = new Thickness (0, 15, 0, 0);
 			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
@@ -126,7 +126,9 @@ namespace OKHOSTING.UDG.Radio.UI
 				Episode episodio = new Episode ();
 				episodio.Name = reader.ReadElementContentAsString ();
 				reader.ReadToFollowing ("link");
-				//episodio.EpisodeUri = reader.ReadElementContentAs(Uri, null);
+				string mp3string = reader.ReadElementContentAsString();
+				episodio.EpisodeUri = new Uri (mp3string);
+				episodio.ImagenUri = podcasts.LogoUri;
 
 				episodios.Add (episodio);
 			}
@@ -162,8 +164,8 @@ namespace OKHOSTING.UDG.Radio.UI
 
 				ILabelButton lblTitulo = Platform.Current.Create<ILabelButton> ();
 				lblTitulo.Text = e.Name;
-				lblTitulo.FontSize = 11;
-				lblTitulo.FontColor = new Color (255, 210, 100, 10);
+				lblTitulo.FontSize = 10;
+				lblTitulo.FontColor = new Color (255, 255, 255, 255);
 				lblTitulo.Click += Episode_Click;
 				lblTitulo.Tag = e;
 				panel.Add (lblTitulo, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgPostcast);
