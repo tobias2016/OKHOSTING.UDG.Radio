@@ -75,7 +75,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			Show programa7 = new Show ();
 			programa7.Id = 7;
 			programa7.Name = "Cobertura FIL 2015";
-			programa7.Description = "Feria Internacional del Libro en Guadalajara 2015";
+			programa7.Description = "Feria Internacional del Libro en Guadalajara";
 			programa7.LogoUri = new Uri ("http://udgtv.com/sites/default/files/fil2015.jpg");
 			programa7.PodcastUri = new Uri ("http://podcastudg.com/FIL2015/CoberturaFIL.xml");
 
@@ -466,44 +466,91 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 1;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 15;
+			if (Platform.Current.Page.Width > 600)
+			{
+				grdMenu.Height = 50;
+			} 
+			else if (Platform.Current.Page.Width)
+			{
+				grdMenu.Height = 50;
+			}
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 0, 0, 0);
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			imgHome.Width = 20;
-			imgHome.Height = 20;
+			if (Platform.Current.Page.Width > 600)
+			{
+				imgHome.Width = 45;
+				imgHome.Height = 45;
+			} 
+			else if (Platform.Current.Page.Width)
+			{
+				imgHome.Width = 45;
+				imgHome.Height = 45;
+			}
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
 			grdMenu.SetContent (0, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			imgRegionales.Width = 20;
-			imgRegionales.Height = 20;
-			//imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController().Start();
+			if (Platform.Current.Page.Width > 600)
+			{
+				imgRegionales.Width = 45;
+				imgRegionales.Height = 45;
+			} 
+			else if (Platform.Current.Page.Width)
+			{
+				imgRegionales.Width = 45;
+				imgRegionales.Height = 45;
+			}
+			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(homecontroller).Start();
 			grdMenu.SetContent (0, 1, imgRegionales);
 
 			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
 			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-08.png"));
-			cmdProgramas.Width = 20;
-			cmdProgramas.Height = 20;
+			if (Platform.Current.Page.Width > 600)
+			{
+				cmdProgramas.Width = 45;
+				cmdProgramas.Height = 45;
+			} 
+			else if (Platform.Current.Page.Width)
+			{
+				cmdProgramas.Width = 45;
+				cmdProgramas.Height = 45;
+			}
 			//cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
 			grdMenu.SetContent (0, 2, cmdProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 20;
-			imgVirtuales.Height = 20;
-			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
+			if (Platform.Current.Page.Width > 600)
+			{
+				imgVirtuales.Width = 45;
+				imgVirtuales.Height = 45;
+			} 
+			else if (Platform.Current.Page.Width)
+			{
+				imgVirtuales.Width = 45;
+				imgVirtuales.Height = 45;
+			}
+			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController (homecontroller).Start ();
 			grdMenu.SetContent (0, 3, imgVirtuales);
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Archivo de Programas";
 			lblLabel.Width = Platform.Current.Page.Width;
-			lblLabel.Height = 40;
-			lblLabel.FontSize = 12;
+			if (Platform.Current.Page.Width > 310)
+			{
+				lblLabel.Height = 50;
+				lblLabel.FontSize = 14;
+			} 
+			else if (Platform.Current.Page.Width < 310)
+			{
+				lblLabel.Height = 40;
+				lblLabel.FontSize = 12;
+			}
 			lblLabel.Bold = true;
 			lblLabel.FontColor = new Color(255, 255, 255, 255);
 			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -516,9 +563,16 @@ namespace OKHOSTING.UDG.Radio.UI
 			{
 				IImage imgLogo = Platform.Current.Create<IImage> ();
 				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-				imgLogo.Width = 60;
-				imgLogo.Height = 60;
-				imgLogo.Margin = new Thickness (0, -10, 0, 0);
+				if (Platform.Current.Page.Width > 310)
+				{
+					imgLogo.Width = 70;
+					imgLogo.Height = 50;
+				} 
+				else if (Platform.Current.Page.Width < 310)
+				{
+					imgLogo.Width = 60;
+					imgLogo.Height = 40;
+				}
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
 			}
 
@@ -539,72 +593,91 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			foreach (Show programa in programas) 
 			{
-				IGrid grdEstacion = Platform.Current.Create<IGrid>();
-				grdEstacion.RowCount = 1;
-				grdEstacion.ColumnCount = 4;
-				grdEstacion.Height = 50;
-				grdEstacion.Width = Platform.Current.Page.Width;
-				grdEstacion.BackgroundColor = new Color(40, 120, 120, 120);
-				grdEstacion.Margin = new Thickness (0, 20, 0, 0);
-				panel.Add(grdEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+				IGrid grdProgramas = Platform.Current.Create<IGrid>();
+				grdProgramas.RowCount = 1;
+				grdProgramas.ColumnCount = 4;
+				if (Platform.Current.Page.Width > 310)
+				{
+					grdProgramas.Height = 70;
+				} 
+				else if (Platform.Current.Page.Width < 310)
+				{
+					grdProgramas.Height = 50;
+				}
+				grdProgramas.Height = 50;
+				grdProgramas.Width = Platform.Current.Page.Width;
+				grdProgramas.BackgroundColor = new Color(40, 120, 120, 120);
+				grdProgramas.Margin = new Thickness (0, 20, 0, 0);
+				panel.Add(grdProgramas, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-				referencia = grdEstacion;
+				referencia = grdProgramas;
 
-				IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
-				imgEstacion.LoadFromUrl(programa.LogoUri);
-				imgEstacion.Click += Programa_Click;
-				imgEstacion.Tag = programa;
-				imgEstacion.Width = 35;
-				imgEstacion.Height = 35;
+				IImageButton imgPrograma = Platform.Current.Create<IImageButton>();
+				imgPrograma.LoadFromUrl(programa.LogoUri);
+				imgPrograma.Click += Programa_Click;
+				imgPrograma.Tag = programa;
 				if (Platform.Current.Page.Width > 250)
 				{
-					imgEstacion.Margin = new Thickness (30, 10, 30, 5);
+					imgPrograma.Width = 50;
+					imgPrograma.Height = 50;
+					imgPrograma.Margin = new Thickness (35, 10, 50, 5);
 				} 
 				else if (Platform.Current.Page.Width < 250)
 				{
-					imgEstacion.Margin = new Thickness(15, 10, 10, 5);
+					imgPrograma.Width = 35;
+					imgPrograma.Height = 35;
+					imgPrograma.Margin = new Thickness(7, 10, 7, 5);
 				}
-				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
+				panel.Add(imgPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdProgramas);
 
-				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
-				lblNombreEstacion.Click += Programa_Click;
-				lblNombreEstacion.Text = programa.Name;
-				lblNombreEstacion.Tag = programa;
-				lblNombreEstacion.FontSize = 11;
-				lblNombreEstacion.Bold = true;
-				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
-				panel.Add(lblNombreEstacion, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgEstacion);
-
-				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
-				lblDescripcionEstacion.Click += Programa_Click;
-				lblDescripcionEstacion.Text = programa.Description;
-				lblDescripcionEstacion.Tag = programa;
+				ILabelButton lblNombrePrograma = Platform.Current.Create<ILabelButton>();
+				lblNombrePrograma.Click += Programa_Click;
+				lblNombrePrograma.Text = programa.Name;
+				lblNombrePrograma.Tag = programa;
 				if (Platform.Current.Page.Width > 250)
 				{
-					lblDescripcionEstacion.FontSize = 10;
+					lblNombrePrograma.FontSize = 13;
 				} 
 				else if (Platform.Current.Page.Width < 250)
 				{
-					lblDescripcionEstacion.FontSize = 8;
+					lblNombrePrograma.FontSize = 11;
 				}
-				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
-				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
+				lblNombrePrograma.Bold = true;
+				lblNombrePrograma.FontColor = new Color(255, 255, 255, 255);
+				panel.Add(lblNombrePrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgPrograma);
+
+				ILabelButton lblDescripcionPrograma = Platform.Current.Create<ILabelButton>();
+				lblDescripcionPrograma.Click += Programa_Click;
+				lblDescripcionPrograma.Text = programa.Description;
+				lblDescripcionPrograma.Tag = programa;
+				if (Platform.Current.Page.Width > 250)
+				{
+					lblDescripcionPrograma.FontSize = 10;
+				} 
+				else if (Platform.Current.Page.Width < 250)
+				{
+					lblDescripcionPrograma.FontSize = 8;
+				}
+				lblDescripcionPrograma.FontColor = new Color (255, 150, 150, 150);
+				panel.Add(lblDescripcionPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombrePrograma);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Click += Programa_Click;
 				imgPlay.Tag = programa;
-				imgPlay.Width = 20;
-				imgPlay.Height = 20;
 				if (Platform.Current.Page.Width > 250)
 				{
 					imgPlay.Margin = new Thickness (0, 0, 30, 0);
+					imgPlay.Width = 30;
+					imgPlay.Height = 30;
 				} 
 				else if (Platform.Current.Page.Width < 250)
 				{
-					imgPlay.Margin = new Thickness (0, 0, 10, 0);
+					imgPlay.Margin = new Thickness (0, 0, 7, 0);
+					imgPlay.Width = 20;
+					imgPlay.Height = 20;
 				}
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdEstacion);
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdProgramas);
 			}
 
 			Platform.Current.Page.Title = "Choose one control to test";

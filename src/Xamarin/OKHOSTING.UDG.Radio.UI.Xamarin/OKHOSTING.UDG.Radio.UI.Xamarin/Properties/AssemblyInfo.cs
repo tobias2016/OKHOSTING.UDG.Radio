@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OKHOSTING.UDG.Radio.UI.Xamarin")]
+[assembly: AssemblyTitle("Radio Universidad de Guaralajara")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OKHOSTING.UDG.Radio.UI.Xamarin")]
+[assembly: AssemblyProduct("Radio Universidad de Guaralajara")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

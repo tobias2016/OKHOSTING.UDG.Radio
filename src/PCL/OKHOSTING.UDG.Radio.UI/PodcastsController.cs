@@ -45,44 +45,52 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 1;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 15;
+			grdMenu.Height = 25;
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 0, 0, 0);
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			imgHome.Width = 20;
-			imgHome.Height = 20;
+			imgHome.Width = 25;
+			imgHome.Height = 25;
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
 			grdMenu.SetContent (0, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			imgRegionales.Width = 20;
-			imgRegionales.Height = 20;
-			//imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController().Start();
+			imgRegionales.Width = 25;
+			imgRegionales.Height = 25;
+			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(homecontroller).Start();
 			grdMenu.SetContent (0, 1, imgRegionales);
 
 			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
 			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-08.png"));
-			cmdProgramas.Width = 20;
-			cmdProgramas.Height = 20;
+			cmdProgramas.Width = 25;
+			cmdProgramas.Height = 25;
 			//cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
 			grdMenu.SetContent (0, 2, cmdProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 20;
-			imgVirtuales.Height = 20;
-			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController ().Start ();
+			imgVirtuales.Width = 25;
+			imgVirtuales.Height = 25;
+			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController (homecontroller).Start ();
 			grdMenu.SetContent (0, 3, imgVirtuales);
 
 			ILabel lblLabel = Platform.Current.Create<ILabel>();
 			lblLabel.Text = "Archivo de programa";
 			lblLabel.Width = Platform.Current.Page.Width;
-			lblLabel.Height = 40;
-			lblLabel.FontSize = 11;
+			if (Platform.Current.Page.Width > 310)
+			{
+				lblLabel.Height = 50;
+				lblLabel.FontSize = 14;
+			} 
+			else if (Platform.Current.Page.Width < 310)
+			{
+				lblLabel.Height = 40;
+				lblLabel.FontSize = 12;
+			}
 			lblLabel.Bold = true;
 			lblLabel.FontFamily = "Arial";
 			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -96,8 +104,18 @@ namespace OKHOSTING.UDG.Radio.UI
 			{
 				IImage imgLogo = Platform.Current.Create<IImage> ();
 				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-				imgLogo.Width = 60;
-				imgLogo.Height = 40;
+				if (Platform.Current.Page.Width > 310)
+				{
+					imgLogo.Width = 70;
+					imgLogo.Height = 50;
+					imgLogo.Margin = new Thickness (0, -10, 10, 0);
+				} 
+				else if (Platform.Current.Page.Width < 310)
+				{
+					imgLogo.Width = 60;
+					imgLogo.Height = 40;
+					imgLogo.Margin = new Thickness (0, -10, 0, 0);
+				}
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
 			}
 
@@ -129,6 +147,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				string mp3string = reader.ReadElementContentAsString();
 				episodio.EpisodeUri = new Uri (mp3string);
 				episodio.ImagenUri = podcasts.LogoUri;
+				episodio.Description = podcasts.Name;
 
 				episodios.Add (episodio);
 			}
@@ -138,7 +157,14 @@ namespace OKHOSTING.UDG.Radio.UI
 				IGrid grdPostcads = Platform.Current.Create<IGrid>();
 				grdPostcads.RowCount = 1;
 				grdPostcads.ColumnCount = 4;
-				grdPostcads.Height = 50;
+				if (Platform.Current.Page.Width > 310)
+				{
+					grdPostcads.Height = 70;
+				} 
+				else if (Platform.Current.Page.Width < 310)
+				{
+					grdPostcads.Height = 50;
+				}
 				grdPostcads.Width = Platform.Current.Page.Width;
 				grdPostcads.BackgroundColor = new Color(40, 120, 120, 120);
 				grdPostcads.Margin = new Thickness (0, 20, 0, 0);
@@ -154,17 +180,26 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPostcast.Height = 35;
 				if (Platform.Current.Page.Width > 250)
 				{
-					imgPostcast.Margin = new Thickness (30, 10, 30, 5);
+					imgPostcast.Margin = new Thickness (35, 10, 50, 5);
 				} 
 				else if (Platform.Current.Page.Width < 250)
 				{
-					imgPostcast.Margin = new Thickness(15, 10, 10, 5);
+					imgPostcast.Margin = new Thickness(10, 10, 10, 5);
 				}
 				panel.Add(imgPostcast, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdPostcads);
 
 				ILabelButton lblTitulo = Platform.Current.Create<ILabelButton> ();
+				if (Platform.Current.Page.Width < 250)
+				{
+					lblTitulo.Width = 150;
+					lblTitulo.FontSize = 12;
+				} 
+				else if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 500)
+				{
+					lblTitulo.Width = 400;
+					lblTitulo.FontSize = 10;
+				}
 				lblTitulo.Text = e.Name;
-				lblTitulo.FontSize = 10;
 				lblTitulo.FontColor = new Color (255, 255, 255, 255);
 				lblTitulo.Click += Episode_Click;
 				lblTitulo.Tag = e;
@@ -175,14 +210,16 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon-20.png"));
 				imgPlay.Click += Episode_Click;
 				imgPlay.Tag = e;
-				imgPlay.Width = 20;
-				imgPlay.Height = 20;
 				if (Platform.Current.Page.Width > 250)
 				{
+					imgPlay.Width = 30;
+					imgPlay.Height = 30;
 					imgPlay.Margin = new Thickness (0, 0, 30, 0);
 				} 
 				else if (Platform.Current.Page.Width < 250)
 				{
+					imgPlay.Width = 20;
+					imgPlay.Height = 20;
 					imgPlay.Margin = new Thickness (0, 0, 10, 0);
 				}
 				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdPostcads);

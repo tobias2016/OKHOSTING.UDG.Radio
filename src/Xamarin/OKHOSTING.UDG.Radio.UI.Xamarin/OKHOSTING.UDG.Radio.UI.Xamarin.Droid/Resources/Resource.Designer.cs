@@ -27,6 +27,8 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::OKHOSTING.UDG.Radio.UI.Xamarin.Droid.Resource.Attribute.actionBarSize;
+			global::PCLCrypto.Resource.String.ApplicationName = global::OKHOSTING.UDG.Radio.UI.Xamarin.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::OKHOSTING.UDG.Radio.UI.Xamarin.Droid.Resource.String.Hello;
 			global::OKHOSTING.Streaming.Xamarin.Android.Resource.String.ApplicationName = global::OKHOSTING.UDG.Radio.UI.Xamarin.Droid.Resource.String.ApplicationName;
 			global::OKHOSTING.Streaming.Xamarin.Android.Resource.String.Hello = global::OKHOSTING.UDG.Radio.UI.Xamarin.Droid.Resource.String.Hello;
 		}

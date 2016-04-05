@@ -14,6 +14,7 @@ namespace OKHOSTING.UDG.Radio
 		public Show Show { get; set; }
 		public DateTime PublishedOn { get; set; }
 		public string Name { get; set; }
+		public string Description { get; set; }
 		public Uri EpisodeUri { get; set; }
 		public Uri ImagenUri { get; set; }
 	}

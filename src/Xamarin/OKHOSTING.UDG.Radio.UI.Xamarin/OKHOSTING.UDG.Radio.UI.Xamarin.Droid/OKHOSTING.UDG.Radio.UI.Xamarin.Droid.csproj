@@ -84,6 +84,18 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\..\..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\..\..\packages\PCLCrypto.1.0.86\lib\monoandroid\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="OKHOSTING.Core">
+      <HintPath>..\..\..\packages\OKHOSTING.Core.1.0.12\lib\OKHOSTING.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OKHOSTING.Data">
+      <HintPath>..\..\..\packages\OKHOSTING.Data.1.0.5\lib\OKHOSTING.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
