@@ -2043,6 +2043,9 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 			// aapt resource value: 0x7f0b003d
 			public const int image = 2131427389;
 			
+			// aapt resource value: 0x7f0b0081
+			public const int imageView1 = 2131427457;
+			
 			// aapt resource value: 0x7f0b007f
 			public const int info = 2131427455;
 			
@@ -2445,7 +2448,10 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 			public const int select_dialog_singlechoice_material = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int support_simple_spinner_dropdown_item = 2130903087;
+			public const int SplashLayout = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int support_simple_spinner_dropdown_item = 2130903088;
 			
 			static Layout()
 			{

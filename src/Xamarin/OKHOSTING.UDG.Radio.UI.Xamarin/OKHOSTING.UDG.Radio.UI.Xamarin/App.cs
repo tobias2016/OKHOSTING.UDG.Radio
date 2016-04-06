@@ -11,15 +11,13 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin
     {
         public App()
         {
-            OKHOSTING.UI.Xamarin.Forms.Platform.Current.Page = new OKHOSTING.UI.Xamarin.Forms.Page();
-            MainPage = (global::Xamarin.Forms.Page) OKHOSTING.UI.Xamarin.Forms.Platform.Current.Page;
-
-            new IndexController().Start();
+			OKHOSTING.UI.Xamarin.Forms.Platform.Current.Page = new OKHOSTING.UI.Xamarin.Forms.Page();
+			MainPage = (global::Xamarin.Forms.Page) OKHOSTING.UI.Xamarin.Forms.Platform.Current.Page;
+			new IndexController().Start();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
         }
 
         protected override void OnSleep()
