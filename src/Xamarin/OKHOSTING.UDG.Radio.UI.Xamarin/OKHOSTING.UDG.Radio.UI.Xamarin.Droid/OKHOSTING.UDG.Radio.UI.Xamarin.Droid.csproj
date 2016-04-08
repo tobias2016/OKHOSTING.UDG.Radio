@@ -101,6 +101,9 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamingBackgroundService.cs" />
+    <Compile Include="AudioPlayer.cs" />
+    <Compile Include="MusicBroadcastReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

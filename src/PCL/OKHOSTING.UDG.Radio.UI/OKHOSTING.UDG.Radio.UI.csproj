@@ -55,9 +55,6 @@
     <Compile Include="PodcastsController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.Core.1.0.12\lib\OKHOSTING.Core.dll</HintPath>
-    </Reference>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\OKHOSTING.Data.1.0.4\lib\OKHOSTING.Data.dll</HintPath>
     </Reference>
@@ -90,6 +87,9 @@
     </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OKHOSTING.Core">
+      <HintPath>..\..\packages\OKHOSTING.Core.1.0.14\lib\OKHOSTING.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

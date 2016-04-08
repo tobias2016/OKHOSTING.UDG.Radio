@@ -1,43 +1,41 @@
 ﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_21" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs">
     <Files>
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="91" Column="5" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="536" Column="17" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/RegionalesController.cs" Line="219" Column="7" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/VirtualesController.cs" Line="59" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="216" Column="24" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio/Episode.cs" Line="17" Column="41" />
-      <File FileName="../../OKHOSTING.UI/src/Xamarin/OKHOSTING.UI.Xamarin.Forms/Page.cs" Line="24" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/SplashScreenScontroller.cs" Line="23" Column="76" />
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/Properties/AssemblyInfo.cs" Line="13" Column="61" />
+      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/MainActivity.cs" Line="26" Column="10" />
+      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/App.cs" Line="14" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/IndexController.cs" Line="28" Column="4" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/SplashScreenScontroller.cs" Line="44" Column="64" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="174" Column="99" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="232" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OKHOSTING.UDG.Radio" expanded="True">
-            <Node name="Streaming" expanded="True">
-              <Node name="OKHOSTING.Streaming.Xamarin.Android" expanded="True" />
-            </Node>
             <Node name="OKHOSTING.UDG.Radio.UI" expanded="True">
-              <Node name="ProgramasController.cs" selected="True" />
+              <Node name="HomeController.cs" selected="True" />
             </Node>
-            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin" expanded="True">
+            <Node name="OKHOSTING.UDG.Radio.UI.Net4.WebServices" expanded="True">
               <Node name="Properties" expanded="True" />
             </Node>
-            <Node name="OKHOSTING.UI.Xamarin.Forms" expanded="True">
-              <Node name="Controls" expanded="True" />
+            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin" expanded="True" />
+            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin.Droid" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+                <Node name="layout" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" line="714" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.Droid AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>
