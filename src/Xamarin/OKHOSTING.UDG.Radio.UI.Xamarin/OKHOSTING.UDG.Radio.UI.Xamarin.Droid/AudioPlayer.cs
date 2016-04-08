@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 {
-    public class AudioPlayer : OKHOSTING.Streaming.IAudioPlayer
+	public class AudioPlayer : OKHOSTING.UDG.Radio.UI.IAudioPlayer
     {
         protected Uri _Source;
 
