@@ -53,6 +53,7 @@
     <Compile Include="RegionalesController.cs" />
     <Compile Include="VirtualesController.cs" />
     <Compile Include="PodcastsController.cs" />
+    <Compile Include="IAudioPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">

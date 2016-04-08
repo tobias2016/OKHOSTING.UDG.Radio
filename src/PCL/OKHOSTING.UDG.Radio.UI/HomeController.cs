@@ -78,7 +78,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 0, 0, 0);
-			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
+			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Droid.Android", "Xamarin.Droid.iOS"});
 
 			AudioPlayer.Source = new Uri("http://148.202.165.1:8000/;stream/1");
 
