@@ -152,7 +152,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			{
 				BackgroundImage.Height = Platform.Current.Page.Height * 2.7;
 			}
-			panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
+			//panel.Add(BackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
 
 			IControl referencia = lblLabel;
 

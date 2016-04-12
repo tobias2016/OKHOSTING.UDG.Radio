@@ -210,7 +210,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			{
 				imgBackgroundImage.Height = Platform.Current.Page.Height * 2.7;
 			}
-			panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
+			//panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
 
 			IControl referencia = lblLabel;
 
@@ -338,8 +338,11 @@ namespace OKHOSTING.UDG.Radio.UI
 		{
 			base.Resize();
 
-			imgBackgroundImage.Width = Platform.Current.Page.Width;
-			imgBackgroundImage.Height = Platform.Current.Page.Height;
+            if (imgBackgroundImage != null)
+            {
+                imgBackgroundImage.Width = Platform.Current.Page.Width;
+                imgBackgroundImage.Height = Platform.Current.Page.Height;
+            }
 		}
 
 		private void cmdEstaciones_Click(object sender, EventArgs e)

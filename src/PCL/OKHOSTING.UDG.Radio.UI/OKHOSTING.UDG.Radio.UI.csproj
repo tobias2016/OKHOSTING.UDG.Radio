@@ -53,17 +53,23 @@
     <Compile Include="RegionalesController.cs" />
     <Compile Include="VirtualesController.cs" />
     <Compile Include="PodcastsController.cs" />
-    <Compile Include="IAudioPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.Data.1.0.4\lib\OKHOSTING.Data.dll</HintPath>
+    <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.Core.1.0.17\lib\OKHOSTING.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.ORM.1.0.0\lib\OKHOSTING.ORM.dll</HintPath>
+    <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.Data.1.0.7\lib\OKHOSTING.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.Sql.1.0.1\lib\OKHOSTING.Sql.dll</HintPath>
+    <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.ORM.1.0.8\lib\OKHOSTING.ORM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.Sql.1.0.4\lib\OKHOSTING.Sql.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Sql.MySql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\OKHOSTING.Sql.MySql.1.0.4\lib\OKHOSTING.Sql.MySql.dll</HintPath>
@@ -71,11 +77,13 @@
     <Reference Include="OKHOSTING.Sql.Web.Services.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\OKHOSTING.Sql.Web.Services.Client.1.0.0\lib\OKHOSTING.Sql.Web.Services.Client.dll</HintPath>
     </Reference>
-    <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.UI.1.0.6\lib\OKHOSTING.UI.dll</HintPath>
+    <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OKHOSTING.UI.1.0.7\lib\OKHOSTING.UI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c">
-      <HintPath>..\..\packages\PCLCrypto.2.0.144\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7">
       <HintPath>..\..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
@@ -89,11 +97,9 @@
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="OKHOSTING.Core">
-      <HintPath>..\..\packages\OKHOSTING.Core.1.0.14\lib\OKHOSTING.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -22,7 +22,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			ILabel lblTitulo = Platform.Current.Create<ILabel>();
 			lblTitulo.Text = "Radio Universidad De Guadalajara";
 			lblTitulo.FontColor = new Color(255, 230, 230, 230);
-			lblTitulo.FontSize = 14;
+			lblTitulo.FontSize = 30;
 			lblTitulo.Bold = true;
 			lblTitulo.FontFamily = "Arial";
 			lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
@@ -38,7 +38,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			ILabel lblTocar = Platform.Current.Create<ILabel> ();
 			lblTocar.Text = "Presiona la imagen para continuar";
 			lblTocar.FontColor = new Color (255, 255, 255, 255);
-			lblTocar.FontSize = 12;
+			lblTocar.FontSize = 18;
 			lblTocar.FontFamily = "Arial";
 			lblTocar.Margin = new Thickness (0, 25, 0, 0);
 			lblTocar.TextHorizontalAlignment = HorizontalAlignment.Center;
