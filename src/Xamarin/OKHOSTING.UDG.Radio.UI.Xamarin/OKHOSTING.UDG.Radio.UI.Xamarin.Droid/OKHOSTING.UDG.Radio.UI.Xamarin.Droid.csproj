@@ -14,8 +14,8 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -71,14 +71,6 @@
     </Reference>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\OKHOSTING.Data.1.0.7\lib\OKHOSTING.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\OKHOSTING.UI.1.0.7\lib\OKHOSTING.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.UI.Xamarin.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\OKHOSTING.UI.Xamarin.Forms.1.0.4\lib\OKHOSTING.UI.Xamarin.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
@@ -161,6 +153,14 @@
     <ProjectReference Include="..\..\..\..\..\OKHOSTING.Streaming\src\Xamarin\OKHOSTING.Streaming.Xamarin.Android\OKHOSTING.Streaming.Xamarin.Android.csproj">
       <Project>{63EEA7A1-E03D-4283-BCFE-F99CC3196CAF}</Project>
       <Name>OKHOSTING.Streaming.Xamarin.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\OKHOSTING.UI\src\PCL\OKHOSTING.UI\OKHOSTING.UI.csproj">
+      <Project>{f9d654b5-6b7a-4573-b8c8-fd09b96c021b}</Project>
+      <Name>OKHOSTING.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\OKHOSTING.UI\src\Xamarin\OKHOSTING.UI.Xamarin.Forms\OKHOSTING.UI.Xamarin.Forms.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>OKHOSTING.UI.Xamarin.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\PCL\OKHOSTING.UDG.Radio.UI\OKHOSTING.UDG.Radio.UI.csproj">
       <Project>{173CD50A-9736-4348-A94C-3C6C2E1D8FDA}</Project>
