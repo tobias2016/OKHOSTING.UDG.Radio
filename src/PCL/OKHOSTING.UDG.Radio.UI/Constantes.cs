@@ -78,6 +78,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTitulo.FontColor = Constantes.FontColor1;
 			lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
 			lblTitulo.TextVerticalAlignment = VerticalAlignment.Center;
+			lblTitulo.Margin = new Thickness(0, 0, 0, 20);
 
 			return lblTitulo;
 		}

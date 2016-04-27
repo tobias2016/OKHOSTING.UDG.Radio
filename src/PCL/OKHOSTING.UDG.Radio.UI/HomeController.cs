@@ -113,7 +113,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IImage imgAntena = Platform.Current.Create<IImage>();
 			imgAntena.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-22.png"));
 			imgAntena.Width = Platform.Current.Page.Width * .1;
-			imgAntena.Margin = new Thickness(10, 20, 10, 20);
+			imgAntena.Margin = new Thickness(10, 0, 10, 20);
 			panel.Add(imgAntena, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblTitulo);
 
 			ILabel lblAlAire = Platform.Current.Create<ILabel>();
@@ -144,6 +144,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblNombrePrograma.FontFamily = Constantes.FontFamily;
 			lblNombrePrograma.FontSize = Constantes.FontSize2;
 			lblNombrePrograma.Bold = true;
+			lblNombrePrograma.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
 			panel.Add(lblNombrePrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
 			lblDescripcionPrograma = Platform.Current.Create<ILabel>();
@@ -159,11 +160,11 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdPlay.Click += Play_Click;
 			cmdPlay.Width = Constantes.AnchoIconos;
 			cmdPlay.Height = Constantes.AnchoIconos;
-			cmdPlay.Margin = new Thickness (10, 0, 0, 0);
+			cmdPlay.Margin = new Thickness (20, 0, 0, 0);
 
-            panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdReproductor);
+            panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombrePrograma);
 
-			Platform.Current.Page.Title = "straming";
+			Platform.Current.Page.Title = "Radio Universidad de Guadalajara";
 			Platform.Current.Page.Content = panel;
 
 			Play_Click (null, null);

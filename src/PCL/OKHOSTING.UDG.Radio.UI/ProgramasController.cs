@@ -14,6 +14,11 @@ namespace OKHOSTING.UDG.Radio.UI
 
 		protected static IControl Cache;
 
+		public ProgramasController(HomeController home)
+		{
+			HomeController = home;
+		}
+
 		public override void Start()
 		{
 			base.Start ();
@@ -523,59 +528,56 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			foreach (Show programa in programas) 
 			{
-				IGrid grdProgramas = Platform.Current.Create<IGrid>();
-				grdProgramas.RowCount = 1;
-				grdProgramas.ColumnCount = 4;
-				grdProgramas.Height = 90;
-				grdProgramas.Width = Platform.Current.Page.Width;
-				grdProgramas.Margin = new Thickness (0, 20, 0, 0);
-				panel.Add(grdProgramas, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+				IImageButton imgLogo = Platform.Current.Create<IImageButton>();
+				imgLogo.LoadFromUrl(programa.LogoUri);
+				imgLogo.Click += Programa_Click;
+				imgLogo.Tag = programa;
+				imgLogo.Width = Constantes.AnchoIconos;
+				imgLogo.Height = Constantes.AnchoIconos;
+				
+				//set margin for first iteration
+				if (referencia == lblTitulo)
+				{
+					imgLogo.Margin = new Thickness(10, 10, 10, 10);
+				}
+				else
+				{
+					imgLogo.Margin = new Thickness(0, 10, 10, 10);
+				}
 
-				referencia = grdProgramas;
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-				IImageButton imgPrograma = Platform.Current.Create<IImageButton>();
-				imgPrograma.LoadFromUrl(programa.LogoUri);
-				imgPrograma.Click += Programa_Click;
-				imgPrograma.Tag = programa;
-				imgPrograma.Width = 70;
-				imgPrograma.Height = 70;
-				imgPrograma.Margin = new Thickness(40, 10, 60, 5);
-				panel.Add(imgPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdProgramas);
+				referencia = imgLogo;
 
-				ILabelButton lblNombrePrograma = Platform.Current.Create<ILabelButton>();
-				lblNombrePrograma.Click += Programa_Click;
-				lblNombrePrograma.Text = programa.Name;
-				lblNombrePrograma.Tag = programa;
-				lblNombrePrograma.Bold = true;
-				lblNombrePrograma.FontSize = Constantes.FontSize2;
-				lblNombrePrograma.FontColor = Constantes.FontColor2;
-				panel.Add(lblNombrePrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgPrograma);
+				ILabelButton lblNombre = Platform.Current.Create<ILabelButton>();
+				lblNombre.Click += Programa_Click;
+				lblNombre.Text = programa.Name;
+				lblNombre.Tag = programa;
+				lblNombre.Bold = true;
+				lblNombre.FontSize = Constantes.FontSize2;
+				lblNombre.FontColor = Constantes.FontColor2;
+				lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+				panel.Add(lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogo);
 
-				ILabelButton lblDescripcionPrograma = Platform.Current.Create<ILabelButton>();
-				lblDescripcionPrograma.Click += Programa_Click;
-				lblDescripcionPrograma.Text = programa.Description;
-				lblDescripcionPrograma.Tag = programa;
-				lblDescripcionPrograma.FontSize = Constantes.FontSize3;
-				lblDescripcionPrograma.FontColor = Constantes.FontColor3;
-				panel.Add(lblDescripcionPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombrePrograma);
+				ILabelButton lblDescripcion = Platform.Current.Create<ILabelButton>();
+				lblDescripcion.Click += Programa_Click;
+				lblDescripcion.Text = programa.Description;
+				lblDescripcion.Tag = programa;
+				lblDescripcion.FontSize = Constantes.FontSize3;
+				lblDescripcion.FontColor = Constantes.FontColor3;
+				panel.Add(lblDescripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombre);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Click += Programa_Click;
 				imgPlay.Tag = programa;
-				imgPlay.Margin = new Thickness (0, 0, 40, 0);
-				imgPlay.Width = 50;
-				imgPlay.Height = 50;
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdProgramas);
+				imgPlay.Width = Constantes.AnchoIconos;
+				imgPlay.Height = Constantes.AnchoIconos;
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 			}
 
 			Platform.Current.Page.Content = panel;
 			Cache = panel;
-		}
-
-		public ProgramasController(HomeController home)
-		{
-			HomeController = home;
 		}
 
 		private void cmdHome_Click(object sender, EventArgs e)

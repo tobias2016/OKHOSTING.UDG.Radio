@@ -13,6 +13,12 @@ namespace OKHOSTING.UDG.Radio.UI
 		HomeController HomeController;
 		Show Show;
 
+		public PodcastsController(Show show, HomeController home)
+		{
+			Show = show;
+			HomeController = home;
+		}
+
 		public override void Start()
 		{
 			base.Start();
@@ -72,8 +78,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 			}
 
-			IControl referencia = lblTitulo;
-
+			//extraer episodios del xml
 			while (reader.ReadToFollowing ("item")) 
 			{
 				reader.ReadToFollowing ("title");
@@ -88,54 +93,52 @@ namespace OKHOSTING.UDG.Radio.UI
 				episodios.Add (episodio);
 			}
 
-			foreach(Episode e in episodios)
+			IControl referencia = lblTitulo;
+
+			foreach (Episode episodio in episodios)
 			{
-				IGrid grdPostcads = Platform.Current.Create<IGrid>();
-				grdPostcads.RowCount = 1;
-				grdPostcads.ColumnCount = 4;
-				grdPostcads.Height = 90;
-				grdPostcads.Width = Platform.Current.Page.Width;
-				grdPostcads.Margin = new Thickness (0, 20, 0, 0);
-				panel.Add(grdPostcads, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+				IImageButton imgLogo = Platform.Current.Create<IImageButton>();
+				imgLogo.LoadFromUrl(Show.LogoUri);
+				imgLogo.Click += Episode_Click;
+				imgLogo.Tag = episodio;
+				imgLogo.Width = Constantes.AnchoIconos;
+				imgLogo.Height = Constantes.AnchoIconos;
+				
+				//set margin for first iteration
+				if (referencia == lblTitulo)
+				{
+					imgLogo.Margin = new Thickness(10, 10, 10, 10);
+				}
+				else
+				{
+					imgLogo.Margin = new Thickness(0, 10, 10, 10);
+				}
 
-				referencia = grdPostcads;
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-				IImageButton imgPostcast = Platform.Current.Create<IImageButton>();
-				imgPostcast.LoadFromUrl(Show.LogoUri);
-				imgPostcast.Click += Episode_Click;
-				imgPostcast.Tag = e;
-				imgPostcast.Width = 70;
-				imgPostcast.Height = 70;
-				imgPostcast.Margin = new Thickness(40, 10, 80, 5);
-				panel.Add(imgPostcast, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdPostcads);
-
-				ILabelButton lblTituloPodcast = Platform.Current.Create<ILabelButton> ();
-				lblTituloPodcast.Width = 500;
-				lblTituloPodcast.Text = e.Name;
-				lblTituloPodcast.FontSize = Constantes.FontSize2;
-				lblTituloPodcast.FontColor = Constantes.FontColor2;
-				lblTituloPodcast.Click += Episode_Click;
-				lblTituloPodcast.Tag = e;
-				panel.Add (lblTituloPodcast, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgPostcast);
+				referencia = imgLogo;
+				
+				ILabelButton lblNombre = Platform.Current.Create<ILabelButton> ();
+				lblNombre.Click += Episode_Click;
+				lblNombre.Text = episodio.Name;
+				lblNombre.Tag = episodio;
+				lblNombre.Bold = true;
+				lblNombre.FontSize = Constantes.FontSize2;
+				lblNombre.FontColor = Constantes.FontColor2;
+				lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+				panel.Add (lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogo);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon-20.png"));
 				imgPlay.Click += Episode_Click;
-				imgPlay.Tag = e;
-				imgPlay.Width = 50;
-				imgPlay.Height = 50;
-				imgPlay.Margin = new Thickness (0, 0, 50, 0);
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdPostcads);
+				imgPlay.Tag = episodio;
+				imgPlay.Width = Constantes.AnchoIconos;
+				imgPlay.Height = Constantes.AnchoIconos;
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 			}
 
 			Platform.Current.Page.Title = "Selecciona un episodio";
 			Platform.Current.Page.Content = panel;
-		}
-
-		public PodcastsController(Show show, HomeController home)
-		{
-			Show = show;
-			HomeController = home;
 		}
 
 		private void cmdHome_Click(object sender, EventArgs e)

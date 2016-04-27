@@ -136,7 +136,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			ILabel lblTitulo = Constantes.CrearTitulo("Estaciones Regionales", new Color(255, 79, 195, 247));
 			panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
 
-			if (Platform.Current.Page.Width > 250) 
+			if (Platform.Current.Page.Width > 250)
 			{
 				IImage imgLogo = Platform.Current.Create<IImage> ();
 				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
@@ -148,36 +148,46 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IControl referencia = lblTitulo;
 
-			foreach (Station estacion in estaciones) 
+			foreach (Station estacion in estaciones)
 			{
-				IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
-				imgEstacion.LoadFromUrl(estacion.WebSiteUri);
-				imgEstacion.Click += Estacion_Click;
-				imgEstacion.Tag = estacion;
-				imgEstacion.Width = Constantes.AnchoIconos;
-				imgEstacion.Height = Constantes.AnchoIconos;
-				imgEstacion.Margin = new Thickness(20, 20, 5, 10);
-				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+				IImageButton imgLogo = Platform.Current.Create<IImageButton>();
+				imgLogo.LoadFromUrl(estacion.WebSiteUri);
+				imgLogo.Click += Estacion_Click;
+				imgLogo.Tag = estacion;
+				imgLogo.Width = Constantes.AnchoIconos;
+				imgLogo.Height = Constantes.AnchoIconos;
 
-				referencia = imgEstacion;
+				//set margin for first iteration
+				if (referencia == lblTitulo)
+				{
+					imgLogo.Margin = new Thickness(10, 10, 10, 10);
+				}
+				else
+				{
+					imgLogo.Margin = new Thickness(0, 10, 10, 10);
+				}
 
-				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
-				lblNombreEstacion.Click += Estacion_Click;
-				lblNombreEstacion.Text = estacion.Name;
-				lblNombreEstacion.Tag = estacion;
-				lblNombreEstacion.Bold = true;
-				lblNombreEstacion.FontSize = Constantes.FontSize2;
-				lblNombreEstacion.FontColor = Constantes.FontColor2;
-				imgEstacion.Margin = new Thickness(0, 0, 5, 5);
-				panel.Add(lblNombreEstacion, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgEstacion);
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
 
-				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
-				lblDescripcionEstacion.Click += Estacion_Click;
-				lblDescripcionEstacion.Text = estacion.Description;
-				lblDescripcionEstacion.Tag = estacion;
-				lblDescripcionEstacion.FontSize = Constantes.FontSize3;
-				lblDescripcionEstacion.FontColor = Constantes.FontColor3;
-				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
+				referencia = imgLogo;
+
+				ILabelButton lblNombre = Platform.Current.Create<ILabelButton>();
+				lblNombre.Click += Estacion_Click;
+				lblNombre.Text = estacion.Name;
+				lblNombre.Tag = estacion;
+				lblNombre.Bold = true;
+				lblNombre.FontSize = Constantes.FontSize2;
+				lblNombre.FontColor = Constantes.FontColor2;
+				lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+				panel.Add(lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogo);
+
+				ILabelButton lblDescripcion = Platform.Current.Create<ILabelButton>();
+				lblDescripcion.Click += Estacion_Click;
+				lblDescripcion.Text = estacion.Description;
+				lblDescripcion.Tag = estacion;
+				lblDescripcion.FontSize = Constantes.FontSize3;
+				lblDescripcion.FontColor = Constantes.FontColor3;
+				panel.Add(lblDescripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombre);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
@@ -185,7 +195,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.Tag = estacion;
 				imgPlay.Width = Constantes.AnchoIconos;
 				imgPlay.Height = Constantes.AnchoIconos;
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombreEstacion);
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 			}
 
 			Platform.Current.Page.Content = panel;
