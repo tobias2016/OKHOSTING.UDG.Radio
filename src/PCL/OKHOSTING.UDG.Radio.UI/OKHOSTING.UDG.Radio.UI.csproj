@@ -45,6 +45,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constantes.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="IndexController.cs" />
     <Compile Include="ProgramasController.cs" />
