@@ -10,8 +10,7 @@ namespace OKHOSTING.UDG.Radio.UI
 	public class RegionalesController : OKHOSTING.UI.Controller
 	{
 		IAudioPlayer AudioPlayer;
-		protected IImage imgBackgroundImage;
-		protected HomeController homecontroler;
+		protected HomeController HomeControler;
 
 		protected static IControl Cache;
 
@@ -101,22 +100,10 @@ namespace OKHOSTING.UDG.Radio.UI
 			estaciones.Add (estacion8);
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
-			panel.BackgroundColor = new Color (255, 0, 0, 0);
+			panel.BackgroundColor = new Color (255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
-			IGrid grdMenu = Platform.Current.Create<IGrid>();
-			grdMenu.RowCount = 1;
-			grdMenu.ColumnCount = 4;
-			if (Platform.Current.Page.Width > 600)
-			{
-				grdMenu.Height = 30;
-			} 
-			else if (Platform.Current.Page.Width < 600)
-			{
-				grdMenu.Height = 25;
-			}
-			grdMenu.Width = Platform.Current.Page.Width;
-			grdMenu.BackgroundColor = new Color(255, 0, 0, 0);
+			IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
@@ -124,225 +111,90 @@ namespace OKHOSTING.UDG.Radio.UI
 			imgHome.Width = 25;
 			imgHome.Height = 25;
 			imgHome.Click += cmdEstaciones_Click;
-			grdMenu.SetContent (0, 0, imgHome);
+			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-12.png"));
 			imgRegionales.Width = 25;
 			imgRegionales.Height = 25;
-			grdMenu.SetContent (0, 1, imgRegionales);
+			grdMenu.SetContent(1, 1, imgRegionales);
 
 			IImageButton imngProgramas = Platform.Current.Create<IImageButton>();
 			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			imngProgramas.Width = 25;
 			imngProgramas.Height = 25;
 			imngProgramas.Click += cmdProgramas_Click;
-			grdMenu.SetContent (0, 2, imngProgramas);
+			grdMenu.SetContent(1, 2, imngProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
 			imgVirtuales.Width = 25;
 			imgVirtuales.Height = 25;
 			imgVirtuales.Click += cmdVirtuales_Click;
-			grdMenu.SetContent (0, 3, imgVirtuales);
+			grdMenu.SetContent(1, 3, imgVirtuales);
 
-			ILabel lblLabel = Platform.Current.Create<ILabel>();
-			lblLabel.Text = "Estaciones Regionales";
-			lblLabel.Width = Platform.Current.Page.Width;
-			if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-			{
-				lblLabel.Height = 50;
-				lblLabel.FontSize = 14;
-			} 
-			else if (Platform.Current.Page.Width < 310)
-			{
-				lblLabel.Height = 40;
-				lblLabel.FontSize = 12;
-			}
-			else if (Platform.Current.Page.Width > 600)
-			{
-				lblLabel.Height = 70;
-				lblLabel.FontSize = 19;
-			}
-			lblLabel.Bold = true;
-			lblLabel.BackgroundColor = new Color (255, 79, 195, 247);
-			lblLabel.FontColor = new Color(255, 0, 0, 0);
-			lblLabel.TextHorizontalAlignment = HorizontalAlignment.Center;
-			lblLabel.TextVerticalAlignment = VerticalAlignment.Center;
-			lblLabel.Margin = new Thickness (0, 25, 0, 0);
-			panel.Add(lblLabel, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
+			ILabel lblTitulo = Constantes.CrearTitulo("Estaciones Regionales", new Color(255, 79, 195, 247));
+			panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
 
 			if (Platform.Current.Page.Width > 250) 
 			{
 				IImage imgLogo = Platform.Current.Create<IImage> ();
 				imgLogo.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images-old/icon2--14.png"));
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					imgLogo.Width = 70;
-					imgLogo.Height = 50;
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					imgLogo.Width = 60;
-					imgLogo.Height = 40;
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					imgLogo.Width = 90;
-					imgLogo.Height = 70;
-				}
-				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblLabel);
+				imgLogo.Width = Platform.Current.Page.Width / 6;
+				imgLogo.Height = lblTitulo.Height;
+				imgLogo.Margin = new Thickness(0, 0, 10, 0);
+				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 			}
 
-			imgBackgroundImage = Platform.Current.Create<IImage>();
-			imgBackgroundImage.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--50.png"));
-			imgBackgroundImage.Width = Platform.Current.Page.Width;
+			IControl referencia = lblTitulo;
 
-			if (Platform.Current.Page.Width > 250 && Platform.Current.Page.Width < 500)
+			foreach (Station estacion in estaciones) 
 			{
-				imgBackgroundImage.Height = Platform.Current.Page.Height * 1.2;
-			} 
-			else if (Platform.Current.Page.Width < 250)
-			{
-				imgBackgroundImage.Height = Platform.Current.Page.Height * 2;
-			} 
-			else if (Platform.Current.Page.Width > 500)
-			{
-				imgBackgroundImage.Height = Platform.Current.Page.Height * 2.7;
-			}
-			//panel.Add(imgBackgroundImage, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblLabel);
-
-			IControl referencia = lblLabel;
-
-			foreach (Station etacion in estaciones) 
-			{
-				IGrid grdEstacion = Platform.Current.Create<IGrid>();
-				grdEstacion.RowCount = 1;
-				grdEstacion.ColumnCount = 4;
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					grdEstacion.Height = 70;
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					grdEstacion.Height = 50;
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					grdEstacion.Height = 90;
-				}
-				grdEstacion.Width = Platform.Current.Page.Width;
-				grdEstacion.BackgroundColor = new Color(40, 120, 120, 120);
-				grdEstacion.Margin = new Thickness (0, 20, 0, 0);
-				panel.Add(grdEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
-
-				referencia = grdEstacion;
-
-                IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
-				imgEstacion.LoadFromUrl(etacion.WebSiteUri);
+				IImageButton imgEstacion = Platform.Current.Create<IImageButton>();
+				imgEstacion.LoadFromUrl(estacion.WebSiteUri);
 				imgEstacion.Click += Estacion_Click;
-				imgEstacion.Tag = etacion;
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					imgEstacion.Width = 50;
-					imgEstacion.Height = 50;
-					imgEstacion.Margin = new Thickness(40, 10, 50, 5);
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					imgEstacion.Width = 35;
-					imgEstacion.Height = 35;
-					imgEstacion.Margin = new Thickness(30, 10, 20, 5);
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					imgEstacion.Width = 70;
-					imgEstacion.Height = 70;
-					imgEstacion.Margin = new Thickness(35, 10, 60, 5);
-				}
-				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdEstacion);
+				imgEstacion.Tag = estacion;
+				imgEstacion.Width = Constantes.AnchoIconos;
+				imgEstacion.Height = Constantes.AnchoIconos;
+				imgEstacion.Margin = new Thickness(20, 20, 5, 10);
+				panel.Add(imgEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, referencia);
+
+				referencia = imgEstacion;
 
 				ILabelButton lblNombreEstacion = Platform.Current.Create<ILabelButton>();
 				lblNombreEstacion.Click += Estacion_Click;
-				lblNombreEstacion.Text = etacion.Name;
-				lblNombreEstacion.Tag = etacion;
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					lblNombreEstacion.FontSize = 13;
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					lblNombreEstacion.FontSize = 11;
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					lblNombreEstacion.FontSize = 16;
-				}
+				lblNombreEstacion.Text = estacion.Name;
+				lblNombreEstacion.Tag = estacion;
 				lblNombreEstacion.Bold = true;
-				lblNombreEstacion.FontColor = new Color(255, 255, 255, 255);
+				lblNombreEstacion.FontSize = Constantes.FontSize2;
+				lblNombreEstacion.FontColor = Constantes.FontColor2;
+				imgEstacion.Margin = new Thickness(0, 0, 5, 5);
 				panel.Add(lblNombreEstacion, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgEstacion);
 
 				ILabelButton lblDescripcionEstacion = Platform.Current.Create<ILabelButton>();
 				lblDescripcionEstacion.Click += Estacion_Click;
-				lblDescripcionEstacion.Text = etacion.Description;
-				lblDescripcionEstacion.Tag = etacion;
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					lblDescripcionEstacion.FontSize = 11;
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					lblDescripcionEstacion.FontSize = 9;
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					lblDescripcionEstacion.FontSize = 14;
-				}
-				lblDescripcionEstacion.FontColor = new Color (255, 150, 150, 150);
+				lblDescripcionEstacion.Text = estacion.Description;
+				lblDescripcionEstacion.Tag = estacion;
+				lblDescripcionEstacion.FontSize = Constantes.FontSize3;
+				lblDescripcionEstacion.FontColor = Constantes.FontColor3;
 				panel.Add(lblDescripcionEstacion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombreEstacion);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
 				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
 				imgPlay.Click += Estacion_Click;
-				imgPlay.Tag = etacion;
-				if (Platform.Current.Page.Width > 310 && Platform.Current.Page.Width < 600)
-				{
-					imgPlay.Width = 30;
-					imgPlay.Height = 30;
-					imgPlay.Margin = new Thickness (0, 0, 20, 0);
-				} 
-				else if (Platform.Current.Page.Width < 310)
-				{
-					imgPlay.Width = 20;
-					imgPlay.Height = 20;
-				}
-				else if (Platform.Current.Page.Width > 600)
-				{
-					imgPlay.Width = 50;
-					imgPlay.Height = 50;
-					imgPlay.Margin = new Thickness (0, 0, 50, 0);
-				}
-				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.CenterWith, grdEstacion);
+				imgPlay.Tag = estacion;
+				imgPlay.Width = Constantes.AnchoIconos;
+				imgPlay.Height = Constantes.AnchoIconos;
+				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombreEstacion);
 			}
 
 			Platform.Current.Page.Content = panel;
 			Cache = panel;
 		}
 
-		public RegionalesController(HomeController h)
+		public RegionalesController(HomeController home)
 		{
-			homecontroler = h;
-		}
-
-		public override void Resize()
-		{
-			base.Resize();
-
-            if (imgBackgroundImage != null)
-            {
-                imgBackgroundImage.Width = Platform.Current.Page.Width;
-                imgBackgroundImage.Height = Platform.Current.Page.Height;
-            }
+			HomeControler = home;
 		}
 
 		private void cmdEstaciones_Click(object sender, EventArgs e)
@@ -353,20 +205,20 @@ namespace OKHOSTING.UDG.Radio.UI
 		private void cmdProgramas_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new ProgramasController (homecontroler).Start ();
+			new ProgramasController (HomeControler).Start ();
 		}
 
 		private void cmdVirtuales_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new VirtualesController (homecontroler).Start ();
+			new VirtualesController (HomeControler).Start ();
 		}
 
 		public void Estacion_Click(object sender, EventArgs e)
 		{
 			IControl control = (IControl)sender;
 			Station estacion = (Station)control.Tag;
-			homecontroler.Station = estacion;
+			HomeControler.Station = estacion;
 			this.Finish ();
 		}
 	}
