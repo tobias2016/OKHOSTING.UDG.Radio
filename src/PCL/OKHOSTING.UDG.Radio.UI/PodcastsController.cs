@@ -125,7 +125,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				lblNombre.Bold = true;
 				lblNombre.FontSize = Constantes.FontSize2;
 				lblNombre.FontColor = Constantes.FontColor2;
-				lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+				lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 10;
 				panel.Add (lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogo);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();

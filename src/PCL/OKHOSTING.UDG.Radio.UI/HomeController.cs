@@ -143,7 +143,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblNombre.FontFamily = Constantes.FontFamily;
 			lblNombre.FontSize = Constantes.FontSize2;
 			lblNombre.Bold = true;
-			lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+			lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 10;
 			panel.Add(lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
 			lblDescripcion = Platform.Current.Create<ILabel>();

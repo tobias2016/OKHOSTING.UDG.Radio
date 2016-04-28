@@ -42,9 +42,9 @@ namespace OKHOSTING.UDG.Radio.UI
 			{
 				double ancho = Platform.Current.Page.Width * .2;
 
-				if (ancho > 70)
+				if (ancho > 50)
 				{
-					ancho = 70;
+					ancho = 50;
 				}
 
 				return ancho;
