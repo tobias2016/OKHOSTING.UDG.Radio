@@ -187,6 +187,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				lblDescripcion.Tag = estacion;
 				lblDescripcion.FontSize = Constantes.FontSize3;
 				lblDescripcion.FontColor = Constantes.FontColor3;
+				lblDescripcion.Width = lblNombre.Width;
 				panel.Add(lblDescripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombre);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
@@ -195,6 +196,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.Tag = estacion;
 				imgPlay.Width = Constantes.AnchoIconos;
 				imgPlay.Height = Constantes.AnchoIconos;
+
 				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 			}
 

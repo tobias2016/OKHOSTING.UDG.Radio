@@ -55,6 +55,12 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
         {
             base.OnStop();
         }
-    }
+
+		public override void OnBackPressed()
+		{
+			//no hacer nada
+			//base.OnBackPressed();
+		}
+	}
 }
 

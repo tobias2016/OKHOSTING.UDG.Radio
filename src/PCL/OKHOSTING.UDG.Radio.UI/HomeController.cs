@@ -9,12 +9,11 @@ namespace OKHOSTING.UDG.Radio.UI
 { 
     public class HomeController : OKHOSTING.UI.Controller
     {
-		IImage imgBackgroundImage;
         IImageButton cmdPlay;
         IAudioPlayer AudioPlayer;
 		IImage imgLogoPrograma;
-		ILabel lblNombrePrograma;
-		ILabel lblDescripcionPrograma;
+		ILabel lblNombre;
+		ILabel lblDescripcion;
 
 		public Station Station 
 		{
@@ -26,8 +25,8 @@ namespace OKHOSTING.UDG.Radio.UI
 			{ 
 				_station = value;
 				imgLogoPrograma.LoadFromUrl(_station.WebSiteUri);
-				lblNombrePrograma.Text = _station.Name;
-				lblDescripcionPrograma.Text = _station.Description;
+				lblNombre.Text = _station.Name;
+				lblDescripcion.Text = _station.Description;
 				cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-53.png"));
 				IsPlaying = true;
 
@@ -51,8 +50,8 @@ namespace OKHOSTING.UDG.Radio.UI
 				cmdPlay.LoadFromUrl (new Uri ("http://radioudg.okhosting.com/images/app-53.png"));
 
 				imgLogoPrograma.LoadFromUrl(_episode.ImagenUri);
-				lblNombrePrograma.Text = _episode.Name;
-				lblDescripcionPrograma.Text = _episode.Description;
+				lblNombre.Text = _episode.Name;
+				lblDescripcion.Text = _episode.Description;
 				IsPlaying = true;
 
 				AudioPlayer.Stop ();
@@ -138,47 +137,36 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
-			lblNombrePrograma = Platform.Current.Create<ILabel>();
-			lblNombrePrograma.Text = "GUADALAJARA";
-			lblNombrePrograma.FontColor = Constantes.FontColor2;
-			lblNombrePrograma.FontFamily = Constantes.FontFamily;
-			lblNombrePrograma.FontSize = Constantes.FontSize2;
-			lblNombrePrograma.Bold = true;
-			lblNombrePrograma.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
-			panel.Add(lblNombrePrograma, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
+			lblNombre = Platform.Current.Create<ILabel>();
+			lblNombre.Text = "GUADALAJARA";
+			lblNombre.FontColor = Constantes.FontColor2;
+			lblNombre.FontFamily = Constantes.FontFamily;
+			lblNombre.FontSize = Constantes.FontSize2;
+			lblNombre.Bold = true;
+			lblNombre.Width = Platform.Current.Page.Width - (Constantes.AnchoIconos * 3) + 30;
+			panel.Add(lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
-			lblDescripcionPrograma = Platform.Current.Create<ILabel>();
-			lblDescripcionPrograma.Text = "XHUDG 104.3 F.M.";
-			lblDescripcionPrograma.FontColor = Constantes.FontColor3;
-			lblDescripcionPrograma.FontFamily = Constantes.FontFamily;
-			lblDescripcionPrograma.FontSize = Constantes.FontSize3;
-			lblDescripcionPrograma.Margin = new Thickness(0, 5, 0, 0);
-			panel.Add(lblDescripcionPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombrePrograma);
+			lblDescripcion = Platform.Current.Create<ILabel>();
+			lblDescripcion.Text = "XHUDG 104.3 F.M.";
+			lblDescripcion.FontColor = Constantes.FontColor3;
+			lblDescripcion.FontFamily = Constantes.FontFamily;
+			lblDescripcion.FontSize = Constantes.FontSize3;
+			lblDescripcion.Margin = new Thickness(0, 5, 0, 0);
+			lblDescripcion.Width = lblNombre.Width;
+			panel.Add(lblDescripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombre);
 
 			cmdPlay = Platform.Current.Create<IImageButton>();
 			cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-54.png"));
 			cmdPlay.Click += Play_Click;
 			cmdPlay.Width = Constantes.AnchoIconos;
 			cmdPlay.Height = Constantes.AnchoIconos;
-			cmdPlay.Margin = new Thickness (20, 0, 0, 0);
 
-            panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombrePrograma);
+            panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 
 			Platform.Current.Page.Title = "Radio Universidad de Guadalajara";
 			Platform.Current.Page.Content = panel;
 
 			Play_Click (null, null);
-        }
-
-		public override void Resize()
-		{
-            if (imgBackgroundImage != null)
-            {
-                imgBackgroundImage.Width = Platform.Current.Page.Width;
-                imgBackgroundImage.Height = Platform.Current.Page.Height;
-            }
-
-            base.Resize();
         }
 
         protected bool IsPlaying = false;

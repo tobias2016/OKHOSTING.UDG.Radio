@@ -134,6 +134,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgPlay.Tag = episodio;
 				imgPlay.Width = Constantes.AnchoIconos;
 				imgPlay.Height = Constantes.AnchoIconos;
+
 				panel.Add(imgPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 			}
 
