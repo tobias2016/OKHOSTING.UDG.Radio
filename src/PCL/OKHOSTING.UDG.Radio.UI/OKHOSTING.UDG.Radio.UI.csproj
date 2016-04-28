@@ -15,6 +15,8 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,19 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OKHOSTING.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.Core.1.0.17\lib\OKHOSTING.Core.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.Core.1.0.20\lib\OKHOSTING.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.Data.1.0.7\lib\OKHOSTING.Data.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.Data.1.0.11\lib\OKHOSTING.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.ORM.1.0.8\lib\OKHOSTING.ORM.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.ORM.1.0.15\lib\OKHOSTING.ORM.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.Sql.1.0.4\lib\OKHOSTING.Sql.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.Sql.1.0.6\lib\OKHOSTING.Sql.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Sql.MySql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -79,7 +81,7 @@
       <HintPath>..\..\packages\OKHOSTING.Sql.Web.Services.Client.1.0.0\lib\OKHOSTING.Sql.Web.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.UI.1.0.7\lib\OKHOSTING.UI.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.UI.1.0.14\lib\OKHOSTING.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
@@ -103,6 +105,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
