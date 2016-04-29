@@ -63,22 +63,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="OKHOSTING.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.Data.1.0.11\lib\OKHOSTING.Data.dll</HintPath>
+      <HintPath>..\..\packages\OKHOSTING.Data.1.0.12\lib\OKHOSTING.Data.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.ORM.1.0.15\lib\OKHOSTING.ORM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OKHOSTING.Sql.1.0.6\lib\OKHOSTING.Sql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.Sql.MySql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.Sql.MySql.1.0.4\lib\OKHOSTING.Sql.MySql.dll</HintPath>
-    </Reference>
-    <Reference Include="OKHOSTING.Sql.Web.Services.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\OKHOSTING.Sql.Web.Services.Client.1.0.0\lib\OKHOSTING.Sql.Web.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OKHOSTING.UI.1.0.14\lib\OKHOSTING.UI.dll</HintPath>
