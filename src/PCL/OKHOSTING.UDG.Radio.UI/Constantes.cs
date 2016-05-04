@@ -58,9 +58,17 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 3;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 90;
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 50, 50, 50);
+
+			if (Platform.Current.Page.Width > 800)
+			{
+				grdMenu.Height = 100;
+			}
+			else
+			{
+				grdMenu.Height = 80;
+			}
 
 			return grdMenu;
 		}
@@ -72,13 +80,21 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblTitulo.Width = Platform.Current.Page.Width;
 			lblTitulo.FontFamily = Constantes.FontFamily;
 			lblTitulo.FontSize = Constantes.FontSize1;
-			lblTitulo.Height = 70;
 			lblTitulo.Bold = true;
 			lblTitulo.BackgroundColor = fondo;
 			lblTitulo.FontColor = Constantes.FontColor1;
 			lblTitulo.TextHorizontalAlignment = HorizontalAlignment.Center;
 			lblTitulo.TextVerticalAlignment = VerticalAlignment.Center;
 			lblTitulo.Margin = new Thickness(0, 0, 0, 20);
+
+			if (Platform.Current.Page.Width > 800)
+			{
+				lblTitulo.Height = 100;
+			}
+			else
+			{
+				lblTitulo.Height = 80;
+			}
 
 			return lblTitulo;
 		}
