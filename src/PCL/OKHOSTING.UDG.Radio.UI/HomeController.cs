@@ -127,6 +127,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			grdReproductor.RowCount = 1;
 			grdReproductor.ColumnCount = 4;
 			grdReproductor.Width = Platform.Current.Page.Width - 20;
+			grdReproductor.BackgroundColor = new Color(60, 255, 255, 255);
 			panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
 			imgLogoPrograma = Platform.Current.Create<IImage>();

@@ -58,7 +58,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 3;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 100;
+			grdMenu.Height = 90;
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 50, 50, 50);
 
