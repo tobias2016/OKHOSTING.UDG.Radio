@@ -39,29 +39,21 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			imgHome.Width = 25;
-			imgHome.Height = 25;
 			imgHome.Click += cmdHome_Click;
 			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			imgRegionales.Width = 25;
-			imgRegionales.Height = 25;
 			imgRegionales.Click += cmdEstaciones_Click;
 			grdMenu.SetContent(1, 1, imgRegionales);
 
 			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
 			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-08.png"));
-			cmdProgramas.Width = 25;
-			cmdProgramas.Height = 25;
 			//cmdProgramas.Click += (object sender, EventArgs e) => new ProgramasController().Start();
 			grdMenu.SetContent(1, 2, cmdProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 25;
-			imgVirtuales.Height = 25;
 			imgVirtuales.Click += cmdVirtuales_Click;
 			grdMenu.SetContent(1, 3, imgVirtuales);
 

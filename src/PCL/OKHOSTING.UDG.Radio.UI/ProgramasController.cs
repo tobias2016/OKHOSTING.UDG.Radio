@@ -30,8 +30,10 @@ namespace OKHOSTING.UDG.Radio.UI
 				Platform.Current.Page.Content = Cache;
 				return;
 			}
+            
+            #region lista de programas
 
-			IList<Show> programas = new List<Show> ();
+            IList<Show> programas = new List<Show> ();
 			Show programa1 = new Show ();
 			programa1.Id = 1;
 			programa1.Name = "Aniversario 41";
@@ -473,11 +475,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			programas.Add (programa49);
 
+            #endregion
 
-
-
-
-			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
+            IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
@@ -486,28 +486,20 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images/app-15.png"));
-			imgHome.Width = 25;
-			imgHome.Height = 25;
 			imgHome.Click += cmdHome_Click;
 			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
-			imgRegionales.Width = 25;
-			imgRegionales.Height = 25;
 			imgRegionales.Click += cmdEstaciones_Click;
 			grdMenu.SetContent(1, 1, imgRegionales);
 
 			IImageButton cmdProgramas = Platform.Current.Create<IImageButton>();
 			cmdProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-08.png"));
-			cmdProgramas.Width = 25;
-			cmdProgramas.Height = 25;
 			grdMenu.SetContent(1, 2, cmdProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 25;
-			imgVirtuales.Height = 25;
 			imgVirtuales.Click += cmdVirtuales_Click;
 			grdMenu.SetContent(1, 3, imgVirtuales);
 
@@ -569,7 +561,7 @@ namespace OKHOSTING.UDG.Radio.UI
 				panel.Add(lblDescripcion, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, lblNombre);
 
 				IImageButton imgPlay = Platform.Current.Create<IImageButton>();
-				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon2--45.png"));
+				imgPlay.LoadFromUrl(new Uri ("http://radioudg.okhosting.com/images-old/icon-20.png"));
 				imgPlay.Click += Programa_Click;
 				imgPlay.Tag = programa;
 				imgPlay.Width = Constantes.AnchoIconos;

@@ -79,22 +79,22 @@ namespace OKHOSTING.UDG.Radio.UI
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--15.png"));
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
-			grdMenu.SetContent(1, 0, imgHome);
+            grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
 			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(this).Start();
-			grdMenu.SetContent(1, 1, imgRegionales);
+            grdMenu.SetContent(1, 1, imgRegionales);
 
 			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
 			imgProgramas.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController(this).Start();
-			grdMenu.SetContent(1, 2, imgProgramas);
+            grdMenu.SetContent(1, 2, imgProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
 			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController(this).Start();
-			grdMenu.SetContent(1, 3, imgVirtuales);
+            grdMenu.SetContent(1, 3, imgVirtuales);
 
 			ILabel lblTitulo = Constantes.CrearTitulo("Radio Universidad De Guadalajara", new Color(255, 255, 212, 79));
 			panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);

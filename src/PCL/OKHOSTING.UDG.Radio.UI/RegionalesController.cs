@@ -26,7 +26,9 @@ namespace OKHOSTING.UDG.Radio.UI
 				return;
 			}
 
-			IList<Station> estaciones = new List<Station> ();
+            #region lista de staciones
+
+            IList<Station> estaciones = new List<Station> ();
 			Station estacion1 = new Station ();
 			estacion1.Id = 1;
 			estacion1.Name = "AMECA";
@@ -99,7 +101,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			estaciones.Add (estacion8);
 
-			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
+            #endregion
+
+            IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
@@ -108,28 +112,20 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-05.png"));
-			imgHome.Width = 25;
-			imgHome.Height = 25;
 			imgHome.Click += cmdEstaciones_Click;
 			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-12.png"));
-			imgRegionales.Width = 25;
-			imgRegionales.Height = 25;
 			grdMenu.SetContent(1, 1, imgRegionales);
 
-			IImageButton imngProgramas = Platform.Current.Create<IImageButton>();
-			imngProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
-			imngProgramas.Width = 25;
-			imngProgramas.Height = 25;
-			imngProgramas.Click += cmdProgramas_Click;
-			grdMenu.SetContent(1, 2, imngProgramas);
+			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
+			imgProgramas.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
+			imgProgramas.Click += cmdProgramas_Click;
+			grdMenu.SetContent(1, 2, imgProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
-			imgVirtuales.Width = 25;
-			imgVirtuales.Height = 25;
 			imgVirtuales.Click += cmdVirtuales_Click;
 			grdMenu.SetContent(1, 3, imgVirtuales);
 

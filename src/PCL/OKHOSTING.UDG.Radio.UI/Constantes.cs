@@ -51,14 +51,14 @@ namespace OKHOSTING.UDG.Radio.UI
 			}
 		}
 
-		public const string FontFamily = "Arial";
+        public const string FontFamily = "Arial";
 
 		public static IGrid CrearMenuVacio()
 		{
 			IGrid grdMenu = Platform.Current.Create<IGrid>();
 			grdMenu.RowCount = 3;
 			grdMenu.ColumnCount = 4;
-			grdMenu.Height = 60;
+			grdMenu.Height = 100;
 			grdMenu.Width = Platform.Current.Page.Width;
 			grdMenu.BackgroundColor = new Color(255, 50, 50, 50);
 
