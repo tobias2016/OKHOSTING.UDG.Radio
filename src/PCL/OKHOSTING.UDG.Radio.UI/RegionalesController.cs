@@ -26,9 +26,9 @@ namespace OKHOSTING.UDG.Radio.UI
 				return;
 			}
 
-            #region lista de staciones
+			#region lista de staciones
 
-            IList<Station> estaciones = new List<Station> ();
+			IList<Station> estaciones = new List<Station> ();
 			Station estacion1 = new Station ();
 			estacion1.Id = 1;
 			estacion1.Name = "AMECA";
@@ -101,9 +101,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			estaciones.Add (estacion8);
 
-            #endregion
+			#endregion
 
-            IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
+			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 

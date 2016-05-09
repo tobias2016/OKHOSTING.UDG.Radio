@@ -30,10 +30,10 @@ namespace OKHOSTING.UDG.Radio.UI
 				Platform.Current.Page.Content = Cache;
 				return;
 			}
-            
-            #region lista de programas
+			
+			#region lista de programas
 
-            IList<Show> programas = new List<Show> ();
+			IList<Show> programas = new List<Show> ();
 			Show programa1 = new Show ();
 			programa1.Id = 1;
 			programa1.Name = "Aniversario 41";
@@ -475,9 +475,9 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			programas.Add (programa49);
 
-            #endregion
+			#endregion
 
-            IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
+			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 

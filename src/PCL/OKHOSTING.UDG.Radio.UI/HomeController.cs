@@ -7,10 +7,10 @@ using OKHOSTING.Streaming;
 
 namespace OKHOSTING.UDG.Radio.UI
 { 
-    public class HomeController : OKHOSTING.UI.Controller
-    {
-        IImageButton cmdPlay;
-        IAudioPlayer AudioPlayer;
+	public class HomeController : OKHOSTING.UI.Controller
+	{
+		IImageButton cmdPlay;
+		IAudioPlayer AudioPlayer;
 		IImage imgLogoPrograma;
 		ILabel lblNombre;
 		ILabel lblDescripcion;
@@ -79,22 +79,22 @@ namespace OKHOSTING.UDG.Radio.UI
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--15.png"));
 			imgHome.Click += (object sender, EventArgs e) => new HomeController().Start();
-            grdMenu.SetContent(1, 0, imgHome);
+			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
 			imgRegionales.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-11.png"));
 			imgRegionales.Click += (object sender, EventArgs e) => new RegionalesController(this).Start();
-            grdMenu.SetContent(1, 1, imgRegionales);
+			grdMenu.SetContent(1, 1, imgRegionales);
 
 			IImageButton imgProgramas = Platform.Current.Create<IImageButton>();
 			imgProgramas.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-07.png"));
 			imgProgramas.Click += (object sender, EventArgs e) => new ProgramasController(this).Start();
-            grdMenu.SetContent(1, 2, imgProgramas);
+			grdMenu.SetContent(1, 2, imgProgramas);
 
 			IImageButton imgVirtuales = Platform.Current.Create<IImageButton>();
 			imgVirtuales.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon-09.png"));
 			imgVirtuales.Click += (object sender, EventArgs e) => new VirtualesController(this).Start();
-            grdMenu.SetContent(1, 3, imgVirtuales);
+			grdMenu.SetContent(1, 3, imgVirtuales);
 
 			ILabel lblTitulo = Constantes.CrearTitulo("Radio Universidad De Guadalajara", new Color(255, 255, 212, 79));
 			panel.Add(lblTitulo, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, grdMenu);
@@ -162,36 +162,36 @@ namespace OKHOSTING.UDG.Radio.UI
 			cmdPlay.Width = Constantes.AnchoIconos;
 			cmdPlay.Height = Constantes.AnchoIconos;
 
-            panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
+			panel.Add(cmdPlay, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, lblNombre);
 
 			Platform.Current.Page.Title = "Radio Universidad de Guadalajara";
 			Platform.Current.Page.Content = panel;
 
 			Play_Click (null, null);
-        }
+		}
 
-        protected bool IsPlaying = false;
+		protected bool IsPlaying = false;
 
-        private void Play_Click(object sender, EventArgs e)
-        {
-            if (!IsPlaying)
-            {
+		private void Play_Click(object sender, EventArgs e)
+		{
+			if (!IsPlaying)
+			{
 				cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-53.png"));
-                AudioPlayer.Play();
-                IsPlaying = true;
-            }
-            else
-            {
+				AudioPlayer.Play();
+				IsPlaying = true;
+			}
+			else
+			{
 				cmdPlay.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images/app-54.png"));
-                AudioPlayer.Pause();
-                IsPlaying = false;
-            }
-        }
+				AudioPlayer.Pause();
+				IsPlaying = false;
+			}
+		}
 
-        public override void Finish()
-        {
-            AudioPlayer.Stop();
-            base.Finish();
-        }
-    }
+		public override void Finish()
+		{
+			AudioPlayer.Stop();
+			base.Finish();
+		}
+	}
 }

@@ -15,13 +15,13 @@ using Windows.UI.Xaml.Navigation;
 
 namespace OKHOSTING.UDG.Radio.UI.Xamarin.Windows
 {
-    public sealed partial class MainPage
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
+	public sealed partial class MainPage
+	{
+		public MainPage()
+		{
+			this.InitializeComponent();
 
-            LoadApplication(new OKHOSTING.UDG.Radio.UI.Xamarin.App());
-        }
-    }
+			LoadApplication(new OKHOSTING.UDG.Radio.UI.Xamarin.App());
+		}
+	}
 }

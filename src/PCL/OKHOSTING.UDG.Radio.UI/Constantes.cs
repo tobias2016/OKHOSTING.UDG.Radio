@@ -51,7 +51,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			}
 		}
 
-        public const string FontFamily = "Arial";
+		public const string FontFamily = "Arial";
 
 		public static IGrid CrearMenuVacio()
 		{

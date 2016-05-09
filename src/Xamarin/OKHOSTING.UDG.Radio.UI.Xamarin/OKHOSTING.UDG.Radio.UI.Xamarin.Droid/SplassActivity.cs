@@ -13,10 +13,10 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 {
 	[Activity(Label = "Radio UDG", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SplassActivity : Android.App.Activity
-    {
-        protected override void OnStart()
-        {
-            base.OnStart();
+	{
+		protected override void OnStart()
+		{
+			base.OnStart();
 
 			base.SetContentView (Resource.Layout.SplashLayout);
 
@@ -29,6 +29,6 @@ namespace OKHOSTING.UDG.Radio.UI.Xamarin.Droid
 			}, TaskScheduler.FromCurrentSynchronizationContext());
 
 			startupWork.Start();
-        }
-    }
+		}
+	}
 }
