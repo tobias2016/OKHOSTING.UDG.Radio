@@ -43,20 +43,20 @@
       <Project>{08813445-AF0D-4DBC-9162-C222FB269352}</Project>
       <Name>OKHOSTING.Streaming</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\OKHOSTING.UI\src\PCL\OKHOSTING.UI\OKHOSTING.UI.csproj">
-      <Project>{F9D654B5-6B7A-4573-B8C8-FD09B96C021B}</Project>
-      <Name>OKHOSTING.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\OKHOSTING.UI\src\Xamarin\OKHOSTING.UI.Xamarin.Forms\OKHOSTING.UI.Xamarin.Forms.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
-      <Name>OKHOSTING.UI.Xamarin.Forms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\PCL\OKHOSTING.UDG.Radio.UI\OKHOSTING.UDG.Radio.UI.csproj">
       <Project>{173CD50A-9736-4348-A94C-3C6C2E1D8FDA}</Project>
       <Name>OKHOSTING.UDG.Radio.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\OKHOSTING.UI.1.0.4\lib\OKHOSTING.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OKHOSTING.UI.Xamarin.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\OKHOSTING.UI.Xamarin.Forms.1.0.5\lib\OKHOSTING.UI.Xamarin.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7">
       <HintPath>..\..\..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
     </Reference>

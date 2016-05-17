@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <None Include="app.config" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,10 +116,6 @@
     <ProjectReference Include="..\..\..\PCL\OKHOSTING.UDG.Radio.UI\OKHOSTING.UDG.Radio.UI.csproj">
       <Project>{173CD50A-9736-4348-A94C-3C6C2E1D8FDA}</Project>
       <Name>OKHOSTING.UDG.Radio.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\OKHOSTING.Core\src\PCL\OKHOSTING.Core\OKHOSTING.Core.csproj">
-      <Project>{3F4502FA-51EA-4CB9-8E50-46F828D240A1}</Project>
-      <Name>OKHOSTING.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -43,14 +43,14 @@
     <Compile Include="UserRating.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="OKHOSTING.Core">
+      <HintPath>..\..\..\..\OKHOSTING.UI\src\packages\OKHOSTING.Core.1.0.22\lib\OKHOSTING.Core.dll</HintPath>
+    </Reference>
     <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c">
       <HintPath>..\..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
     </Reference>
     <Reference Include="Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7">
       <HintPath>..\..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
-    </Reference>
-    <Reference Include="OKHOSTING.Core">
-      <HintPath>..\..\packages\OKHOSTING.Core.1.0.22\lib\OKHOSTING.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
