@@ -112,7 +112,7 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
 			imgHome.LoadFromUrl (new Uri("http://radioudg.okhosting.com/images-old/icon-05.png"));
-			imgHome.Click += cmdEstaciones_Click;
+			imgHome.Click += cmdHome_Click;
 			grdMenu.SetContent(1, 0, imgHome);
 
 			IImageButton imgRegionales = Platform.Current.Create<IImageButton>();
@@ -205,7 +205,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			HomeControler = home;
 		}
 
-		private void cmdEstaciones_Click(object sender, EventArgs e)
+		private void cmdHome_Click(object sender, EventArgs e)
 		{
 			this.Finish();
 		}

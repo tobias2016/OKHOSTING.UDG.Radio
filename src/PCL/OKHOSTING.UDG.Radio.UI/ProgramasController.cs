@@ -300,7 +300,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			programa30.Name = "Multiverso";
 			programa30.Description = "Universitarios, colectivos y ciudadanos";
 			programa30.LogoUri = new Uri ("http://udgtv.com/sites/default/files/Multiverso_1.jpg");
-			programa30.PodcastUri = new Uri ("http://podcastudg.com/multiverso.xml");
+			programa30.PodcastUri = new Uri ("\thttp://podcastudg.com/multiverso.xml");
 
 			programas.Add (programa30);
 

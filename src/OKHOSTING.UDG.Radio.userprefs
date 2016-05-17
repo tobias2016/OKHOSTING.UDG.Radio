@@ -1,39 +1,19 @@
-﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_21" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs">
+﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/OKHOSTING.UDG.Radio.UI.Xamarin.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs">
     <Files>
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/MainActivity.cs" Line="26" Column="10" />
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/App.cs" Line="14" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/IndexController.cs" Line="28" Column="4" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/SplashScreenScontroller.cs" Line="44" Column="64" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="174" Column="99" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="232" Column="48" />
+      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" Line="28" Column="22" />
+      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/StreamingPlayBack.cs" Line="108" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="27" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="OKHOSTING.UDG.Radio" expanded="True">
-            <Node name="OKHOSTING.UDG.Radio.UI" expanded="True">
-              <Node name="HomeController.cs" selected="True" />
-            </Node>
-            <Node name="OKHOSTING.UDG.Radio.UI.Net4.WebServices" expanded="True">
-              <Node name="Properties" expanded="True" />
-            </Node>
-            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin" expanded="True" />
-            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin.Droid" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-                <Node name="layout" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" line="714" column="1" />
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/MainViewController.cs" line="42" column="1" />
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/StreamingPlayBack.cs" line="92" column="1" />
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/StreamingPlayBack.cs" line="96" column="1" />
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/PlayerViewController.cs" line="95" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
