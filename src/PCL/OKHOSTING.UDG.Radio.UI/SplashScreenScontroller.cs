@@ -15,7 +15,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			stack.BackgroundColor = new Color(255, 255, 255, 255);
 
 			ILabel lblTitulo = Platform.Current.Create<ILabel>();
-			lblTitulo.Text = "Radio Universidad De Guadalajara";
+			lblTitulo.Text = "\n\nRadio Universidad De Guadalajara";
 			lblTitulo.FontColor = Constantes.FontColor1;
 			lblTitulo.FontSize = 20;
 			lblTitulo.Bold = true;

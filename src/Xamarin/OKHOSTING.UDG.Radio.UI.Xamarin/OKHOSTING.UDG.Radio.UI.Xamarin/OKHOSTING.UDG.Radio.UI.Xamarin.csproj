@@ -49,14 +49,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OKHOSTING.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\OKHOSTING.UI.1.0.4\lib\OKHOSTING.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="OKHOSTING.UI.Xamarin.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\OKHOSTING.UI.Xamarin.Forms.1.0.5\lib\OKHOSTING.UI.Xamarin.Forms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7">
       <HintPath>..\..\..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
     </Reference>
@@ -89,6 +81,12 @@
     </Reference>
     <Reference Include="OKHOSTING.Core">
       <HintPath>..\..\..\packages\OKHOSTING.Core.1.0.22\lib\OKHOSTING.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OKHOSTING.UI.Xamarin.Forms">
+      <HintPath>..\..\..\packages\OKHOSTING.UI.Xamarin.Forms.1.0.5\lib\OKHOSTING.UI.Xamarin.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="OKHOSTING.UI">
+      <HintPath>..\..\..\packages\OKHOSTING.UI.1.0.17\lib\OKHOSTING.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
