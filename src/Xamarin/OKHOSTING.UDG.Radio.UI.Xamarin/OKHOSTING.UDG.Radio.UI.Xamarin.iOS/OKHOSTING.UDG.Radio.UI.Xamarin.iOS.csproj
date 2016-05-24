@@ -34,6 +34,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
+    <CodesignProvision>f8214d93-9227-4d4c-ade8-25ffbeb3d5a7</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,8 +59,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>f8214d93-9227-4d4c-ade8-25ffbeb3d5a7</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -81,8 +84,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignProvision>Automatic:AppStore</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>f8214d93-9227-4d4c-ade8-25ffbeb3d5a7</CodesignProvision>
+    <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
@@ -123,15 +126,8 @@
     <BundleResource Include="Resources\Default-Portrait%402x.png" />
     <BundleResource Include="Resources\Default.png" />
     <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
     <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
@@ -173,6 +169,37 @@
     <Reference Include="PCLCrypto">
       <HintPath>..\..\..\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 29x29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 57x57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 114x114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 50x50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 100x100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 72x72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 144x144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 76x76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 152x152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 167x167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 48x48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 55x55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 88x88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 172x172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 196x196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 16x16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 32x32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 64x64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 128x128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 256x256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 512x512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 1024x1024.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

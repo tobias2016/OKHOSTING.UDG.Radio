@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OKHOSTING.UDG.Radio.UI.Xamarin.iOS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Radio UDG")]
+[assembly: AssemblyDescription("Escucha en vivo todas las estaciones de Radio Universidad de Guadalajara, también puedes escuchar cualquiera de los programas grabados disponibles, y en poco tiempo podrás interactuar con los locutores en tiempo real.\n\nTambién puedes visitar nuestra página para ver más contenidos:\n\nhttp://udgtv.com/\n\nEste proyecto es totalmente open source, y hecho con cariño por http://okhosting.com. Si eres programador, ayudanos a hacerlo mejor:\n\nhttps://github.com/okhosting/OKHOSTING.UDG.Radio")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("OK HOSTING SC")]
 [assembly: AssemblyProduct("OKHOSTING.UDG.Radio.UI.Xamarin.iOS")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2016 OK HOSTING SC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

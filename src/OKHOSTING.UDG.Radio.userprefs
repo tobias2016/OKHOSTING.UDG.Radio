@@ -1,12 +1,7 @@
-﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs">
+﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/OKHOSTING.UDG.Radio.UI.Xamarin.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" Line="1" Column="1" />
-      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/StreamingPlayBack.cs" Line="1" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="34" Column="52" />
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/App.cs" Line="34" Column="1" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/SplashScreenScontroller.cs" Line="18" Column="26" />
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/Resources/Resource.Designer.cs" Line="1" Column="1" />
+      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/Info.plist" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -21,5 +16,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Xamarin_Android_API_15" />
-  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2750EE9B-A634-4568-AA2F-EFDD473D2444" />
+  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
 </Properties>
