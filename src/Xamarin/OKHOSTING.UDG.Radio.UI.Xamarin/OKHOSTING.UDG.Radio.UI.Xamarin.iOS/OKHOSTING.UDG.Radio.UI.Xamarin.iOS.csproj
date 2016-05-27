@@ -24,6 +24,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -61,7 +62,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>f8214d93-9227-4d4c-ade8-25ffbeb3d5a7</CodesignProvision>
+    <CodesignProvision>e0949828-4526-4daa-8034-c0b60d3dcaa8</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -72,8 +73,8 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>e0949828-4526-4daa-8034-c0b60d3dcaa8</CodesignProvision>
+    <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -84,7 +85,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignProvision>f8214d93-9227-4d4c-ade8-25ffbeb3d5a7</CodesignProvision>
+    <CodesignProvision>e0949828-4526-4daa-8034-c0b60d3dcaa8</CodesignProvision>
     <CodesignKey>iPhone Distribution: OK HOSTING, S.C. (ABKY82MP37)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
