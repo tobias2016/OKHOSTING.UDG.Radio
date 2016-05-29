@@ -1,38 +1,31 @@
-﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/OKHOSTING.UDG.Radio.UI.Xamarin.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/Info.plist">
+﻿<Properties StartupItem="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.Droid/OKHOSTING.UDG.Radio.UI.Xamarin.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs">
     <Files>
-      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" Line="9" Column="42" />
-      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="74" Column="68" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/Regionales.xml" Line="5" Column="52" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/RegionalesController.cs" Line="68" Column="4" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/PodcastsController.cs" Line="78" Column="27" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio/Show.cs" Line="1" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio/Station.cs" Line="1" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" Line="480" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/VirtualesController.cs" Line="21" Column="1" />
+      <File FileName="PCL/OKHOSTING.UDG.Radio.UI/HomeController.cs" Line="153" Column="53" />
+      <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/Properties/AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin/OKHOSTING.UDG.Radio.UI.Xamarin.iOS/Info.plist" />
+      <File FileName="../../OKHOSTING.Streaming/src/PCL/OKHOSTING.Streaming/IAudioPlayer.cs" Line="1" Column="1" />
+      <File FileName="../../OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" Line="84" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="OKHOSTING.UDG.Radio" expanded="True">
-            <Node name="OKHOSTING.UDG.Radio.UI" expanded="True" />
-            <Node name="OKHOSTING.UDG.Radio.UI.Xamarin.iOS" expanded="True">
-              <Node name="Info.plist" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" line="714" column="1" />
+      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/PCL/OKHOSTING.UDG.Radio.UI/ProgramasController.cs" line="711" column="1" />
       <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/MainViewController.cs" line="42" column="1" />
       <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/StreamingPlayBack.cs" line="92" column="1" />
       <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/StreamingPlayBack.cs" line="96" column="1" />
       <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.UDG.Radio/src/OKHOSTING.UDG.Radio.UI.Xamarin.IOS/PlayerViewController.cs" line="95" column="1" />
-      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" line="86" column="1" />
-      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" line="83" column="1" />
-      <Breakpoint file="/Users/okhosting/Documents/OKHOSTING.Streaming/src/Xamarin/OKHOSTING.Streaming.Xamarin.iOS/AudioPlayer.cs" line="24" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Xamarin_Android_API_15" />
-  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2750EE9B-A634-4568-AA2F-EFDD473D2444" />
+  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Xamarin_Android_API_21" />
+  <MonoDevelop.Ide.ItemProperties.OKHOSTING.UDG.Radio.UI.Xamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
 </Properties>

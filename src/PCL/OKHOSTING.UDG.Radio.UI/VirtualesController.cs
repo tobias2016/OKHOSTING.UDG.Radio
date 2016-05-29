@@ -9,7 +9,6 @@ namespace OKHOSTING.UDG.Radio.UI
 {
 	public class VirtualesController : OKHOSTING.UI.Controller
 	{
-		IAudioPlayer AudioPlayer;
 		protected IImage BackgroundImage;
 		HomeController homecontroller;
 
@@ -19,7 +18,6 @@ namespace OKHOSTING.UDG.Radio.UI
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 0, 0, 0);
-			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
 			IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<estaciones>
+	<estacion>
+		<imagen>http://radioudg.okhosting.com/images-old/icon2--20.png</imagen>
+		<streaming>http://198.178.123.17:10478/;?icy=http</streaming>
+		<nombre>GUADALAJARA</nombre>
+		<descripcion>XHUDG 104.3 F.M.</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--11.png	
+		</imagen>
+		<streaming>
+			http://148.202.87.222:8000/;stream/1
+		</streaming>
+		<nombre>
+			AMECA
+		</nombre>
+		<descripcion>
+			XHUDG 105.5 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--40.png
+		</imagen>
+		<streaming>
+			http://148.202.114.39:8000/;stream/1
+		</streaming>
+		<nombre>
+			AUTLAN
+		</nombre>
+		<descripcion>
+			XHANU 102.3 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--23.png
+		</imagen>
+		<streaming>
+			http://148.202.119.233:8080/;stream/1
+		</streaming>
+		<nombre>
+			CD. GUZMÁN
+		</nombre>
+		<descripcion>
+			XHUGG 94.3 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--44.png
+		</imagen>
+		<streaming>
+			http://148.202.79.112:8000/;stream/1
+		</streaming>
+		<nombre>
+			COLOTLÁN
+		</nombre>
+		<descripcion>
+			XHUGC 104.7 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--43.png
+		</imagen>
+		<streaming>
+			http://148.202.62.3:8000/;stream/1
+		</streaming>
+		<nombre>
+			LAGOS DE MORENO
+		</nombre>
+		<descripcion>
+			XHUGL 104.7 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--41.png
+		</imagen>
+		<streaming>
+			http://148.202.148.5:4040/;stream/1
+		</streaming>
+		<nombre>
+			OCOTLÁN
+		</nombre>
+		<descripcion>
+			XHUGO 107.9 F.M.
+		</descripcion>
+	</estacion>
+	<estacion>
+		<imagen>
+			http://radioudg.okhosting.com/images-old/icon2--42.png
+		</imagen>
+		<streaming>
+			http://148.202.110.152:8000/;stream/1
+		</streaming>
+		<nombre>
+			PUERTO VALLARTA
+		</nombre>
+		<descripcion>
+			XHUGP 104.3 F.M.
+		</descripcion>
+	</estacion>
+</estaciones>
