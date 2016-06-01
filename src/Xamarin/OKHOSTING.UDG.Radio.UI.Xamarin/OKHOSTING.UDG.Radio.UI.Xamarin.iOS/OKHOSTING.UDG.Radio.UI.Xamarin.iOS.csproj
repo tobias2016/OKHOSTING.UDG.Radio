@@ -172,35 +172,93 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 87x87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 29x29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 58x58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 80x80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 120x120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 57x57.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 114x114.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 180x180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 40x40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 50x50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 100x100.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 72x72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 144x144.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 76x76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 152x152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 167x167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 48x48.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 55x55.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 88x88.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 172x172.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 196x196.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 16x16.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 32x32.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 64x64.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 128x128.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 256x256.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 512x512.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 1024x1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 87x87.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 29x29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 58x58.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 80x80.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 120x120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 57x57.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 114x114.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 180x180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 40x40.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 50x50.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 100x100.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 72x72.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 144x144.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 76x76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 152x152.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 167x167.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 48x48.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 55x55.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 88x88.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 172x172.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 196x196.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 16x16.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 32x32.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 64x64.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 128x128.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 256x256.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 512x512.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon 1024x1024.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
