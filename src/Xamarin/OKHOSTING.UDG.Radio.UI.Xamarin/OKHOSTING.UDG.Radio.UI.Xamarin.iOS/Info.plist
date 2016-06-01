@@ -22,12 +22,8 @@
 	<string>6.0</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.okhosting.udg.radio</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>CFBundleName</key>
 	<string>Radio UDG</string>
 	<key>XSAppIconAssets</key>
@@ -36,5 +32,9 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>CFBundleVersion</key>
+	<string>1.1</string>
 </dict>
 </plist>

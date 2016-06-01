@@ -9,7 +9,6 @@ namespace OKHOSTING.UDG.Radio.UI
 {
 	public class PodcastsController : OKHOSTING.UI.Controller
 	{
-		IAudioPlayer AudioPlayer;
 		HomeController HomeController;
 		Show Show;
 
@@ -23,16 +22,9 @@ namespace OKHOSTING.UDG.Radio.UI
 		{
 			base.Start();
 
-			System.Net.Http.HttpClient client = new System.Net.Http.HttpClient ();
-			var xmlStream = client.GetStreamAsync (Show.PodcastUri).Result;
-
-			System.Xml.XmlReader reader = System.Xml.XmlReader.Create (xmlStream);
-
-			IList<Episode> episodios = new List<Episode> ();
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
-			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
 			IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -69,6 +61,13 @@ namespace OKHOSTING.UDG.Radio.UI
 				imgLogo.Margin = new Thickness (0, 0, 10, 0);
 				panel.Add(imgLogo, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, lblTitulo);
 			}
+
+			System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
+			var xmlStream = client.GetStreamAsync(Show.PodcastUri).Result;
+
+			System.Xml.XmlReader reader = System.Xml.XmlReader.Create(xmlStream);
+
+			IList<Episode> episodios = new List<Episode>();
 
 			//extraer episodios del xml
 			while (reader.ReadToFollowing ("item")) 

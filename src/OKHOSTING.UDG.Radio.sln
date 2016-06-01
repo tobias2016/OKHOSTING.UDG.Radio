@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKHOSTING.Streaming.Xamarin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKHOSTING.Streaming.Xamarin.iOS", "..\..\OKHOSTING.Streaming\src\Xamarin\OKHOSTING.Streaming.Xamarin.iOS\OKHOSTING.Streaming.Xamarin.iOS.csproj", "{2A17B264-92B0-4048-9476-B57FCD6957C0}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "OKHOSTING.UDG.Radio.UI.Xamarin.iOS", "Xamarin\OKHOSTING.UDG.Radio.UI.Xamarin\OKHOSTING.UDG.Radio.UI.Xamarin.iOS\OKHOSTING.UDG.Radio.UI.Xamarin.iOS.csproj", "{6DAF7DFD-BF1A-4A15-A639-6B89210739BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKHOSTING.UDG.Radio.UI.Xamarin.iOS", "Xamarin\OKHOSTING.UDG.Radio.UI.Xamarin\OKHOSTING.UDG.Radio.UI.Xamarin.iOS\OKHOSTING.UDG.Radio.UI.Xamarin.iOS.csproj", "{6DAF7DFD-BF1A-4A15-A639-6B89210739BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -473,6 +473,7 @@ Global
 		$2.TabsToSpaces = False
 		$2.inheritsSet = VisualStudio
 		$2.inheritsScope = text/plain
+		version = 2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

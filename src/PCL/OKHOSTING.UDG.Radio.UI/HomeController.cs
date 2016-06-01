@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using OKHOSTING.UI;
 using OKHOSTING.UI.Controls;
@@ -70,10 +71,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			panel.BackgroundColor = new Color(255, 255, 255, 255);
 			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>(new string[] { "Xamarin.Android", "Xamarin.iOS" });
 
-			AudioPlayer.Stop();
-			AudioPlayer.Source = new Uri("http://148.202.165.1:8000/;stream/1");
-
-			IGrid grdMenu = Constantes.CrearMenuVacio();
+						IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
 
 			IImageButton imgHome = Platform.Current.Create<IImageButton>();
@@ -122,6 +120,11 @@ namespace OKHOSTING.UDG.Radio.UI
 			lblAlAire.FontColor = Constantes.FontColor2;
 			panel.Add(lblAlAire, RelativePanelHorizontalContraint.RightWith, RelativePanelVerticalContraint.TopWith, imgAntena);
 
+			var estacionDefault = RegionalesController.LeerEstaciones().First();
+
+			AudioPlayer.Stop();
+			AudioPlayer.Source = estacionDefault.StramingUri;
+
 			IGrid grdReproductor = Platform.Current.Create<IGrid>();
 			grdReproductor.RowCount = 1;
 			grdReproductor.ColumnCount = 4;
@@ -130,7 +133,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			panel.Add(grdReproductor, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.BelowOf, imgAntena);
 
 			imgLogoPrograma = Platform.Current.Create<IImage>();
-			imgLogoPrograma.LoadFromUrl(new Uri("http://radioudg.okhosting.com/images-old/icon2--20.png"));
+			imgLogoPrograma.LoadFromUrl(estacionDefault.WebSiteUri);
 			imgLogoPrograma.Width = Constantes.AnchoIconos;
 			imgLogoPrograma.Height = Constantes.AnchoIconos;
 			imgLogoPrograma.Margin = new Thickness(0, 0, 10, 0);
@@ -138,7 +141,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			panel.Add(imgLogoPrograma, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith, grdReproductor);
 
 			lblNombre = Platform.Current.Create<ILabel>();
-			lblNombre.Text = "GUADALAJARA";
+			lblNombre.Text = estacionDefault.Name;
 			lblNombre.FontColor = Constantes.FontColor2;
 			lblNombre.FontFamily = Constantes.FontFamily;
 			lblNombre.FontSize = Constantes.FontSize2;
@@ -147,7 +150,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			panel.Add(lblNombre, RelativePanelHorizontalContraint.RightOf, RelativePanelVerticalContraint.TopWith, imgLogoPrograma);
 
 			lblDescripcion = Platform.Current.Create<ILabel>();
-			lblDescripcion.Text = "XHUDG 104.3 F.M.";
+			lblDescripcion.Text = estacionDefault.Description;
 			lblDescripcion.FontColor = Constantes.FontColor3;
 			lblDescripcion.FontFamily = Constantes.FontFamily;
 			lblDescripcion.FontSize = Constantes.FontSize3;

@@ -9,9 +9,7 @@ namespace OKHOSTING.UDG.Radio.UI
 {
 	public class RegionalesController : OKHOSTING.UI.Controller
 	{
-		IAudioPlayer AudioPlayer;
 		protected HomeController HomeControler;
-
 		protected static IControl Cache;
 
 		public override void Start()
@@ -26,86 +24,8 @@ namespace OKHOSTING.UDG.Radio.UI
 				return;
 			}
 
-			#region lista de staciones
-
-			IList<Station> estaciones = new List<Station> ();
-			Station estacion1 = new Station ();
-			estacion1.Id = 1;
-			estacion1.Name = "AMECA";
-			estacion1.Description = "XHUDG 105.5 F.M.";
-			estacion1.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--11.png");
-			estacion1.StramingUri = new Uri ("http://148.202.87.222:8000/;stream/1");
-
-			estaciones.Add (estacion1);
-
-			Station estacion2 = new Station ();
-			estacion2.Id = 2;
-			estacion2.Name = "GUADALAJARA";
-			estacion2.Description = "XHUDG 104.3 F.M.";
-			estacion2.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--20.png");
-			estacion2.StramingUri = new Uri ("http://148.202.165.1:8000/;stream/1");
-
-			estaciones.Add (estacion2);
-
-			Station estacion3 = new Station ();
-			estacion3.Id = 1;
-			estacion3.Name = "AUTLAN";
-			estacion3.Description = "XHANU 102.3 F.M.";
-			estacion3.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--40.png");
-			estacion3.StramingUri = new Uri ("http://148.202.114.39:8000/;stream/1");
-
-			estaciones.Add (estacion3);
-
-			Station estacion4 = new Station ();
-			estacion4.Id = 1;
-			estacion4.Name = "CD. GUZMÁN";
-			estacion4.Description = "XHUGG 94.3 F.M.";
-			estacion4.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--23.png");
-			estacion4.StramingUri = new Uri ("http://148.202.119.233:8080/;stream/1");
-
-			estaciones.Add (estacion4);
-
-			Station estacion5 = new Station ();
-			estacion5.Id = 1;
-			estacion5.Name = "COLOTLÁN";
-			estacion5.Description = "XHUGC 104.7 F.M.";
-			estacion5.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--44.png");
-			estacion5.StramingUri = new Uri ("http://148.202.79.112:8000/;stream/1");
-
-			estaciones.Add (estacion5);
-
-			Station estacion6 = new Station ();
-			estacion6.Id = 1;
-			estacion6.Name = "LAGOS DE MORENO";
-			estacion6.Description = "XHUGL 104.7 F.M.";
-			estacion6.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--43.png");
-			estacion6.StramingUri = new Uri ("http://148.202.62.3:8000/;stream/1");
-
-			estaciones.Add (estacion6);
-
-			Station estacion7 = new Station ();
-			estacion7.Id = 1;
-			estacion7.Name = "OCOTLÁN";
-			estacion7.Description = "XHUGO 107.9 F.M.";
-			estacion7.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--41.png");
-			estacion7.StramingUri = new Uri ("http://148.202.148.5:4040/;stream/1");
-
-			estaciones.Add (estacion7);
-
-			Station estacion8 = new Station ();
-			estacion8.Id = 1;
-			estacion8.Name = "PUERTO VALLARTA";
-			estacion8.Description = "XHUGP 104.3 F.M.";
-			estacion8.WebSiteUri = new Uri ("http://radioudg.okhosting.com/images-old/icon2--42.png");
-			estacion8.StramingUri = new Uri ("http://148.202.110.152:8000/;stream/1");
-
-			estaciones.Add (estacion8);
-
-			#endregion
-
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
 			panel.BackgroundColor = new Color (255, 255, 255, 255);
-			AudioPlayer = Core.BaitAndSwitch.Create<IAudioPlayer>((IEnumerable<string>) new string[]{"Xamarin.Android", "Xamarin.iOS"});
 
 			IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -143,6 +63,8 @@ namespace OKHOSTING.UDG.Radio.UI
 			}
 
 			IControl referencia = lblTitulo;
+
+			IList<Station> estaciones = LeerEstaciones();
 
 			foreach (Station estacion in estaciones)
 			{
@@ -229,6 +151,35 @@ namespace OKHOSTING.UDG.Radio.UI
 			HomeControler.Station = estacion;
 			this.Finish ();
 		}
+
+		public static List<Station> LeerEstaciones()
+		{ 
+			List<Station> estaciones = new List<Station>();
+			System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
+			var xmlStream = client.GetStreamAsync("http://radioudg.okhosting.com/Regionales.xml").Result;
+			System.Xml.XmlReader reader = System.Xml.XmlReader.Create(xmlStream);
+
+			//extraer episodios del xml
+			while (reader.ReadToFollowing("estacion"))
+			{
+				Station estacion = new Station();
+
+				reader.ReadToFollowing("imagen");
+				estacion.WebSiteUri = new Uri(reader.ReadElementContentAsString());
+
+				reader.ReadToFollowing("streaming");
+				estacion.StramingUri = new Uri(reader.ReadElementContentAsString());
+
+				reader.ReadToFollowing("nombre");
+				estacion.Name = reader.ReadElementContentAsString();
+
+				reader.ReadToFollowing("descripcion");
+				estacion.Description = reader.ReadElementContentAsString();
+
+				estaciones.Add(estacion);
+			}
+
+			return estaciones;
+		}
 	}
 }
-
