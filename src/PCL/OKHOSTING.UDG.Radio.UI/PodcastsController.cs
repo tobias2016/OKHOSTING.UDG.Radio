@@ -9,13 +9,11 @@ namespace OKHOSTING.UDG.Radio.UI
 {
 	public class PodcastsController : OKHOSTING.UI.Controller
 	{
-		HomeController HomeController;
 		Show Show;
 
-		public PodcastsController(Show show, HomeController home)
+		public PodcastsController(Show show)
 		{
 			Show = show;
-			HomeController = home;
 		}
 
 		public override void Start()
@@ -141,20 +139,20 @@ namespace OKHOSTING.UDG.Radio.UI
 		private void cmdVirtuales_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new VirtualesController (HomeController).Start ();
+			new VirtualesController ().Start ();
 		}
 
 		private void cmdEstaciones_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new RegionalesController (HomeController).Start ();
+			new RegionalesController ().Start ();
 		}
 
 		public void Episode_Click(object sender, EventArgs e)
 		{
 			IControl control = (IControl)sender;
 			Episode episode = (Episode)control.Tag;
-			HomeController.Episode = episode;
+			HomeController.Current.Episode = episode;
 			this.Finish ();
 		}
 	}

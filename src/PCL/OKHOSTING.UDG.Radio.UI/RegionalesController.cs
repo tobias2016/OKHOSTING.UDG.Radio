@@ -9,7 +9,6 @@ namespace OKHOSTING.UDG.Radio.UI
 {
 	public class RegionalesController : OKHOSTING.UI.Controller
 	{
-		protected HomeController HomeControler;
 		protected static IControl Cache;
 
 		public override void Start()
@@ -122,11 +121,6 @@ namespace OKHOSTING.UDG.Radio.UI
 			Cache = panel;
 		}
 
-		public RegionalesController(HomeController home)
-		{
-			HomeControler = home;
-		}
-
 		private void cmdHome_Click(object sender, EventArgs e)
 		{
 			this.Finish();
@@ -135,28 +129,28 @@ namespace OKHOSTING.UDG.Radio.UI
 		private void cmdProgramas_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new ProgramasController (HomeControler).Start ();
+			new ProgramasController ().Start ();
 		}
 
 		private void cmdVirtuales_Click(object sender, EventArgs e)
 		{
 			this.Finish();
-			new VirtualesController (HomeControler).Start ();
+			new VirtualesController ().Start ();
 		}
 
 		public void Estacion_Click(object sender, EventArgs e)
 		{
 			IControl control = (IControl)sender;
 			Station estacion = (Station)control.Tag;
-			HomeControler.Station = estacion;
-			this.Finish ();
+			HomeController.Current.Station = estacion;
+            this.Finish ();
 		}
 
 		public static List<Station> LeerEstaciones()
 		{ 
 			List<Station> estaciones = new List<Station>();
 			System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
-			var xmlStream = client.GetStreamAsync("http://radioudg.okhosting.com/Regionales.xml").Result;
+			var xmlStream = client.GetStreamAsync("http://radioudg.okhosting.com/regionales.xml").Result;
 			System.Xml.XmlReader reader = System.Xml.XmlReader.Create(xmlStream);
 
 			//extraer episodios del xml
