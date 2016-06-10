@@ -37,5 +37,14 @@
 	<string>1.1</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
+	<key>UIRequiresPersistentWiFi</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
