@@ -173,6 +173,10 @@ namespace OKHOSTING.UDG.Radio.UI
 				estaciones.Add(estacion);
 			}
 
+			reader.Dispose();
+			xmlStream.Dispose();
+			client.Dispose();
+
 			return estaciones;
 		}
 	}

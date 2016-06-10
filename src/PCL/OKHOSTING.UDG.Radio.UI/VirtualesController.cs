@@ -17,7 +17,7 @@ namespace OKHOSTING.UDG.Radio.UI
 			base.Start ();
 
 			IRelativePanel panel = Platform.Current.Create<IRelativePanel>();
-			panel.BackgroundColor = new Color (255, 0, 0, 0);
+			panel.BackgroundColor = new Color(255, 255, 255, 255);
 
 			IGrid grdMenu = Constantes.CrearMenuVacio();
 			panel.Add(grdMenu, RelativePanelHorizontalContraint.LeftWith, RelativePanelVerticalContraint.TopWith);
@@ -177,7 +177,11 @@ namespace OKHOSTING.UDG.Radio.UI
                 estaciones.Add(estacion);
             }
 
-            return estaciones;
+			reader.Dispose();
+			xmlStream.Dispose();
+			client.Dispose();
+
+			return estaciones;
         }
     }
 }

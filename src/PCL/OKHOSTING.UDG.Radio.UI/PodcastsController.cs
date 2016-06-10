@@ -82,6 +82,10 @@ namespace OKHOSTING.UDG.Radio.UI
 				episodios.Add (episodio);
 			}
 
+			reader.Dispose();
+			xmlStream.Dispose();
+			client.Dispose();
+
 			IControl referencia = lblTitulo;
 
 			foreach (Episode episodio in episodios)
